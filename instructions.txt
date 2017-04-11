@@ -1,5 +1,6 @@
 Download a the latest JDK for you architecture if you do not have one.
 Go to: https://www.eclipse.org and download the latest version of eclipse.
+Make sure you select the java developer version, not the EE version!
 Follow through both installers normally.
 Go to Github and pull the project. This will contain the native java application.
 Add this to the elipse workspace by clicking on file->open projects from file system->BrowseToCode.
