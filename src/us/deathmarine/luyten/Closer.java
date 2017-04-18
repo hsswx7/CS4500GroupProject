@@ -1,5 +1,8 @@
 package us.deathmarine.luyten;
 
+//TODO Nothing
+//DONE
+
 public final class Closer {
 	public static void tryClose(final AutoCloseable c) {
 		if (c == null) {

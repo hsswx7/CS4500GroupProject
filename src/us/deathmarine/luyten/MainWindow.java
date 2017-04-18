@@ -32,6 +32,8 @@ import javax.swing.border.BevelBorder;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 
+
+//TODO CHANGE TITLE, ICON IMAGE
 /**
  * Dispatcher
  */
