@@ -49,7 +49,7 @@ public class MainWindow extends JFrame {
 	private WindowPosition windowPosition;
 	private LuytenPreferences luytenPrefs;
 	private FileDialog fileDialog;
-	private FileSaver fileSaver;
+	//private FileSaver fileSaver;
 	public MainMenuBar mainMenuBar;
 
 	public MainWindow(File fileFromCommandLine) {
@@ -121,7 +121,7 @@ public class MainWindow extends JFrame {
 		}
 
 		fileDialog = new FileDialog(this);
-		fileSaver = new FileSaver(bar, label);
+		//fileSaver = new FileSaver(bar, label);
 
 		this.setExitOnEscWhenEnabled(model);
 
