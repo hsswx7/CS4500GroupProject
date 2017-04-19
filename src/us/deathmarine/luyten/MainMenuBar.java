@@ -69,9 +69,12 @@ public class MainMenuBar extends JMenuBar {
 	private JCheckBox filterOutInnerClassEntries;
 	private JCheckBox singleClickOpenEnabled;
 	private JCheckBox exitByEscEnabled;
+	
+	////////////REMOVE/CLOSE/////////////
+	
 	private DecompilerSettings settings;
 	private LuytenPreferences luytenPrefs;
-	////////////REMOVE/CLOSE/////////////
+
 
 	public MainMenuBar(MainWindow mainWnd) {
 		this.mainWindow = mainWnd;
