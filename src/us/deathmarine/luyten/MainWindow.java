@@ -38,7 +38,7 @@ import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 5265556630724988013L;
 
-	private static final String TITLE = "Luyten";
+	private static final String TITLE = "Legrange Reach Research"; 
 
 	public static Model model;
 	private JProgressBar bar;
@@ -146,7 +146,7 @@ public class MainWindow extends JFrame {
 		this.getModel().closeFile();
 	}
 
-	public void onSaveAsMenu() {
+	/*public void onSaveAsMenu() {
 		RSyntaxTextArea pane = this.getModel().getCurrentTextArea();
 		if (pane == null)
 			return;
@@ -179,7 +179,7 @@ public class MainWindow extends JFrame {
 		if (selectedFileToSave != null) {
 			fileSaver.saveAllDecompiled(openedFile, selectedFileToSave);
 		}
-	}
+	}*/
 
 	public void onExitMenu() {
 		quit();
