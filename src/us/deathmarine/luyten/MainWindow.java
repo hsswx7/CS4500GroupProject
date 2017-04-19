@@ -133,6 +133,7 @@ public class MainWindow extends JFrame {
 		if(RecentFiles.load() > 0) mainMenuBar.updateRecentFiles();
 	}
 
+	// This is Where the file will go to 
 	public void onOpenFileMenu() {
 		File selectedFile = fileDialog.doOpenDialog();
 		if (selectedFile != null) {
