@@ -2,6 +2,11 @@ package us.deathmarine.luyten;
 
 import java.text.DecimalFormat;
 
+//TODO In- Progress
+//This file provides the exception when the file being opened is too large
+
+//Change the limit to our parameter
+
 public class TooLargeFileException extends Exception {
 	private static final long serialVersionUID = 6091096838075139962L;
 	private long size;

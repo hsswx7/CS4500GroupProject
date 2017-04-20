@@ -48,6 +48,8 @@ public class MainMenuBar extends JMenuBar {
 
 	private JMenu recentFiles;
 	private JMenuItem clearRecentFiles;
+	
+	////////REMOVE/OPEN///////
 	private JCheckBox flattenSwitchBlocks;
 	private JCheckBox forceExplicitImports;
 	private JCheckBox forceExplicitTypes;
@@ -67,8 +69,12 @@ public class MainMenuBar extends JMenuBar {
 	private JCheckBox filterOutInnerClassEntries;
 	private JCheckBox singleClickOpenEnabled;
 	private JCheckBox exitByEscEnabled;
+	
+	////////////REMOVE/CLOSE/////////////
+	
 	private DecompilerSettings settings;
 	private LuytenPreferences luytenPrefs;
+
 
 	public MainMenuBar(MainWindow mainWnd) {
 		this.mainWindow = mainWnd;
@@ -79,6 +85,8 @@ public class MainMenuBar extends JMenuBar {
 		final JMenu fileMenu = new JMenu("File");
 		fileMenu.add(new JMenuItem("..."));
 		this.add(fileMenu);
+		
+		/////////REMOVE/OPEN///////
 		final JMenu editMenu = new JMenu("Edit");
 		editMenu.add(new JMenuItem("..."));
 		this.add(editMenu);
@@ -91,6 +99,8 @@ public class MainMenuBar extends JMenuBar {
 		final JMenu settingsMenu = new JMenu("Settings");
 		settingsMenu.add(new JMenuItem("..."));
 		this.add(settingsMenu);
+		//////////REMOVE/CLOSE///////////
+		
 		final JMenu helpMenu = new JMenu("Help");
 		helpMenu.add(new JMenuItem("..."));
 		this.add(helpMenu);
@@ -102,7 +112,8 @@ public class MainMenuBar extends JMenuBar {
 					// build menu later
 					buildFileMenu(fileMenu);
 					refreshMenuPopup(fileMenu);
-
+					
+					/////REMOVE///////
 					buildEditMenu(editMenu);
 					refreshMenuPopup(editMenu);
 
@@ -114,6 +125,7 @@ public class MainMenuBar extends JMenuBar {
 
 					buildSettingsMenu(settingsMenu, configSaver);
 					refreshMenuPopup(settingsMenu);
+					////////REMOVE/////////
 
 					buildHelpMenu(helpMenu);
 					refreshMenuPopup(helpMenu);
@@ -205,8 +217,13 @@ public class MainMenuBar extends JMenuBar {
 			}
 		});
 		fileMenu.add(menuItem);
-		fileMenu.addSeparator();
+		//fileMenu.addSeparator();
+		
+		
+		
+		
 
+		//////REMOVE/OPEN//////
 		menuItem = new JMenuItem("Save As...");
 		menuItem.setAccelerator(
 				KeyStroke.getKeyStroke(KeyEvent.VK_E, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
@@ -228,8 +245,11 @@ public class MainMenuBar extends JMenuBar {
 			}
 		});
 		fileMenu.add(menuItem);
-		fileMenu.addSeparator();
-
+		//fileMenu.addSeparator();
+		/////////////REMOVE/CLOSE///////////////////
+		
+		
+		
 		recentFiles = new JMenu("Recent Files");
 		fileMenu.add(recentFiles);
 		
@@ -261,6 +281,8 @@ public class MainMenuBar extends JMenuBar {
 		}
 	}
 
+	
+	////////REMOVE/////////
 	private void buildEditMenu(JMenu editMenu) {
 		editMenu.removeAll();
 		JMenuItem menuItem = new JMenuItem("Cut");
@@ -318,7 +340,11 @@ public class MainMenuBar extends JMenuBar {
 		});
 		editMenu.add(menuItem);
 	}
+	/////REMOVE///////
+	
+	
 
+	//////REMOVE////////
 	private void buildThemesMenu(JMenu themesMenu) {
 		themesMenu.removeAll();
 		themesGroup = new ButtonGroup();
@@ -352,7 +378,10 @@ public class MainMenuBar extends JMenuBar {
 		themesGroup.add(a);
 		themesMenu.add(a);
 	}
+	/////////REMOVE////////
+	
 
+	///////REMOVE////////
 	private void buildOperationMenu(JMenu operationMenu) {
 		operationMenu.removeAll();
 		packageExplorerStyle = new JCheckBox("    Package Explorer Style");
@@ -529,6 +558,7 @@ public class MainMenuBar extends JMenuBar {
 		bytecodeLineNumbers.addActionListener(settingsChanged);
 		settingsMenu.add(bytecodeLineNumbers);
 	}
+	/////////REMOVE/CLOSE///////////
 
 	private void buildHelpMenu(JMenu helpMenu) {
 		helpMenu.removeAll();
@@ -540,6 +570,8 @@ public class MainMenuBar extends JMenuBar {
 			}
 		});
 		helpMenu.add(menuItem);
+		
+		/////REMOVE/OPEN/////
 		JMenu menuDebug = new JMenu("Debug");
 		menuItem = new JMenuItem("List JVM Classes");
 		menuItem.addActionListener(new ActionListener() {
@@ -550,6 +582,9 @@ public class MainMenuBar extends JMenuBar {
 		});
 		menuDebug.add(menuItem);
 		helpMenu.add(menuDebug);
+		/////REMOVE/CLOSE/////
+		
+		
 		menuItem = new JMenuItem("About");
 		menuItem.addActionListener(new ActionListener() {
 			@Override
@@ -592,6 +627,8 @@ public class MainMenuBar extends JMenuBar {
 		helpMenu.add(menuItem);
 	}
 
+	/////COMMENTOUT/OPEN/////
+	///Could use for data manipulation if we get that far/////
 	private void populateSettingsFromSettingsMenu() {
 		// synchronized: do not disturb decompiler at work (synchronize every
 		// time before run decompiler)
@@ -632,7 +669,10 @@ public class MainMenuBar extends JMenuBar {
 			settings.setIncludeLineNumbersInBytecode(bytecodeLineNumbers.isSelected());
 		}
 	}
-
+	/////COMMENTOUT/CLOSE/////
+	
+	
+	/////REMOVE/OPEN/////
 	private class ThemeAction extends AbstractAction {
 		private static final long serialVersionUID = -6618680171943723199L;
 		private String xml;
@@ -648,6 +688,7 @@ public class MainMenuBar extends JMenuBar {
 			mainWindow.onThemesChanged();
 		}
 	}
+	/////REMOVE/CLOSE/////
 
 	private class LinkListener extends MouseAdapter {
 		String link;
