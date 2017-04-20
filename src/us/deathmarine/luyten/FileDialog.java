@@ -42,6 +42,7 @@ public class FileDialog {
 		initOpenDialog();
 
 		retrieveOpenDialogDir(fcOpen);
+		fcOpen.setDialogTitle("Upload Files"); // Setting Title of the file chooser 
 		int returnVal = fcOpen.showOpenDialog(parent);
 		saveOpenDialogDir(fcOpen);
 
@@ -75,8 +76,7 @@ public class FileDialog {
 
 	public synchronized void initOpenDialog() {
 		if (fcOpen == null) {
-			fcOpen = createFileChooser(); // This program can filter all the
-											// .txt files
+			fcOpen = createFileChooser(); 
 			retrieveOpenDialogDir(fcOpen);
 		}
 	}
@@ -90,12 +90,14 @@ public class FileDialog {
 	 * retrieveSaveDialogDir(fcSaveAll); } }
 	 */
 
+	// Configures file Choices for the user when the user is uploading files 
 	private JFileChooser createFileChooser() {
 		JFileChooser fc = new JFileChooser();
-		fc.addChoosableFileFilter(new FileNameExtensionFilter("Text documents (.txt)", "txt"));
-		fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-		fc.setDialogTitle("Upload Files");
-		fc.setMultiSelectionEnabled(false);
+		//Filtering files by txt
+		fc.addChoosableFileFilter(new FileNameExtensionFilter("Text documents (.txt)", "txt")); 
+		fc.setAcceptAllFileFilterUsed(false); // Disables ALL Files as a File Filter 
+		fc.setFileSelectionMode(JFileChooser.FILES_ONLY); // User can only upload Files 
+		fc.setMultiSelectionEnabled(false); // User can only select one file at a time
 		return fc;
 	}
 
@@ -119,6 +121,7 @@ public class FileDialog {
 		}
 	}
 
+	// Gets the Location of the file directory Usre previously used 
 	private void retrieveOpenDialogDir(JFileChooser fc) {
 		try {
 			String currentDirStr = luytenPrefs.getFileOpenCurrentDirectory();
@@ -133,6 +136,7 @@ public class FileDialog {
 		}
 	}
 
+	// Saving Directory Location to minimize traversal to previously opened directory 
 	private void saveOpenDialogDir(JFileChooser fc) {
 		try {
 			File currentDir = fc.getCurrentDirectory();

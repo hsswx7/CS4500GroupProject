@@ -451,7 +451,7 @@ public class Model extends JSplitPane {
 	}
 
 	public void updateOpenClasses() {
-		// invalidate all open classes (update will hapen at tab change)
+		// invalidate all open classes (update will happen at tab change)
 		for (OpenFile open : hmap) {
 			if (open.getType() != null) {
 				open.invalidateContent();
@@ -629,10 +629,12 @@ public class Model extends JSplitPane {
 					}
 					tree.setModel(new DefaultTreeModel(null));
 
-					if (file.length() > MAX_JAR_FILE_SIZE_BYTES) {
+				
+					if (file.length() < MAX_JAR_FILE_SIZE_BYTES) {
+						System.out.println("File Length  " + file.length());
 						throw new TooLargeFileException(file.length());
 					}
-					if (file.getName().endsWith(".zip") || file.getName().endsWith(".jar")) {
+					/*if (file.getName().endsWith(".zip") || file.getName().endsWith(".jar")) {
 						JarFile jfile;
 						jfile = new JarFile(file);
 						getLabel().setText("Loading: " + jfile.getName());
@@ -654,32 +656,33 @@ public class Model extends JSplitPane {
 						}
 						open = true;
 						getLabel().setText("Complete");
-					} else {
-						TreeNodeUserObject topNodeUserObject = new TreeNodeUserObject(getName(file.getName()));
+					} else {*/
+						/*TreeNodeUserObject topNodeUserObject = new TreeNodeUserObject(getName(file.getName()));
 						final DefaultMutableTreeNode top = new DefaultMutableTreeNode(topNodeUserObject);
 						tree.setModel(new DefaultTreeModel(top));
 						settings.setTypeLoader(new InputTypeLoader());
 						open = true;
-						getLabel().setText("Complete");
+						getLabel().setText("Complete");*/
 
 						// open it automatically
-						new Thread() {
+						/*new Thread() {
 							public void run() {
 								TreePath trp = new TreePath(top.getPath());
 								openEntryByTreePath(trp);
 							};
-						}.start();
-					}
+						}.start();*/ 
+					//}
 
-					if (treeExpansionState != null) {
+					/*if (treeExpansionState != null) {
 						try {
 							TreeUtil treeUtil = new TreeUtil(tree);
 							treeUtil.restoreExpanstionState(treeExpansionState);
 						} catch (Exception e) {
 							Luyten.showExceptionDialog("Exception!", e);
 						}
-					}
+					}*/
 				} catch (TooLargeFileException e) {
+					System.out.println("TooLargeFileException Called ");
 					getLabel().setText("File is too large: " + file.getName() + " - size: " + e.getReadableFileSize());
 					closeFile();
 				} catch (Exception e1) {
@@ -695,13 +698,13 @@ public class Model extends JSplitPane {
 		}).start();
 	}
 
-	private void buildTreeFromMass(List<String> mass) {
+	/*private void buildTreeFromMass(List<String> mass) {
 		if (luytenPrefs.isPackageExplorerStyle()) {
 			buildFlatTreeFromMass(mass);
 		} else {
 			buildDirectoryTreeFromMass(mass);
 		}
-	}
+	}*/
 
 	private void buildDirectoryTreeFromMass(List<String> mass) {
 		TreeNodeUserObject topNodeUserObject = new TreeNodeUserObject(getName(file.getName()));
