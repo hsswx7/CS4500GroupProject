@@ -1,5 +1,9 @@
 package us.deathmarine.luyten;
 
+//TODO Remove
+//This file gets data from objects opened in application and
+//distributes them to the tree in the left pane
+
 public class TreeNodeUserObject {
 
 	private String originalName;
