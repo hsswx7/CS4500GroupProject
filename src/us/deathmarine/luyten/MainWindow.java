@@ -314,7 +314,7 @@ public class MainWindow extends JFrame {
 	}
 
 	public void onFileLoadEnded(File file, boolean isSuccess) {
-		System.out.println("At main window with file : " + file.getName() + " isSuccess : " + isSuccess);
+		//System.out.println("At main window with file : " + file.getName() + " isSuccess : " + isSuccess);
 		try {
 			if (file != null && isSuccess) {
 				this.setTitle(TITLE + " - " + file.getName());

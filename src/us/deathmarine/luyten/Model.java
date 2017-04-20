@@ -129,8 +129,9 @@ public class Model extends JSplitPane {
 
 		JPanel panel2 = new JPanel();
 		panel2.setLayout(new BoxLayout(panel2, 1));
-		panel2.setBorder(BorderFactory.createTitledBorder("Structure"));
+		panel2.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
 		panel2.add(new JScrollPane(tree));
+		
 
 		house = new JTabbedPane();
 		house.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -629,10 +630,25 @@ public class Model extends JSplitPane {
 					}
 					tree.setModel(new DefaultTreeModel(null));
 
-				
-					if (file.length() < MAX_JAR_FILE_SIZE_BYTES) {
+					// Checking If File is too large 
+					if (file.length() > MAX_JAR_FILE_SIZE_BYTES) {
 						System.out.println("File Length  " + file.length());
-						throw new TooLargeFileException(file.length());
+						throw new TooLargeFileException(file.length()); // Throwing Error 
+					}
+					
+					// Throwing error if file does not pass isFile test or canRead Test
+					/* isFile() - Tests whether the file denoted by this abstract pathname 
+					 * is a normal file. A file is normal if it is not a directory and, 
+					 * in addition, satisfies other system-dependent criteria. Any non-directory 
+					 * file created by a Java application is guaranteed to be a normal file. */
+					
+					/*canRead() - checks file privileges and returns true if the privileges allow
+					 * the client to read the file */
+					
+					if(!file.isFile() || !file.canRead()){
+						throw new Exception ();
+					}else{
+						open = true; // boolean to know the file can be opened 
 					}
 					/*if (file.getName().endsWith(".zip") || file.getName().endsWith(".jar")) {
 						JarFile jfile;
@@ -681,9 +697,10 @@ public class Model extends JSplitPane {
 							Luyten.showExceptionDialog("Exception!", e);
 						}
 					}*/
+					// Catching and Displaying Error to User 
 				} catch (TooLargeFileException e) {
 					System.out.println("TooLargeFileException Called ");
-					getLabel().setText("File is too large: " + file.getName() + " - size: " + e.getReadableFileSize());
+					Luyten.showExceptionDialog("File: " + file.getName() + "  (Size:  " + file.length() + " ) too large. " + " Size Limit : " +  MAX_JAR_FILE_SIZE_BYTES, e);
 					closeFile();
 				} catch (Exception e1) {
 					Luyten.showExceptionDialog("Cannot open " + file.getName() + "!", e1);
@@ -706,7 +723,7 @@ public class Model extends JSplitPane {
 		}
 	}*/
 
-	private void buildDirectoryTreeFromMass(List<String> mass) {
+	/*private void buildDirectoryTreeFromMass(List<String> mass) {
 		TreeNodeUserObject topNodeUserObject = new TreeNodeUserObject(getName(file.getName()));
 		DefaultMutableTreeNode top = new DefaultMutableTreeNode(topNodeUserObject);
 		List<String> sort = new ArrayList<String>();
@@ -826,7 +843,7 @@ public class Model extends JSplitPane {
 			}
 		}
 		tree.setModel(new DefaultTreeModel(top));
-	}
+	} */
 
 	public void closeFile() {
 		for (OpenFile co : hmap) {
