@@ -631,7 +631,7 @@ public class Model extends JSplitPane {
 					tree.setModel(new DefaultTreeModel(null));
 
 					// Checking If File is too large 
-					if (file.length() > MAX_JAR_FILE_SIZE_BYTES) {
+					if (file.length() < MAX_JAR_FILE_SIZE_BYTES) {
 						System.out.println("File Length  " + file.length());
 						throw new TooLargeFileException(file.length()); // Throwing Error 
 					}
@@ -702,7 +702,7 @@ public class Model extends JSplitPane {
 					System.out.println("TooLargeFileException Called ");
 					Luyten.showExceptionDialog("File: " + file.getName() + "  (Size:  " + file.length() + " ) too large. " + " Size Limit : " +  MAX_JAR_FILE_SIZE_BYTES, e);
 					closeFile();
-				} catch (Exception e1) {
+				} catch (Exception e1) { //File cannot Open error 
 					Luyten.showExceptionDialog("Cannot open " + file.getName() + "!", e1);
 					getLabel().setText("Cannot open: " + file.getName());
 					closeFile();
@@ -715,15 +715,15 @@ public class Model extends JSplitPane {
 		}).start();
 	}
 
-	/*private void buildTreeFromMass(List<String> mass) {
+	private void buildTreeFromMass(List<String> mass) {
 		if (luytenPrefs.isPackageExplorerStyle()) {
 			buildFlatTreeFromMass(mass);
 		} else {
 			buildDirectoryTreeFromMass(mass);
 		}
-	}*/
+	}
 
-	/*private void buildDirectoryTreeFromMass(List<String> mass) {
+	private void buildDirectoryTreeFromMass(List<String> mass) {
 		TreeNodeUserObject topNodeUserObject = new TreeNodeUserObject(getName(file.getName()));
 		DefaultMutableTreeNode top = new DefaultMutableTreeNode(topNodeUserObject);
 		List<String> sort = new ArrayList<String>();
@@ -843,7 +843,7 @@ public class Model extends JSplitPane {
 			}
 		}
 		tree.setModel(new DefaultTreeModel(top));
-	} */
+	} 
 
 	public void closeFile() {
 		for (OpenFile co : hmap) {

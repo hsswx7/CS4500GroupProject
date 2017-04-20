@@ -133,7 +133,7 @@ public class MainWindow extends JFrame {
 		if(RecentFiles.load() > 0) mainMenuBar.updateRecentFiles();
 	}
 
-	// This is Where the file will go to 
+	// This is Where the file will go to once the user selects a file
 	public void onOpenFileMenu() {
 		File selectedFile = fileDialog.doOpenDialog();
 		if (selectedFile != null) {
@@ -314,7 +314,7 @@ public class MainWindow extends JFrame {
 	}
 
 	public void onFileLoadEnded(File file, boolean isSuccess) {
-		//System.out.println("At main window with file : " + file.getName() + " isSuccess : " + isSuccess);
+		System.out.println("At main window with file : " + file.getName() + " isSuccess : " + isSuccess);
 		try {
 			if (file != null && isSuccess) {
 				this.setTitle(TITLE + " - " + file.getName());
@@ -330,6 +330,7 @@ public class MainWindow extends JFrame {
 		this.getModel().navigateTo(uniqueStr);
 	}
 
+	//When opening the client this function Sets windows size to user's preference
 	private void adjustWindowPositionBySavedState() {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		if (!windowPosition.isSavedWindowPositionValid()) {

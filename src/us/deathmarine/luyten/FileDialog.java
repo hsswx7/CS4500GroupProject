@@ -37,6 +37,7 @@ public class FileDialog {
 		}.start();
 	}
 
+	// Opens Dialog Box for the user to select file to upload 
 	public File doOpenDialog() {
 		File selectedFile = null;
 		initOpenDialog();
@@ -93,7 +94,7 @@ public class FileDialog {
 	// Configures file Choices for the user when the user is uploading files 
 	private JFileChooser createFileChooser() {
 		JFileChooser fc = new JFileChooser();
-		//Filtering files by txt
+		//Filtering files by .txt
 		fc.addChoosableFileFilter(new FileNameExtensionFilter("Text documents (.txt)", "txt")); 
 		fc.setAcceptAllFileFilterUsed(false); // Disables ALL Files as a File Filter 
 		fc.setFileSelectionMode(JFileChooser.FILES_ONLY); // User can only upload Files 
