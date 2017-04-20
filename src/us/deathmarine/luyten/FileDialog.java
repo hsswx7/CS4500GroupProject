@@ -6,15 +6,15 @@ import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileFilter;
 
 /**
- * FileChoosers for Open and Save
+ * FileChoosers find files to open for the user 
  */
 public class FileDialog {
 	private ConfigSaver configSaver;
 	private LuytenPreferences luytenPrefs;
 	private Component parent;
 	private JFileChooser fcOpen;
-	private JFileChooser fcSave;
-	private JFileChooser fcSaveAll;
+	//private JFileChooser fcSave;
+	//private JFileChooser fcSaveAll;
 
 	public FileDialog(Component parent) {
 		this.parent = parent;
@@ -25,10 +25,10 @@ public class FileDialog {
 			public void run() {
 				try {
 					initOpenDialog();
-					Thread.sleep(500);
-					initSaveAllDialog();
-					Thread.sleep(500);
-					initSaveDialog();
+					//Thread.sleep(500);
+					//initSaveAllDialog();
+					//Thread.sleep(500);
+					//initSaveDialog();
 				} catch (Exception e) {
 					Luyten.showExceptionDialog("Exception!", e);
 				}
@@ -50,7 +50,7 @@ public class FileDialog {
 		return selectedFile;
 	}
 
-	public File doSaveDialog(String recommendedFileName) {
+	/*public File doSaveDialog(String recommendedFileName) {
 		File selectedFile = null;
 		initSaveDialog();
 
@@ -65,7 +65,7 @@ public class FileDialog {
 		return selectedFile;
 	}
 
-	public File doSaveAllDialog(String recommendedFileName) {
+	/*public File doSaveAllDialog(String recommendedFileName) {
 		File selectedFile = null;
 		initSaveAllDialog();
 
@@ -78,18 +78,18 @@ public class FileDialog {
 			selectedFile = fcSaveAll.getSelectedFile();
 		}
 		return selectedFile;
-	}
+	}*/
 
 	public synchronized void initOpenDialog() {
 		if (fcOpen == null) {
-			fcOpen = createFileChooser("*.jar", "*.zip", "*.class");
+			fcOpen = createFileChooser("*.txt", "*.csv"); // This program only accepts  .txt and .csv files 
 			retrieveOpenDialogDir(fcOpen);
 		}
 	}
 
-	public synchronized void initSaveDialog() {
+	/*public synchronized void initSaveDialog() {
 		if (fcSave == null) {
-			fcSave = createFileChooser("*.txt", "*.java");
+			fcSave = createFileChooser("*.txt", "*.csv");
 			retrieveSaveDialogDir(fcSave);
 		}
 	}
@@ -99,7 +99,7 @@ public class FileDialog {
 			fcSaveAll = createFileChooser("*.jar", "*.zip");
 			retrieveSaveDialogDir(fcSaveAll);
 		}
-	}
+	}*/
 
 	private JFileChooser createFileChooser(String... fileFilters) {
 		JFileChooser fc = new JFileChooser();
@@ -156,7 +156,8 @@ public class FileDialog {
 		}
 	}
 
-	private void retrieveSaveDialogDir(JFileChooser fc) {
+	// We Can Get Rid of All Code Below here
+	/* void retrieveSaveDialogDir(JFileChooser fc) {
 		try {
 			String currentDirStr = luytenPrefs.getFileSaveCurrentDirectory();
 			if (currentDirStr != null && currentDirStr.trim().length() > 0) {
@@ -179,5 +180,5 @@ public class FileDialog {
 		} catch (Exception e) {
 			Luyten.showExceptionDialog("Exception!", e);
 		}
-	}
+	}*/
 }

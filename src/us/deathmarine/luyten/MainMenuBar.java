@@ -223,8 +223,11 @@ public class MainMenuBar extends JMenuBar {
 		
 		
 
+
 		//////REMOVE/OPEN//////
-		menuItem = new JMenuItem("Save As...");
+
+		/*menuItem = new JMenuItem("Save As...");
+
 		menuItem.setAccelerator(
 				KeyStroke.getKeyStroke(KeyEvent.VK_E, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
 		menuItem.addActionListener(new ActionListener() {
@@ -243,7 +246,7 @@ public class MainMenuBar extends JMenuBar {
 			public void actionPerformed(ActionEvent e) {
 				mainWindow.onSaveAllMenu();
 			}
-		});
+		});*/
 		fileMenu.add(menuItem);
 		//fileMenu.addSeparator();
 		/////////////REMOVE/CLOSE///////////////////
