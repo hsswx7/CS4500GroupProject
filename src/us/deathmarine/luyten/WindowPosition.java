@@ -6,6 +6,9 @@ import java.awt.Toolkit;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 
+//TODO Nothing
+//This file designates the window size and position on the screen
+
 public class WindowPosition {
 
 	private boolean isFullScreen;

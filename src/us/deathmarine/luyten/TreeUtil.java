@@ -6,6 +6,9 @@ import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreePath;
 
+//TODO Remove
+//This file creates the tree hierarchy in the left pane
+
 public class TreeUtil {
 
 	private JTree tree;

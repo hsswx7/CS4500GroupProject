@@ -32,6 +32,10 @@ import javax.swing.border.BevelBorder;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 
+
+//TODO In-Progress
+
+
 /**
  * Dispatcher
  */
@@ -86,7 +90,8 @@ public class MainWindow extends JFrame {
 
 		model = new Model(this);
 		this.getContentPane().add(model);
-
+		// TODO the following line to change pane structure
+		
 		JSplitPane spt = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, panel1, panel2) {
 			private static final long serialVersionUID = 2189946972124687305L;
 			private final int location = 400;

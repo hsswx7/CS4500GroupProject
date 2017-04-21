@@ -1,5 +1,8 @@
 package us.deathmarine.luyten;
 
+//TODO Remove
+//This file selects text for editing
+
 public class Selection implements Comparable<Selection> {
 	public final Integer from;
 	public final Integer to;
