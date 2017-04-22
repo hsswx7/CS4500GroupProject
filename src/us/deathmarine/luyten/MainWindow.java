@@ -20,6 +20,7 @@ import java.util.Vector;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -54,7 +55,7 @@ public class MainWindow extends JFrame {
 	private LuytenPreferences luytenPrefs;
 	private FileDialog fileDialog;
 	//private FileSaver fileSaver;
-	private UploadedFiles uploadedFiles;
+	private UploadedFilesContainer uploadedFiles;
 	public MainMenuBar mainMenuBar;
 
 	public MainWindow(File fileFromCommandLine) {
@@ -78,6 +79,7 @@ public class MainWindow extends JFrame {
 		label.setHorizontalAlignment(JLabel.LEFT);
 		panel1.setBorder(new BevelBorder(BevelBorder.LOWERED));
 		panel1.setPreferredSize(new Dimension(this.getWidth() / 2, 20));
+		panel1.setBorder(BorderFactory.createTitledBorder("Panel 1 from MainWindows.java line 82"));
 		panel1.add(label);
 
 		JPanel panel2 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -87,6 +89,7 @@ public class MainWindow extends JFrame {
 		bar.setOpaque(false);
 		bar.setVisible(false);
 		panel2.setPreferredSize(new Dimension(this.getWidth() / 3, 20));
+		panel2.setBorder(BorderFactory.createTitledBorder("Panel 2 from MainWindows.java line 91"));
 		panel2.add(bar);
 
 		model = new Model(this);
@@ -141,9 +144,7 @@ public class MainWindow extends JFrame {
 
 	// This is Where the file will go to once the user selects a file
 	public void onOpenFileMenu() {
-		uploadedFiles = new UploadedFiles();
-		if(uploadedFiles.getFileUploadSizeLeft() == 0){
-			Luyten.showErrorDialog("File Upload Size Limit ( " + uploadedFiles.getMaxFilesAllowed() + " ) Reached!");
+		if(checkIfFileUploadSizeReached()){
 			return;
 		}
 		File selectedFile = fileDialog.doOpenDialog();
@@ -152,6 +153,19 @@ public class MainWindow extends JFrame {
 			
 			this.getModel().checkFileSelected(selectedFile);
 		}
+	}
+	
+	public boolean checkIfFileUploadSizeReached(){
+		if(uploadedFiles == null){
+			uploadedFiles = new UploadedFilesContainer();
+		}
+		
+		if(uploadedFiles.getFileUploadSizeLeft() == 0){
+			Luyten.showErrorDialog("File Upload Size Limit ( " + uploadedFiles.getMaxFilesAllowed() + " ) Reached!");
+			return true;
+		}
+		
+		return false;
 	}
 
 	/*public void onCloseFileMenu() {

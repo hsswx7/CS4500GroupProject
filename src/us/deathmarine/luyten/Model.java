@@ -1,9 +1,6 @@
 package us.deathmarine.luyten;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
@@ -11,6 +8,8 @@ import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
@@ -20,17 +19,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
-import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
-import javax.swing.JTabbedPane;
-import javax.swing.JTree;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -66,6 +55,8 @@ public class Model extends JSplitPane {
 
 	private JTree tree;
 	public JTabbedPane house;
+	private JButton submitFileButton;
+	private JLabel positionLabel;
 	private File file;
 	private DecompilerSettings settings;
 	private DecompilationOptions decompilationOptions;
@@ -118,11 +109,28 @@ public class Model extends JSplitPane {
 			}
 		});
 
-		JPanel panel2 = new JPanel();
-		panel2.setLayout(new BoxLayout(panel2, 1));
-		panel2.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
-		panel2.add(new JScrollPane(tree));
-		
+
+		// leftMainPanel will be a container for all other left panels
+		JPanel leftMainPanel = new JPanel();
+		leftMainPanel.setLayout(new BoxLayout(leftMainPanel, 1));
+
+		JPanel uploadFileLeftPanel = new JPanel();
+        uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel, 1));
+        uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
+        uploadFileLeftPanel.add(new JScrollPane(tree));
+
+        submitFileButton = new JButton("Submit Uploaded Files");
+        uploadFileLeftPanel.add(submitFileButton);
+
+        leftMainPanel.add(uploadFileLeftPanel);
+
+        JPanel panel3 = new JPanel();
+        panel3.setLayout(new BoxLayout(panel3, 1));
+        panel3.setBorder(BorderFactory.createTitledBorder("Test Panel 3"));
+        panel3.add(new JScrollPane(tree));
+
+
+        leftMainPanel.add(panel3);
 
 		house = new JTabbedPane();
 		house.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -139,9 +147,10 @@ public class Model extends JSplitPane {
 		panel.setLayout(new BoxLayout(panel, 1));
 		panel.setBorder(BorderFactory.createTitledBorder("Code"));
 		panel.add(house);
+
 		this.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
 		this.setDividerLocation(250 % mainWindow.getWidth());
-		this.setLeftComponent(panel2);
+		this.setLeftComponent(leftMainPanel);
 		this.setRightComponent(panel);
 
 		decompilationOptions = new DecompilationOptions();
@@ -698,6 +707,19 @@ public class Model extends JSplitPane {
 					getLabel().setText("Cannot open: " + file.getName());
 					open = false;
 				} finally {
+					try (InputStream in = new FileInputStream(file);) {
+						String path = file.getPath().replaceAll("\\\\", "/");
+						extractSimpleFileEntryToTextPane(in, file.getName(), path);
+					} catch (FileNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (Exception e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					
 					mainWindow.onFileLoadEnded(file, open);
 					bar.setVisible(false);

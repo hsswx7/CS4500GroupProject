@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 // This file will keep track of the files uploaded by the user 
 
-public class UploadedFiles {
+public class UploadedFilesContainer {
 	public static ArrayList<File> files = new ArrayList<>();
 	private static int maxFilesAllowed = 3;
 	
@@ -27,7 +27,7 @@ public class UploadedFiles {
 	
 	// Returns the total file upload size allowed
 	public int getMaxFilesAllowed(){
-		return UploadedFiles.maxFilesAllowed;
+		return UploadedFilesContainer.maxFilesAllowed;
 	}
 	
 	// returns amount of files uploaded 
