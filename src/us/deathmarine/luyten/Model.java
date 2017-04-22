@@ -15,16 +15,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.HashSet;
-import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import javax.swing.BorderFactory;
@@ -48,7 +41,6 @@ import javax.swing.tree.TreeSelectionModel;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.Theme;
 import org.fife.ui.rtextarea.RTextScrollPane;
-import com.strobel.assembler.InputTypeLoader;
 import com.strobel.assembler.metadata.ITypeLoader;
 import com.strobel.assembler.metadata.JarTypeLoader;
 import com.strobel.assembler.metadata.MetadataSystem;
@@ -82,7 +74,6 @@ public class Model extends JSplitPane {
 	private JProgressBar bar;
 	private JLabel label;
 	private HashSet<OpenFile> hmap = new HashSet<OpenFile>();
-	private Set<String> treeExpansionState;
 	private boolean open = false;
 	private State state;
 	private ConfigSaver configSaver;
@@ -208,7 +199,7 @@ public class Model extends JSplitPane {
 			open.close();
 	}
 
-	private String getName(String path) {
+	/*private String getName(String path) {
 		if (path == null)
 			return "";
 		int i = path.lastIndexOf("/");
@@ -217,7 +208,7 @@ public class Model extends JSplitPane {
 		if (i != -1)
 			return path.substring(i + 1);
 		return path;
-	}
+	}*/
 
 	private class TreeListener extends MouseAdapter {
 		@Override
@@ -604,23 +595,21 @@ public class Model extends JSplitPane {
 		return null;
 	}
 
-	public void loadFile(File file) {
-		if (open)
-			closeFile();
+	public void checkFileSelected(File file) {
 		this.file = file;
 		
 		RecentFiles.add(file.getAbsolutePath());
 		mainWindow.mainMenuBar.updateRecentFiles();
-		loadTree();
+		verifyFile();
 	}
 
-	public void updateTree() {
+	/*public void updateTree() {
 		TreeUtil treeUtil = new TreeUtil(tree);
 		treeExpansionState = treeUtil.getExpansionState();
-		loadTree();
-	}
+		verifyFile();
+	}*/
 
-	public void loadTree() {
+	public void verifyFile() {
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -631,7 +620,7 @@ public class Model extends JSplitPane {
 					tree.setModel(new DefaultTreeModel(null));
 
 					// Checking If File is too large 
-					if (file.length() < MAX_JAR_FILE_SIZE_BYTES) {
+					if (file.length() > MAX_JAR_FILE_SIZE_BYTES) {
 						System.out.println("File Length  " + file.length());
 						throw new TooLargeFileException(file.length()); // Throwing Error 
 					}
@@ -701,12 +690,15 @@ public class Model extends JSplitPane {
 				} catch (TooLargeFileException e) {
 					System.out.println("TooLargeFileException Called ");
 					Luyten.showExceptionDialog("File: " + file.getName() + "  (Size:  " + file.length() + " ) too large. " + " Size Limit : " +  MAX_JAR_FILE_SIZE_BYTES, e);
-					closeFile();
+					Luyten.showErrorDialog("File: " + file.getName() + "  (Size:  " + file.length() + " ) too large. " + " Size Limit : " +  MAX_JAR_FILE_SIZE_BYTES);
+					Luyten.showInformationDialog("File: " + file.getName() + "  (Size:  " + file.length() + " ) too large. " + " Size Limit : " +  MAX_JAR_FILE_SIZE_BYTES);
+					open = false;
 				} catch (Exception e1) { //File cannot Open error 
 					Luyten.showExceptionDialog("Cannot open " + file.getName() + "!", e1);
 					getLabel().setText("Cannot open: " + file.getName());
-					closeFile();
+					open = false;
 				} finally {
+					
 					mainWindow.onFileLoadEnded(file, open);
 					bar.setVisible(false);
 				}
@@ -715,15 +707,15 @@ public class Model extends JSplitPane {
 		}).start();
 	}
 
-	private void buildTreeFromMass(List<String> mass) {
+	/*private void buildTreeFromMass(List<String> mass) {
 		if (luytenPrefs.isPackageExplorerStyle()) {
 			buildFlatTreeFromMass(mass);
 		} else {
 			buildDirectoryTreeFromMass(mass);
 		}
-	}
+	}*/
 
-	private void buildDirectoryTreeFromMass(List<String> mass) {
+	/*private void buildDirectoryTreeFromMass(List<String> mass) {
 		TreeNodeUserObject topNodeUserObject = new TreeNodeUserObject(getName(file.getName()));
 		DefaultMutableTreeNode top = new DefaultMutableTreeNode(topNodeUserObject);
 		List<String> sort = new ArrayList<String>();
@@ -756,9 +748,9 @@ public class Model extends JSplitPane {
 			loadNodesByNames(top, list);
 		}
 		tree.setModel(new DefaultTreeModel(top));
-	}
+	}*/
 
-	private void buildFlatTreeFromMass(List<String> mass) {
+	/*private void buildFlatTreeFromMass(List<String> mass) {
 		TreeNodeUserObject topNodeUserObject = new TreeNodeUserObject(getName(file.getName()));
 		DefaultMutableTreeNode top = new DefaultMutableTreeNode(topNodeUserObject);
 
@@ -843,9 +835,9 @@ public class Model extends JSplitPane {
 			}
 		}
 		tree.setModel(new DefaultTreeModel(top));
-	} 
+	} */
 
-	public void closeFile() {
+	/*public void closeFile() {
 		for (OpenFile co : hmap) {
 			int pos = house.indexOfTab(co.name);
 			if (pos >= 0)
@@ -866,7 +858,7 @@ public class Model extends JSplitPane {
 		treeExpansionState = null;
 		open = false;
 		mainWindow.onFileLoadEnded(file, open);
-	}
+	}*/
 
 	public void changeTheme(String xml) {
 		InputStream in = getClass().getResourceAsStream(LuytenPreferences.THEME_XML_PATH + xml);

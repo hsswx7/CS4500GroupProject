@@ -54,6 +54,7 @@ public class MainWindow extends JFrame {
 	private LuytenPreferences luytenPrefs;
 	private FileDialog fileDialog;
 	//private FileSaver fileSaver;
+	private UploadedFiles uploadedFiles;
 	public MainMenuBar mainMenuBar;
 
 	public MainWindow(File fileFromCommandLine) {
@@ -114,7 +115,7 @@ public class MainWindow extends JFrame {
 		spt.setPreferredSize(new Dimension(this.getWidth(), 24));
 		this.add(spt, BorderLayout.SOUTH);
 		if (fileFromCommandLine != null) {
-			model.loadFile(fileFromCommandLine);
+			model.checkFileSelected(fileFromCommandLine);
 		}
 
 		try {
@@ -140,17 +141,22 @@ public class MainWindow extends JFrame {
 
 	// This is Where the file will go to once the user selects a file
 	public void onOpenFileMenu() {
+		uploadedFiles = new UploadedFiles();
+		if(uploadedFiles.getFileUploadSizeLeft() == 0){
+			Luyten.showErrorDialog("File Upload Size Limit ( " + uploadedFiles.getMaxFilesAllowed() + " ) Reached!");
+			return;
+		}
 		File selectedFile = fileDialog.doOpenDialog();
 		if (selectedFile != null) {
 			System.out.println("[Open]: Opening " + selectedFile.getAbsolutePath());
 			
-			this.getModel().loadFile(selectedFile);
+			this.getModel().checkFileSelected(selectedFile);
 		}
 	}
 
-	public void onCloseFileMenu() {
+	/*public void onCloseFileMenu() {
 		this.getModel().closeFile();
-	}
+	}*/
 
 	/*public void onSaveAsMenu() {
 		RSyntaxTextArea pane = this.getModel().getCurrentTextArea();
@@ -308,20 +314,21 @@ public class MainWindow extends JFrame {
 		this.getModel().updateOpenClasses();
 	}
 
-	public void onTreeSettingsChanged() {
+	/*public void onTreeSettingsChanged() {
 		this.getModel().updateTree();
-	}
+	}*/
 
 	public void onFileDropped(File file) {
 		if (file != null) {
-			this.getModel().loadFile(file);
+			this.getModel().checkFileSelected(file);
 		}
 	}
 
 	public void onFileLoadEnded(File file, boolean isSuccess) {
-		System.out.println("At main window with file : " + file.getName() + " isSuccess : " + isSuccess);
+		//System.out.println("At main window with file : " +file.getName()+" isSuccess : " + isSuccess);
 		try {
 			if (file != null && isSuccess) {
+				uploadedFiles.add(file);
 				this.setTitle(TITLE + " - " + file.getName());
 			} else {
 				this.setTitle(TITLE);

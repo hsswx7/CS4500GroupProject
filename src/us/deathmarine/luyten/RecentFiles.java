@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.prefs.Preferences;
 
-//TODO Remove
 //This file provides the list of files that have recently been opened
 
 public class RecentFiles {

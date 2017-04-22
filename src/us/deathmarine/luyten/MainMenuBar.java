@@ -15,7 +15,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.ListIterator;
 import java.util.Map;
-
 import javax.swing.AbstractAction;
 import javax.swing.AbstractButton;
 import javax.swing.BoxLayout;
@@ -178,7 +177,7 @@ public class MainMenuBar extends JMenuBar {
 			menuItem.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					mainWindow.getModel().loadFile(file);
+					mainWindow.getModel().checkFileSelected(file);
 				}
 			});
 			recentFiles.add(menuItem);
@@ -207,13 +206,13 @@ public class MainMenuBar extends JMenuBar {
 		menuItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				JTabbedPane house = mainWindow.getModel().house;
+				//JTabbedPane house = mainWindow.getModel().house;
 				
-				if (e.getModifiers() != 2 || house.getTabCount() == 0)
+				/*if (e.getModifiers() != 2 || house.getTabCount() == 0)
 					mainWindow.onCloseFileMenu();
 				else {
 					mainWindow.getModel().closeOpenTab(house.getSelectedIndex());
-				}
+				}*/
 			}
 		});
 		fileMenu.add(menuItem);
@@ -395,7 +394,7 @@ public class MainMenuBar extends JMenuBar {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				luytenPrefs.setPackageExplorerStyle(packageExplorerStyle.isSelected());
-				mainWindow.onTreeSettingsChanged();
+				//mainWindow.onTreeSettingsChanged();
 			}
 		});
 		operationMenu.add(packageExplorerStyle);
@@ -408,7 +407,7 @@ public class MainMenuBar extends JMenuBar {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				luytenPrefs.setFilterOutInnerClassEntries(filterOutInnerClassEntries.isSelected());
-				mainWindow.onTreeSettingsChanged();
+				//mainWindow.onTreeSettingsChanged();
 			}
 		});
 		operationMenu.add(filterOutInnerClassEntries);
