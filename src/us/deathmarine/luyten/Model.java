@@ -638,12 +638,6 @@ public class Model extends JSplitPane {
 		verifyFile();
 	}
 
-	/*public void updateTree() {
-		TreeUtil treeUtil = new TreeUtil(tree);
-		treeExpansionState = treeUtil.getExpansionState();
-		verifyFile();
-	}*/
-
 	public void verifyFile() {
 		new Thread(new Runnable() {
 			@Override
@@ -714,173 +708,15 @@ public class Model extends JSplitPane {
 		String name = file.getName();
 		
 		int index = list.getSelectedIndex();
-		System.out.println(index);
 		if(index == -1){ //no selection, so insert at the beginning 
 			index = 0;
 		}else{
 			index++;
 		}
-		System.out.println(index);
 		listModel.insertElementAt(name, index);
-		
-		list.setVisible(true);
-		list.setSelectedIndex(index);
 		list.ensureIndexIsVisible(index);
 		list.setVisibleRowCount(index);
 	}
-
-	/*private void buildTreeFromMass(List<String> mass) {
-		if (luytenPrefs.isPackageExplorerStyle()) {
-			buildFlatTreeFromMass(mass);
-		} else {
-			buildDirectoryTreeFromMass(mass);
-		}
-	}*/
-
-	/*private void buildDirectoryTreeFromMass(List<String> mass) {
-		TreeNodeUserObject topNodeUserObject = new TreeNodeUserObject(getName(file.getName()));
-		DefaultMutableTreeNode top = new DefaultMutableTreeNode(topNodeUserObject);
-		List<String> sort = new ArrayList<String>();
-		Collections.sort(mass, String.CASE_INSENSITIVE_ORDER);
-		for (String m : mass)
-			if (m.contains("META-INF") && !sort.contains(m))
-				sort.add(m);
-		Set<String> set = new HashSet<String>();
-		for (String m : mass) {
-			if (m.contains("/")) {
-				set.add(m.substring(0, m.lastIndexOf("/") + 1));
-			}
-		}
-		List<String> packs = Arrays.asList(set.toArray(new String[] {}));
-		Collections.sort(packs, String.CASE_INSENSITIVE_ORDER);
-		Collections.sort(packs, new Comparator<String>() {
-			public int compare(String o1, String o2) {
-				return o2.split("/").length - o1.split("/").length;
-			}
-		});
-		for (String pack : packs)
-			for (String m : mass)
-				if (!m.contains("META-INF") && m.contains(pack) && !m.replace(pack, "").contains("/"))
-					sort.add(m);
-		for (String m : mass)
-			if (!m.contains("META-INF") && !m.contains("/") && !sort.contains(m))
-				sort.add(m);
-		for (String pack : sort) {
-			LinkedList<String> list = new LinkedList<String>(Arrays.asList(pack.split("/")));
-			loadNodesByNames(top, list);
-		}
-		tree.setModel(new DefaultTreeModel(top));
-	}*/
-
-	/*private void buildFlatTreeFromMass(List<String> mass) {
-		TreeNodeUserObject topNodeUserObject = new TreeNodeUserObject(getName(file.getName()));
-		DefaultMutableTreeNode top = new DefaultMutableTreeNode(topNodeUserObject);
-
-		TreeMap<String, TreeSet<String>> packages = new TreeMap<>();
-		HashSet<String> classContainingPackageRoots = new HashSet<>();
-
-		Comparator<String> sortByFileExtensionsComparator = new Comparator<String>() {
-			// (assertion: mass does not contain null elements)
-			@Override
-			public int compare(String o1, String o2) {
-				int comp = o1.replaceAll("[^\\.]*\\.", "").compareTo(o2.replaceAll("[^\\.]*\\.", ""));
-				if (comp != 0)
-					return comp;
-				return o1.compareTo(o2);
-			}
-		};
-
-		for (String entry : mass) {
-			String packagePath = "";
-			String packageRoot = "";
-			if (entry.contains("/")) {
-				packagePath = entry.replaceAll("/[^/]*$", "");
-				packageRoot = entry.replaceAll("/.*$", "");
-			}
-			String packageEntry = entry.replace(packagePath + "/", "");
-			if (!packages.containsKey(packagePath)) {
-				packages.put(packagePath, new TreeSet<String>(sortByFileExtensionsComparator));
-			}
-			packages.get(packagePath).add(packageEntry);
-			if (!entry.startsWith("META-INF") && packageRoot.trim().length() > 0
-					&& entry.matches(".*\\.(class|java|prop|properties)$")) {
-				classContainingPackageRoots.add(packageRoot);
-			}
-		}
-
-		// META-INF comes first -> not flat
-		for (String packagePath : packages.keySet()) {
-			if (packagePath.startsWith("META-INF")) {
-				List<String> packagePathElements = Arrays.asList(packagePath.split("/"));
-				for (String entry : packages.get(packagePath)) {
-					ArrayList<String> list = new ArrayList<>(packagePathElements);
-					list.add(entry);
-					loadNodesByNames(top, list);
-				}
-			}
-		}
-
-		// real packages: path starts with a classContainingPackageRoot -> flat
-		for (String packagePath : packages.keySet()) {
-			String packageRoot = packagePath.replaceAll("/.*$", "");
-			if (classContainingPackageRoots.contains(packageRoot)) {
-				for (String entry : packages.get(packagePath)) {
-					ArrayList<TreeNodeUserObject> list = new ArrayList<>();
-					list.add(new TreeNodeUserObject(packagePath, packagePath.replaceAll("/", ".")));
-					list.add(new TreeNodeUserObject(entry));
-					loadNodesByUserObj(top, list);
-				}
-			}
-		}
-
-		// the rest, not real packages but directories -> not flat
-		for (String packagePath : packages.keySet()) {
-			String packageRoot = packagePath.replaceAll("/.*$", "");
-			if (!classContainingPackageRoots.contains(packageRoot) && !packagePath.startsWith("META-INF")
-					&& packagePath.length() > 0) {
-				List<String> packagePathElements = Arrays.asList(packagePath.split("/"));
-				for (String entry : packages.get(packagePath)) {
-					ArrayList<String> list = new ArrayList<>(packagePathElements);
-					list.add(entry);
-					loadNodesByNames(top, list);
-				}
-			}
-		}
-
-		// the default package -> not flat
-		String packagePath = "";
-		if (packages.containsKey(packagePath)) {
-			for (String entry : packages.get(packagePath)) {
-				ArrayList<String> list = new ArrayList<>();
-				list.add(entry);
-				loadNodesByNames(top, list);
-			}
-		}
-		tree.setModel(new DefaultTreeModel(top));
-	} */
-
-	/*public void closeFile() {
-		for (OpenFile co : hmap) {
-			int pos = house.indexOfTab(co.name);
-			if (pos >= 0)
-				house.remove(pos);
-			co.close();
-		}
-
-		final State oldState = state;
-		Model.this.state = null;
-		if (oldState != null) {
-			Closer.tryClose(oldState);
-		}
-
-		hmap.clear();
-		tree.setModel(new DefaultTreeModel(null));
-		metadataSystem = new MetadataSystem(typeLoader);
-		file = null;
-		treeExpansionState = null;
-		open = false;
-		mainWindow.onFileLoadEnded(file, open);
-	}*/
 
 	public void changeTheme(String xml) {
 		InputStream in = getClass().getResourceAsStream(LuytenPreferences.THEME_XML_PATH + xml);
