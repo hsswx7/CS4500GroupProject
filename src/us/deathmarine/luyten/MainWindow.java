@@ -55,7 +55,8 @@ public class MainWindow extends JFrame {
 	private LuytenPreferences luytenPrefs;
 	private FileDialog fileDialog;
 	//private FileSaver fileSaver;
-	private UploadedFilesContainer uploadedFiles;
+	private UploadedFilesContainer uploadedFilesContainer; //this container holds an array foe File Objects the User wants to upload 
+	private UploadeFiles uploadeFiles;  // this will allow me to send the uploadedFilesContainer to edit the files 
 	public MainMenuBar mainMenuBar;
 
 	public MainWindow(File fileFromCommandLine) {
@@ -156,12 +157,12 @@ public class MainWindow extends JFrame {
 	}
 	
 	public boolean checkIfFileUploadSizeReached(){
-		if(uploadedFiles == null){
-			uploadedFiles = new UploadedFilesContainer();
+		if(uploadedFilesContainer == null){
+			uploadedFilesContainer = new UploadedFilesContainer();
 		}
 		
-		if(uploadedFiles.getFileUploadSizeLeft() == 0){
-			Luyten.showErrorDialog("File Upload Size Limit ( " + uploadedFiles.getMaxFilesAllowed() + " ) Reached!");
+		if(uploadedFilesContainer.getFileUploadSizeLeft() == 0){
+			Luyten.showErrorDialog("File Upload Size Limit ( " + uploadedFilesContainer.getMaxFilesAllowed() + " ) Reached!");
 			return true;
 		}
 		
@@ -337,12 +338,13 @@ public class MainWindow extends JFrame {
 			this.getModel().checkFileSelected(file);
 		}
 	}
-
+	
+	//This functions sets the files in the uploadedfilesContainer after the Models checks the files 
 	public void onFileLoadEnded(File file, boolean isSuccess) {
 		//System.out.println("At main window with file : " +file.getName()+" isSuccess : " + isSuccess);
 		try {
 			if (file != null && isSuccess) {
-				uploadedFiles.add(file);
+				uploadedFilesContainer.add(file);
 				this.setTitle(TITLE + " - " + file.getName());
 			} else {
 				this.setTitle(TITLE);
@@ -351,6 +353,29 @@ public class MainWindow extends JFrame {
 			Luyten.showExceptionDialog("Exception!", e);
 		}
 	}
+	
+	//User clicks the button and this makes sure the user has correctly uplaoded the files 
+	public void onSubmitFilesButtonClicked(){
+		System.out.println("Submit Files button Clicked");
+		//Checking if user has not files uploaded  
+		if(uploadedFilesContainer == null || uploadedFilesContainer.getFileUploadSizeLeft() == uploadedFilesContainer.getMaxFilesAllowed()){
+			Luyten.showErrorDialog("No files Uploaded");
+			return;
+		}else if (uploadedFilesContainer.getFileUploadSizeLeft() > 0){
+			Luyten.showErrorDialog("Please Upload " + uploadedFilesContainer.getFileUploadSizeLeft() + " more Files");
+			return; 
+		}
+		
+		//TODO TIM you can have your function start from here
+		//If files are uploaded 
+		if(uploadedFilesContainer.getFileUploadSizeLeft() == 0){
+			uploadeFiles = new UploadeFiles();
+			uploadeFiles.setUploadedFiles(uploadedFilesContainer);
+		}		
+		
+	}
+	
+	
 
 	public void onNavigationRequest(String uniqueStr) {
 		this.getModel().navigateTo(uniqueStr);

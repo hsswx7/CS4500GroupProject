@@ -40,5 +40,9 @@ public class UploadedFilesContainer {
 		return (getMaxFilesAllowed() - getTotalFilesUploaded());
 	}
 	
+	// Returns all the files 
+	public ArrayList<File> getAllFiles(){
+		return files;
+	}
 
 }

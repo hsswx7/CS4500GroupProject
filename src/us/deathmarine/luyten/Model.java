@@ -1,6 +1,8 @@
 package us.deathmarine.luyten;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
@@ -54,9 +56,9 @@ public class Model extends JSplitPane {
 	public static MetadataSystem metadataSystem = new MetadataSystem(typeLoader);
 
 	private JTree tree;
+	private JList list; //Used to display List of files user decided to upload
 	public JTabbedPane house;
 	private JButton submitFileButton;
-	private JLabel positionLabel;
 	private File file;
 	private DecompilerSettings settings;
 	private DecompilationOptions decompilationOptions;
@@ -108,21 +110,36 @@ public class Model extends JSplitPane {
 				}
 			}
 		});
+		
+		/* This list is used to display the files chosen by user to upload */
+		list = new JList();
+		list.setModel(new DefaultListModel());
+		
 
 
 		// leftMainPanel will be a container for all other left panels
 		JPanel leftMainPanel = new JPanel();
-		leftMainPanel.setLayout(new BoxLayout(leftMainPanel, 1));
+		leftMainPanel.setLayout(new BoxLayout(leftMainPanel, BoxLayout.Y_AXIS));
 
 		JPanel uploadFileLeftPanel = new JPanel();
-        uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel, 1));
+        uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel, 0));
         uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
         uploadFileLeftPanel.add(new JScrollPane(tree));
 
         submitFileButton = new JButton("Submit Uploaded Files");
-        uploadFileLeftPanel.add(submitFileButton);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, 0));
+        buttonPanel.add(submitFileButton);
 
         leftMainPanel.add(uploadFileLeftPanel);
+        leftMainPanel.add(buttonPanel);
+        
+        submitFileButton.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				onSubmitButtonClicked();
+			}
+        });
 
         JPanel panel3 = new JPanel();
         panel3.setLayout(new BoxLayout(panel3, 1));
@@ -158,6 +175,9 @@ public class Model extends JSplitPane {
 		decompilationOptions.setFullDecompilation(true);
 	}
 
+	public void onSubmitButtonClicked(){
+		mainWindow.onSubmitFilesButtonClicked();
+	}
 	public void showLegal(String legalStr) {
 		show("Legal", legalStr);
 	}
