@@ -114,10 +114,8 @@ public class Model extends JSplitPane {
 		
 		/* This list is used to display the files chosen by user to upload */
 		listModel = new DefaultListModel<String>();
-		listModel.addElement("text");
 	
 		list = new JList<String>(listModel);
-		list.setModel(new DefaultListModel<String>());
 		list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		list.setLayoutOrientation(JList.VERTICAL);
 		list.setVisibleRowCount(-1);
@@ -725,8 +723,10 @@ public class Model extends JSplitPane {
 		System.out.println(index);
 		listModel.insertElementAt(name, index);
 		
+		list.setVisible(true);
 		list.setSelectedIndex(index);
 		list.ensureIndexIsVisible(index);
+		list.setVisibleRowCount(index);
 	}
 
 	/*private void buildTreeFromMass(List<String> mass) {
