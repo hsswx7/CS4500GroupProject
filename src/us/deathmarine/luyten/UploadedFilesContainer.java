@@ -44,5 +44,13 @@ public class UploadedFilesContainer {
 	public ArrayList<File> getAllFiles(){
 		return files;
 	}
+	
+	//checks if files has already been added
+	public boolean checkIfFileAlreadyAdded(File file){
+		if(files.contains(file)){
+			return true; 
+		}
+		return false;
+	}
 
 }

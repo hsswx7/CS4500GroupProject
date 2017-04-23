@@ -150,6 +150,11 @@ public class MainWindow extends JFrame {
 		}
 		File selectedFile = fileDialog.doOpenDialog();
 		if (selectedFile != null) {
+			
+			if(uploadedFilesContainer.checkIfFileAlreadyAdded(selectedFile)){
+				return;
+			}
+			
 			System.out.println("[Open]: Opening " + selectedFile.getAbsolutePath());
 			
 			this.getModel().checkFileSelected(selectedFile);
@@ -346,6 +351,9 @@ public class MainWindow extends JFrame {
 			if (file != null && isSuccess) {
 				uploadedFilesContainer.add(file);
 				this.setTitle(TITLE + " - " + file.getName());
+				if(uploadedFilesContainer.getFileUploadSizeLeft() == 0){
+					model.setSubmitFileButtonEnabled(true);
+				}
 			} else {
 				this.setTitle(TITLE);
 			}
@@ -377,9 +385,9 @@ public class MainWindow extends JFrame {
 	
 	
 
-	public void onNavigationRequest(String uniqueStr) {
+	/*public void onNavigationRequest(String uniqueStr) {
 		this.getModel().navigateTo(uniqueStr);
-	}
+	}*/
 
 	//When opening the client this function Sets windows size to user's preference
 	private void adjustWindowPositionBySavedState() {

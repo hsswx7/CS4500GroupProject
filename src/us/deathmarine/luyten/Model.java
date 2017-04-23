@@ -10,15 +10,11 @@ import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
-import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashSet;
-import java.util.List;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import javax.swing.*;
@@ -107,7 +103,7 @@ public class Model extends JSplitPane {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					openEntryByTreePath(tree.getSelectionPath());
+					//openEntryByTreePath(tree.getSelectionPath());
 				}
 			}
 		});
@@ -118,10 +114,16 @@ public class Model extends JSplitPane {
 		list = new JList<String>(listModel);
 		list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		list.setLayoutOrientation(JList.VERTICAL);
-		list.setVisibleRowCount(-1);
-		JScrollPane listScrollPane = new JScrollPane(list);
+		list.setVisibleRowCount(-1);	
+		list.addMouseListener(new MouseAdapter(){
+			 public void mousePressed(MouseEvent e){
+				 rightClickMousePressed(e);
+			 }
+		});
+		DefaultListCellRenderer renderer = (DefaultListCellRenderer) list.getCellRenderer();
+		renderer.setHorizontalAlignment(SwingConstants.CENTER);	
 		
-
+		JScrollPane listScrollPane = new JScrollPane(list);
 
 		// leftMainPanel will be a container for all other left panels
 		JPanel leftMainPanel = new JPanel();
@@ -133,6 +135,7 @@ public class Model extends JSplitPane {
         uploadFileLeftPanel.add(listScrollPane);
 
         submitFileButton = new JButton("Submit Uploaded Files");
+        submitFileButton.setEnabled(false);
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, 0));
         buttonPanel.add(submitFileButton);
@@ -514,6 +517,10 @@ public class Model extends JSplitPane {
 			}
 		}).start();
 	}
+	
+	private void rightClickMousePressed(MouseEvent e){
+		
+	}
 
 	private boolean isTabInForeground(OpenFile open) {
 		String title = open.name;
@@ -599,15 +606,15 @@ public class Model extends JSplitPane {
 		}
 	}
 
-	public DefaultMutableTreeNode loadNodesByNames(DefaultMutableTreeNode node, List<String> originalNames) {
+	/*public DefaultMutableTreeNode loadNodesByNames(DefaultMutableTreeNode node, List<String> originalNames) {
 		List<TreeNodeUserObject> args = new ArrayList<>();
 		for (String originalName : originalNames) {
 			args.add(new TreeNodeUserObject(originalName));
 		}
 		return loadNodesByUserObj(node, args);
-	}
+	}*/
 
-	public DefaultMutableTreeNode loadNodesByUserObj(DefaultMutableTreeNode node, List<TreeNodeUserObject> args) {
+	/*public DefaultMutableTreeNode loadNodesByUserObj(DefaultMutableTreeNode node, List<TreeNodeUserObject> args) {
 		if (args.size() > 0) {
 			TreeNodeUserObject name = args.remove(0);
 			DefaultMutableTreeNode nod = getChild(node, name);
@@ -616,7 +623,7 @@ public class Model extends JSplitPane {
 			node.add(loadNodesByUserObj(nod, args));
 		}
 		return node;
-	}
+	}*/
 
 	@SuppressWarnings("unchecked")
 	public DefaultMutableTreeNode getChild(DefaultMutableTreeNode node, TreeNodeUserObject name) {
@@ -630,6 +637,8 @@ public class Model extends JSplitPane {
 		return null;
 	}
 
+	
+	
 	public void checkFileSelected(File file) {
 		this.file = file;
 		
@@ -638,6 +647,7 @@ public class Model extends JSplitPane {
 		verifyFile();
 	}
 
+	// Verifies files to see if its valid 
 	public void verifyFile() {
 		new Thread(new Runnable() {
 			@Override
@@ -680,21 +690,6 @@ public class Model extends JSplitPane {
 					getLabel().setText("Cannot open: " + file.getName());
 					open = false;
 				} finally {
-					try (InputStream in = new FileInputStream(file);) {
-						String path = file.getPath().replaceAll("\\\\", "/");
-						extractSimpleFileEntryToTextPane(in, file.getName(), path);
-					} catch (FileNotFoundException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					} catch (Exception e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-					
-					
 					mainWindow.onFileLoadEnded(file, open);
 					addFileUploadedToPane(file);
 					bar.setVisible(false);
@@ -704,6 +699,11 @@ public class Model extends JSplitPane {
 		}).start();
 	}
 	
+	public void setSubmitFileButtonEnabled(boolean i){
+		 submitFileButton.setEnabled(i);
+	}
+	
+	// Adds file to Files Uploaded Files Pane
 	public void addFileUploadedToPane(File file){
 		String name = file.getName();
 		
@@ -717,6 +717,7 @@ public class Model extends JSplitPane {
 		list.ensureIndexIsVisible(index);
 		list.setVisibleRowCount(index);
 	}
+	
 
 	public void changeTheme(String xml) {
 		InputStream in = getClass().getResourceAsStream(LuytenPreferences.THEME_XML_PATH + xml);
