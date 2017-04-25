@@ -606,24 +606,6 @@ public class Model extends JSplitPane {
 		}
 	}
 
-	/*public DefaultMutableTreeNode loadNodesByNames(DefaultMutableTreeNode node, List<String> originalNames) {
-		List<TreeNodeUserObject> args = new ArrayList<>();
-		for (String originalName : originalNames) {
-			args.add(new TreeNodeUserObject(originalName));
-		}
-		return loadNodesByUserObj(node, args);
-	}*/
-
-	/*public DefaultMutableTreeNode loadNodesByUserObj(DefaultMutableTreeNode node, List<TreeNodeUserObject> args) {
-		if (args.size() > 0) {
-			TreeNodeUserObject name = args.remove(0);
-			DefaultMutableTreeNode nod = getChild(node, name);
-			if (nod == null)
-				nod = new DefaultMutableTreeNode(name);
-			node.add(loadNodesByUserObj(nod, args));
-		}
-		return node;
-	}*/
 
 	@SuppressWarnings("unchecked")
 	public DefaultMutableTreeNode getChild(DefaultMutableTreeNode node, TreeNodeUserObject name) {
@@ -638,7 +620,7 @@ public class Model extends JSplitPane {
 	}
 
 	
-	
+	//Uploads files Chosen from Recent Files Menu 
 	public void checkFileSelected(File file) {
 		this.file = file;
 		

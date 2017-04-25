@@ -151,7 +151,7 @@ public class MainWindow extends JFrame {
 		File selectedFile = fileDialog.doOpenDialog();
 		if (selectedFile != null) {
 			
-			if(uploadedFilesContainer.checkIfFileAlreadyAdded(selectedFile)){
+			if(checkIfFileAlreadyAdded(selectedFile)){
 				return;
 			}
 			
@@ -161,6 +161,7 @@ public class MainWindow extends JFrame {
 		}
 	}
 	
+	// Checks if file upload size is reached 
 	public boolean checkIfFileUploadSizeReached(){
 		if(uploadedFilesContainer == null){
 			uploadedFilesContainer = new UploadedFilesContainer();
@@ -173,45 +174,15 @@ public class MainWindow extends JFrame {
 		
 		return false;
 	}
-
-	/*public void onCloseFileMenu() {
-		this.getModel().closeFile();
-	}*/
-
-	/*public void onSaveAsMenu() {
-		RSyntaxTextArea pane = this.getModel().getCurrentTextArea();
-		if (pane == null)
-			return;
-		String tabTitle = this.getModel().getCurrentTabTitle();
-		if (tabTitle == null)
-			return;
-
-		String recommendedFileName = tabTitle.replace(".class", ".java");
-		File selectedFile = fileDialog.doSaveDialog(recommendedFileName);
-		if (selectedFile != null) {
-			fileSaver.saveText(pane.getText(), selectedFile);
+	
+	// Checks if user has already selected the file 
+	public boolean checkIfFileAlreadyAdded(File file){
+		if(uploadedFilesContainer.checkIfFileAlreadyAdded(file)){
+			Luyten.showErrorDialog("File : " + file.getName() + " already chosen.");
+			return true;
 		}
+		return false;
 	}
-
-	public void onSaveAllMenu() {
-		File openedFile = this.getModel().getOpenedFile();
-		if (openedFile == null)
-			return;
-
-		String fileName = openedFile.getName();
-		if (fileName.endsWith(".class")) {
-			fileName = fileName.replace(".class", ".java");
-		} else if (fileName.toLowerCase().endsWith(".jar")) {
-			fileName = "decompiled-" + fileName.replaceAll("\\.[jJ][aA][rR]", ".zip");
-		} else {
-			fileName = "saved-" + fileName;
-		}
-
-		File selectedFileToSave = fileDialog.doSaveAllDialog(fileName);
-		if (selectedFileToSave != null) {
-			fileSaver.saveAllDecompiled(openedFile, selectedFileToSave);
-		}
-	}*/
 
 	public void onExitMenu() {
 		quit();

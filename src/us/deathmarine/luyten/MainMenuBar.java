@@ -176,7 +176,7 @@ public class MainMenuBar extends JMenuBar {
 			menuItem.addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					if(!mainWindow.checkIfFileUploadSizeReached()){
+					if(!mainWindow.checkIfFileUploadSizeReached() && !mainWindow.checkIfFileAlreadyAdded(file)){
 						mainWindow.getModel().checkFileSelected(file);
 					}
 				}
