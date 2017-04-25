@@ -53,8 +53,9 @@ public class Model extends JSplitPane {
 	public static MetadataSystem metadataSystem = new MetadataSystem(typeLoader);
 
 	private JTree tree;
-	private JList<String> list; //Used to display List of files user decided to upload
-	private DefaultListModel<String> listModel; 
+	private JList<String> list; // Used to display List of files user decided to
+								// upload
+	private DefaultListModel<String> listModel;
 	public JTabbedPane house;
 	private JButton submitFileButton;
 	private File file;
@@ -66,6 +67,8 @@ public class Model extends JSplitPane {
 	private JLabel label;
 	private HashSet<OpenFile> hmap = new HashSet<OpenFile>();
 	private boolean open = false;
+	private boolean filesSubbmited = false; // this allows me check if the files
+											// have been subbmited
 	private State state;
 	private ConfigSaver configSaver;
 	private LuytenPreferences luytenPrefs;
@@ -104,77 +107,71 @@ public class Model extends JSplitPane {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					//openEntryByTreePath(tree.getSelectionPath());
+					// openEntryByTreePath(tree.getSelectionPath());
 				}
 			}
 		});
-		
-		/* This list is used to display the files chosen by user to upload */
+
+		/******
+		 * This list is used to display the files chosen by user to upload
+		 *****/
 		listModel = new DefaultListModel<String>();
-	
+
 		list = new JList<String>(listModel);
 		list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 		list.setLayoutOrientation(JList.VERTICAL);
-		list.setVisibleRowCount(-1);	
-		list.addMouseListener(new MouseAdapter(){
-			 public void mousePressed(MouseEvent e){
-				 rightClickMousePressed(e);
-			 }
-		});
+		list.setVisibleRowCount(-1);
+
+		// renderer allows JList to center String Names Added
 		DefaultListCellRenderer renderer = (DefaultListCellRenderer) list.getCellRenderer();
-		renderer.setHorizontalAlignment(SwingConstants.CENTER);	
-		
-		JScrollPane listScrollPane = new JScrollPane(list);
+		renderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+		JScrollPane listScrollPane = new JScrollPane(list); // Makes the list
+															// Scrollable
+
+		addUploadedFilesListKeyListener(list, listModel); // Adding Key Listener
+															// to list
 
 		// leftMainPanel will be a container for all other left panels
 		JPanel leftMainPanel = new JPanel();
 		leftMainPanel.setLayout(new BoxLayout(leftMainPanel, BoxLayout.Y_AXIS));
 
+		/***********************
+		 * Upload Panel for Files Names
+		 ************************/
 		JPanel uploadFileLeftPanel = new JPanel();
-        uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel, 0));
-        uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
-        uploadFileLeftPanel.add(listScrollPane);
+		uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel, 0));
+		uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
+		uploadFileLeftPanel.add(listScrollPane);
 
-        submitFileButton = new JButton("Submit Uploaded Files");
-        submitFileButton.setEnabled(false);
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new BoxLayout(buttonPanel, 0));
-        buttonPanel.add(submitFileButton);
+		/******************* Submit File Button ******************************/
+		submitFileButton = new JButton("Submit Uploaded Files");
+		submitFileButton.setEnabled(false);
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.setLayout(new BoxLayout(buttonPanel, 0));
+		buttonPanel.add(submitFileButton);
 
-        leftMainPanel.add(uploadFileLeftPanel);
-        leftMainPanel.add(buttonPanel);
-        
-        leftMainPanel.addKeyListener(new  KeyListener(){
-        	@Override
-        	public void keyPressed(KeyEvent e){
-        		if(e.getKeyCode() == KeyEvent.VK_DELETE){
-//        			removeFilefromFileUPloadToPane();
-        		}
-        	}
+		leftMainPanel.add(uploadFileLeftPanel);
+		leftMainPanel.add(buttonPanel);
 
-			@Override
-			public void keyReleased(KeyEvent arg0) {}
-
-			@Override
-			public void keyTyped(KeyEvent arg0) {}
-        });
-        
-        //This Listener Detects Submit Button Click
-        submitFileButton.addActionListener(new ActionListener(){
+		// This Listener Detects Submit Button Click
+		submitFileButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				onSubmitButtonClicked();
 			}
-        });
+		});
 
-        JPanel panel3 = new JPanel();
-        panel3.setLayout(new BoxLayout(panel3, 1));
-        panel3.setBorder(BorderFactory.createTitledBorder("Test Panel 3"));
-        panel3.add(new JScrollPane(tree));
+		/******************** Panel 3 For Test ************************/
 
+		JPanel panel3 = new JPanel();
+		panel3.setLayout(new BoxLayout(panel3, 1));
+		panel3.setBorder(BorderFactory.createTitledBorder("Test Panel 3"));
+		panel3.add(new JScrollPane(tree));
 
-        leftMainPanel.add(panel3);
+		leftMainPanel.add(panel3);
 
+		// TODO REMOVE ALL TAB STUFF
 		house = new JTabbedPane();
 		house.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		house.addChangeListener(new TabChangeListener());
@@ -186,11 +183,16 @@ public class Model extends JSplitPane {
 				}
 			}
 		});
+
+		/**************
+		 * Main Panel (This is where the Simulation Will GO)
+		 ****************************/
 		JPanel panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel, 1));
 		panel.setBorder(BorderFactory.createTitledBorder("Code"));
 		panel.add(house);
 
+		/***************** Setting The Panels ***************************/
 		this.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
 		this.setDividerLocation(250 % mainWindow.getWidth());
 		this.setLeftComponent(leftMainPanel);
@@ -200,14 +202,56 @@ public class Model extends JSplitPane {
 		decompilationOptions.setSettings(settings);
 		decompilationOptions.setFullDecompilation(true);
 	}
-	
-	public void setListeners(){
-		
+
+	// BackSpace and Delete Listener for List that holds Uploaded Files
+	private void addUploadedFilesListKeyListener(final JList<String> list, final DefaultListModel<String> listModel) {
+		list.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_DELETE || e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+					if (filesSubbmited) {
+						return;
+					}
+					// If there's nothing in the JList or the User didn't Select
+					// a file to delete nothing happens
+					if (list.getSelectedIndices().length > 0) {
+						int[] selectedIndices = list.getSelectedIndices(); // getting
+																			// the
+																			// items
+																			// user
+																			// selected
+
+						for (int i = selectedIndices.length - 1; i >= 0; i--) {
+							mainWindow.removeFile(listModel.getElementAt(i));
+							listModel.removeElementAt(i); // Deleting selected
+															// items from JList
+							submitButtonAccess(false);
+						}
+					}
+				}
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+			}
+
+			@Override
+			public void keyTyped(KeyEvent e) {
+			}
+		});
 	}
 
-	public void onSubmitButtonClicked(){
-		mainWindow.onSubmitFilesButtonClicked();
+	/*
+	 * Asks the MainWindows to Check if files are ready to be Submits The files
+	 */
+	public void onSubmitButtonClicked() {
+		filesSubbmited = mainWindow.onSubmitFilesButtonClicked();
+		if (filesSubbmited) {
+			submitButtonAccess(false);
+		}
 	}
+
 	public void showLegal(String legalStr) {
 		show("Legal", legalStr);
 	}
@@ -258,7 +302,7 @@ public class Model extends JSplitPane {
 			open.close();
 	}
 
-	/*private String getName(String path) {
+	private String getName(String path) {
 		if (path == null)
 			return "";
 		int i = path.lastIndexOf("/");
@@ -267,7 +311,7 @@ public class Model extends JSplitPane {
 		if (i != -1)
 			return path.substring(i + 1);
 		return path;
-	}*/
+	}
 
 	private class TreeListener extends MouseAdapter {
 		@Override
@@ -538,10 +582,6 @@ public class Model extends JSplitPane {
 			}
 		}).start();
 	}
-	
-	private void rightClickMousePressed(MouseEvent e){
-		
-	}
 
 	private boolean isTabInForeground(OpenFile open) {
 		String title = open.name;
@@ -627,7 +667,6 @@ public class Model extends JSplitPane {
 		}
 	}
 
-
 	@SuppressWarnings("unchecked")
 	public DefaultMutableTreeNode getChild(DefaultMutableTreeNode node, TreeNodeUserObject name) {
 		Enumeration<DefaultMutableTreeNode> entry = node.children();
@@ -640,17 +679,16 @@ public class Model extends JSplitPane {
 		return null;
 	}
 
-	
-	//Uploads files Chosen from Recent Files Menu 
+	// Uploads files Chosen from Recent Files Menu
 	public void checkFileSelected(File file) {
 		this.file = file;
-		
+
 		RecentFiles.add(file.getAbsolutePath());
 		mainWindow.mainMenuBar.updateRecentFiles();
 		verifyFile();
 	}
 
-	// Verifies files to see if its valid 
+	// Verifies files to see if its valid
 	public void verifyFile() {
 		new Thread(new Runnable() {
 			@Override
@@ -661,34 +699,44 @@ public class Model extends JSplitPane {
 					}
 					tree.setModel(new DefaultTreeModel(null));
 
-					// Checking If File is too large 
+					// Checking If File is too large
 					if (file.length() > MAX_JAR_FILE_SIZE_BYTES) {
 						System.out.println("File Length  " + file.length());
-						throw new TooLargeFileException(file.length()); // Throwing Error 
+						throw new TooLargeFileException(file.length()); // Throwing
+																		// Error
 					}
-					
-					// Throwing error if file does not pass isFile test or canRead Test
-					/* isFile() - Tests whether the file denoted by this abstract pathname 
-					 * is a normal file. A file is normal if it is not a directory and, 
-					 * in addition, satisfies other system-dependent criteria. Any non-directory 
-					 * file created by a Java application is guaranteed to be a normal file. */
-					
-					/*canRead() - checks file privileges and returns true if the privileges allow
-					 * the client to read the file */
-					
-					if(!file.isFile() || !file.canRead()){
-						throw new Exception ();
-					}else{
-						open = true; // boolean to know the file can be opened 
+
+					// Throwing error if file does not pass isFile test or
+					// canRead Test
+					/*
+					 * isFile() - Tests whether the file denoted by this
+					 * abstract pathname is a normal file. A file is normal if
+					 * it is not a directory and, in addition, satisfies other
+					 * system-dependent criteria. Any non-directory file created
+					 * by a Java application is guaranteed to be a normal file.
+					 */
+
+					/*
+					 * canRead() - checks file privileges and returns true if
+					 * the privileges allow the client to read the file
+					 */
+
+					if (!file.isFile() || !file.canRead()) {
+						throw new Exception();
+					} else {
+						open = true; // boolean to know the file can be opened
 					}
-					// Catching and Displaying Error to User 
+					// Catching and Displaying Error to User
 				} catch (TooLargeFileException e) {
 					System.out.println("TooLargeFileException Called ");
-					Luyten.showExceptionDialog("File: " + file.getName() + "  (Size:  " + file.length() + " ) too large. " + " Size Limit : " +  MAX_JAR_FILE_SIZE_BYTES, e);
-					Luyten.showErrorDialog("File: " + file.getName() + "  (Size:  " + file.length() + " ) too large. " + " Size Limit : " +  MAX_JAR_FILE_SIZE_BYTES);
-					Luyten.showInformationDialog("File: " + file.getName() + "  (Size:  " + file.length() + " ) too large. " + " Size Limit : " +  MAX_JAR_FILE_SIZE_BYTES);
+					Luyten.showExceptionDialog("File: " + file.getName() + "  (Size:  " + file.length()
+							+ " ) too large. " + " Size Limit : " + MAX_JAR_FILE_SIZE_BYTES, e);
+					Luyten.showErrorDialog("File: " + file.getName() + "  (Size:  " + file.length() + " ) too large. "
+							+ " Size Limit : " + MAX_JAR_FILE_SIZE_BYTES);
+					Luyten.showInformationDialog("File: " + file.getName() + "  (Size:  " + file.length()
+							+ " ) too large. " + " Size Limit : " + MAX_JAR_FILE_SIZE_BYTES);
 					open = false;
-				} catch (Exception e1) { //File cannot Open error 
+				} catch (Exception e1) { // File cannot Open error
 					Luyten.showExceptionDialog("Cannot open " + file.getName() + "!", e1);
 					getLabel().setText("Cannot open: " + file.getName());
 					open = false;
@@ -701,32 +749,24 @@ public class Model extends JSplitPane {
 
 		}).start();
 	}
-	
-	public void setSubmitFileButtonEnabled(boolean i){
-		 submitFileButton.setEnabled(i);
-	}
-	
+
 	// Adds file to Files Uploaded Files Pane
-	private void addFileUploadedToPane(File file){
+	private void addFileUploadedToPane(File file) {
 		String name = file.getName();
-		
+
 		int index = list.getSelectedIndex();
-		if(index == -1){ //no selection, so insert at the beginning 
+		if (index == -1) { // no selection, so insert at the beginning
 			index = 0;
-		}else{
+		} else {
 			index++;
 		}
 		listModel.insertElementAt(name, index);
 		list.ensureIndexIsVisible(index);
 		list.setVisibleRowCount(index);
 	}
-	
-	private void removeFilefromFileUPloadToPane(int index){
-		
-	}
-	
-	// Enables or Disables submitFilebutton 
-	public void submitButtonAccess(Boolean access){
+
+	// Enables or Disables submitFilebutton
+	public void submitButtonAccess(Boolean access) {
 		submitFileButton.setEnabled(access);
 	}
 

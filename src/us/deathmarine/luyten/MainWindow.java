@@ -33,9 +33,7 @@ import javax.swing.border.BevelBorder;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 
-
 //TODO In-Progress
-
 
 /**
  * Dispatcher
@@ -43,7 +41,7 @@ import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 5265556630724988013L;
 
-	private static final String TITLE = "Legrange Reach Research"; 
+	private static final String TITLE = "Legrange Reach Research";
 
 	public static Model model;
 	private JProgressBar bar;
@@ -54,16 +52,22 @@ public class MainWindow extends JFrame {
 	private WindowPosition windowPosition;
 	private LuytenPreferences luytenPrefs;
 	private FileDialog fileDialog;
-	//private FileSaver fileSaver;
-	private UploadedFilesContainer uploadedFilesContainer; //this container holds an array foe File Objects the User wants to upload 
-	private UploadeFiles uploadeFiles;  // this will allow me to send the uploadedFilesContainer to edit the files 
+	// private FileSaver fileSaver;
+	private UploadedFilesContainer uploadedFilesContainer; // this container
+															// holds an array
+															// foe File Objects
+															// the User wants to
+															// upload
+	private UploadeFiles uploadeFiles; // this will allow me to send the
+										// uploadedFilesContainer to edit the
+										// files
 	public MainMenuBar mainMenuBar;
 
 	public MainWindow(File fileFromCommandLine) {
 		configSaver = ConfigSaver.getLoadedInstance();
 		windowPosition = configSaver.getMainWindowPosition();
 		luytenPrefs = configSaver.getLuytenPreferences();
-		
+
 		mainMenuBar = new MainMenuBar(this);
 		this.setJMenuBar(mainMenuBar);
 
@@ -96,7 +100,7 @@ public class MainWindow extends JFrame {
 		model = new Model(this);
 		this.getContentPane().add(model);
 		// TODO the following line to change pane structure
-		
+
 		JSplitPane spt = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, panel1, panel2) {
 			private static final long serialVersionUID = 2189946972124687305L;
 			private final int location = 400;
@@ -131,7 +135,7 @@ public class MainWindow extends JFrame {
 		}
 
 		fileDialog = new FileDialog(this);
-		//fileSaver = new FileSaver(bar, label);
+		// fileSaver = new FileSaver(bar, label);
 
 		this.setExitOnEscWhenEnabled(model);
 
@@ -139,49 +143,56 @@ public class MainWindow extends JFrame {
 				|| fileFromCommandLine.getName().toLowerCase().endsWith(".zip")) {
 			model.startWarmUpThread();
 		}
-		
-		if(RecentFiles.load() > 0) mainMenuBar.updateRecentFiles();
+
+		if (RecentFiles.load() > 0)
+			mainMenuBar.updateRecentFiles();
 	}
 
 	// This is Where the file will go to once the user selects a file
 	public void onOpenFileMenu() {
-		if(checkIfFileUploadSizeReached()){
+		if (checkIfFileUploadSizeReached()) {
 			return;
 		}
 		File selectedFile = fileDialog.doOpenDialog();
 		if (selectedFile != null) {
-			
-			if(checkIfFileAlreadyAdded(selectedFile)){
+
+			if (checkIfFileAlreadyAdded(selectedFile)) {
 				return;
 			}
-			
+
 			System.out.println("[Open]: Opening " + selectedFile.getAbsolutePath());
-			
+
 			this.getModel().checkFileSelected(selectedFile);
 		}
 	}
-	
-	// Checks if file upload size is reached 
-	public boolean checkIfFileUploadSizeReached(){
-		if(uploadedFilesContainer == null){
+
+	// Checks if file upload size is reached
+	public boolean checkIfFileUploadSizeReached() {
+		if (uploadedFilesContainer == null) {
 			uploadedFilesContainer = new UploadedFilesContainer();
 		}
-		
-		if(uploadedFilesContainer.getFileUploadSizeLeft() == 0){
-			Luyten.showErrorDialog("File Upload Size Limit ( " + uploadedFilesContainer.getMaxFilesAllowed() + " ) Reached!");
+
+		if (uploadedFilesContainer.getFileUploadSizeLeft() == 0) {
+			Luyten.showErrorDialog(
+					"File Upload Size Limit ( " + uploadedFilesContainer.getMaxFilesAllowed() + " ) Reached!");
 			return true;
 		}
-		
+
 		return false;
 	}
-	
-	// Checks if user has already selected the file 
-	public boolean checkIfFileAlreadyAdded(File file){
-		if(uploadedFilesContainer.checkIfFileAlreadyAdded(file)){
+
+	// Checks if user has already selected the file
+	public boolean checkIfFileAlreadyAdded(File file) {
+		if (uploadedFilesContainer.checkIfFileAlreadyAdded(file)) {
 			Luyten.showErrorDialog("File : " + file.getName() + " already chosen.");
 			return true;
 		}
 		return false;
+	}
+
+	public void removeFile(String fileName) {
+		System.out.println("Removing File " + fileName);
+		uploadedFilesContainer.removeFile(fileName);
 	}
 
 	public void onExitMenu() {
@@ -310,16 +321,18 @@ public class MainWindow extends JFrame {
 			this.getModel().checkFileSelected(file);
 		}
 	}
-	
-	//This functions sets the files in the uploadedfilesContainer after the Models checks the files 
+
+	// This functions sets the files in the uploadedfilesContainer after the
+	// Models checks the files
 	public void onFileLoadEnded(File file, boolean isSuccess) {
-		//System.out.println("At main window with file : " +file.getName()+" isSuccess : " + isSuccess);
+		// System.out.println("At main window with file : " +file.getName()+"
+		// isSuccess : " + isSuccess);
 		try {
 			if (file != null && isSuccess) {
 				uploadedFilesContainer.add(file);
 				this.setTitle(TITLE + " - " + file.getName());
-				if(uploadedFilesContainer.getFileUploadSizeLeft() == 0){
-					model.setSubmitFileButtonEnabled(true);
+				if (uploadedFilesContainer.getFileUploadSizeLeft() == 0) {
+					model.submitButtonAccess(true);
 				}
 			} else {
 				this.setTitle(TITLE);
@@ -328,30 +341,34 @@ public class MainWindow extends JFrame {
 			Luyten.showExceptionDialog("Exception!", e);
 		}
 	}
-	
-	//User clicks the button and this makes sure the user has correctly uplaoded the files 
-	public void onSubmitFilesButtonClicked(){
+
+	// User clicks the button and this makes sure the user has correctly
+	// uplaoded the files
+	public boolean onSubmitFilesButtonClicked() {
 		System.out.println("Submit Files button Clicked");
-		//Checking if user has not files uploaded  
-		if(uploadedFilesContainer == null || uploadedFilesContainer.getFileUploadSizeLeft() == uploadedFilesContainer.getMaxFilesAllowed()){
+		// Checking if user has not files uploaded
+		if (uploadedFilesContainer == null
+				|| uploadedFilesContainer.getFileUploadSizeLeft() == uploadedFilesContainer.getMaxFilesAllowed()) {
 			Luyten.showErrorDialog("No files Uploaded");
-			return;
-		}else if (uploadedFilesContainer.getFileUploadSizeLeft() > 0){
+			return false;
+		} else if (uploadedFilesContainer.getFileUploadSizeLeft() > 0) {
 			Luyten.showErrorDialog("Please Upload " + uploadedFilesContainer.getFileUploadSizeLeft() + " more Files");
-			return; 
+			return true;
 		}
-		
-		//TODO TIM you can have your function start from here
-		//If files are uploaded 
-		if(uploadedFilesContainer.getFileUploadSizeLeft() == 0){
+
+		// TODO TIM you can have your function start from here
+		// If files are uploaded
+		if (uploadedFilesContainer.getFileUploadSizeLeft() == 0) {
 			uploadeFiles = new UploadeFiles();
 			uploadeFiles.setUploadedFiles(uploadedFilesContainer);
 			model.submitButtonAccess(false);
-		}		
-		
+			return true;
+		}
+		return false;
 	}
-		
-	//When opening the client this function Sets windows size to user's preference
+
+	// When opening the client this function Sets windows size to user's
+	// preference
 	private void adjustWindowPositionBySavedState() {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		if (!windowPosition.isSavedWindowPositionValid()) {
