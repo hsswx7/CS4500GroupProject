@@ -15,6 +15,11 @@ public class UploadeFiles {
 	
 	public ArrayList<File> setUploadedFiles(UploadedFilesContainer filesUpload){
 		uploadedFiles = filesUpload;
+		
+		System.out.println("Files Uploaded: ");
+		for(File counter : filesUpload.getAllFiles()){
+			System.out.println(counter.getName());
+		}
 		return uploadedFiles.getAllFiles();
 	}
 	
