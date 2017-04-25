@@ -302,17 +302,6 @@ public class Model extends JSplitPane {
 			open.close();
 	}
 
-	private String getName(String path) {
-		if (path == null)
-			return "";
-		int i = path.lastIndexOf("/");
-		if (i == -1)
-			i = path.lastIndexOf("\\");
-		if (i != -1)
-			return path.substring(i + 1);
-		return path;
-	}
-
 	private class TreeListener extends MouseAdapter {
 		@Override
 		public void mousePressed(MouseEvent event) {
