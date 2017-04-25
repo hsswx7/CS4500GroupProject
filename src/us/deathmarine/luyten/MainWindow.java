@@ -305,10 +305,6 @@ public class MainWindow extends JFrame {
 		this.getModel().updateOpenClasses();
 	}
 
-	/*public void onTreeSettingsChanged() {
-		this.getModel().updateTree();
-	}*/
-
 	public void onFileDropped(File file) {
 		if (file != null) {
 			this.getModel().checkFileSelected(file);
@@ -350,16 +346,11 @@ public class MainWindow extends JFrame {
 		if(uploadedFilesContainer.getFileUploadSizeLeft() == 0){
 			uploadeFiles = new UploadeFiles();
 			uploadeFiles.setUploadedFiles(uploadedFilesContainer);
+			model.submitButtonAccess(false);
 		}		
 		
 	}
-	
-	
-
-	/*public void onNavigationRequest(String uniqueStr) {
-		this.getModel().navigateTo(uniqueStr);
-	}*/
-
+		
 	//When opening the client this function Sets windows size to user's preference
 	private void adjustWindowPositionBySavedState() {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();

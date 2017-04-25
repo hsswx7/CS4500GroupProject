@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
@@ -143,6 +144,22 @@ public class Model extends JSplitPane {
         leftMainPanel.add(uploadFileLeftPanel);
         leftMainPanel.add(buttonPanel);
         
+        leftMainPanel.addKeyListener(new  KeyListener(){
+        	@Override
+        	public void keyPressed(KeyEvent e){
+        		if(e.getKeyCode() == KeyEvent.VK_DELETE){
+//        			removeFilefromFileUPloadToPane();
+        		}
+        	}
+
+			@Override
+			public void keyReleased(KeyEvent arg0) {}
+
+			@Override
+			public void keyTyped(KeyEvent arg0) {}
+        });
+        
+        //This Listener Detects Submit Button Click
         submitFileButton.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
@@ -182,6 +199,10 @@ public class Model extends JSplitPane {
 		decompilationOptions = new DecompilationOptions();
 		decompilationOptions.setSettings(settings);
 		decompilationOptions.setFullDecompilation(true);
+	}
+	
+	public void setListeners(){
+		
 	}
 
 	public void onSubmitButtonClicked(){
@@ -686,7 +707,7 @@ public class Model extends JSplitPane {
 	}
 	
 	// Adds file to Files Uploaded Files Pane
-	public void addFileUploadedToPane(File file){
+	private void addFileUploadedToPane(File file){
 		String name = file.getName();
 		
 		int index = list.getSelectedIndex();
@@ -700,6 +721,14 @@ public class Model extends JSplitPane {
 		list.setVisibleRowCount(index);
 	}
 	
+	private void removeFilefromFileUPloadToPane(int index){
+		
+	}
+	
+	// Enables or Disables submitFilebutton 
+	public void submitButtonAccess(Boolean access){
+		submitFileButton.setEnabled(access);
+	}
 
 	public void changeTheme(String xml) {
 		InputStream in = getClass().getResourceAsStream(LuytenPreferences.THEME_XML_PATH + xml);
