@@ -1,11 +1,11 @@
 package us.deathmarine.luyten;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.Toolkit;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
@@ -14,30 +14,11 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.Enumeration;
 import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
-import javax.swing.BorderFactory;
-import javax.swing.BoxLayout;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JProgressBar;
-import javax.swing.JScrollPane;
-import javax.swing.JSplitPane;
-import javax.swing.JTabbedPane;
-import javax.swing.JTree;
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -48,7 +29,6 @@ import javax.swing.tree.TreeSelectionModel;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.Theme;
 import org.fife.ui.rtextarea.RTextScrollPane;
-import com.strobel.assembler.InputTypeLoader;
 import com.strobel.assembler.metadata.ITypeLoader;
 import com.strobel.assembler.metadata.JarTypeLoader;
 import com.strobel.assembler.metadata.MetadataSystem;
@@ -73,7 +53,11 @@ public class Model extends JSplitPane {
 	public static MetadataSystem metadataSystem = new MetadataSystem(typeLoader);
 
 	private JTree tree;
+	private JList<String> list; // Used to display List of files user decided to
+								// upload
+	private DefaultListModel<String> listModel;
 	public JTabbedPane house;
+	private JButton submitFileButton;
 	private File file;
 	private DecompilerSettings settings;
 	private DecompilationOptions decompilationOptions;
@@ -82,8 +66,9 @@ public class Model extends JSplitPane {
 	private JProgressBar bar;
 	private JLabel label;
 	private HashSet<OpenFile> hmap = new HashSet<OpenFile>();
-	private Set<String> treeExpansionState;
 	private boolean open = false;
+	private boolean filesSubbmited = false; // this allows me check if the files
+											// have been subbmited
 	private State state;
 	private ConfigSaver configSaver;
 	private LuytenPreferences luytenPrefs;
@@ -122,16 +107,71 @@ public class Model extends JSplitPane {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					openEntryByTreePath(tree.getSelectionPath());
+					// openEntryByTreePath(tree.getSelectionPath());
 				}
 			}
 		});
 
-		JPanel panel2 = new JPanel();
-		panel2.setLayout(new BoxLayout(panel2, 1));
-		panel2.setBorder(BorderFactory.createTitledBorder("Structure"));
-		panel2.add(new JScrollPane(tree));
+		/******
+		 * This list is used to display the files chosen by user to upload
+		 *****/
+		listModel = new DefaultListModel<String>();
 
+		list = new JList<String>(listModel);
+		list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+		list.setLayoutOrientation(JList.VERTICAL);
+		list.setVisibleRowCount(-1);
+
+		// renderer allows JList to center String Names Added
+		DefaultListCellRenderer renderer = (DefaultListCellRenderer) list.getCellRenderer();
+		renderer.setHorizontalAlignment(SwingConstants.CENTER);
+
+		JScrollPane listScrollPane = new JScrollPane(list); // Makes the list
+															// Scrollable
+
+		addUploadedFilesListKeyListener(list, listModel); // Adding Key Listener
+															// to list
+
+		// leftMainPanel will be a container for all other left panels
+		JPanel leftMainPanel = new JPanel();
+		leftMainPanel.setLayout(new BoxLayout(leftMainPanel, BoxLayout.Y_AXIS));
+
+		/***********************
+		 * Upload Panel for Files Names
+		 ************************/
+		JPanel uploadFileLeftPanel = new JPanel();
+		uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel, 0));
+		uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
+		uploadFileLeftPanel.add(listScrollPane);
+
+		/******************* Submit File Button ******************************/
+		submitFileButton = new JButton("Submit Uploaded Files");
+		submitFileButton.setEnabled(false);
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.setLayout(new BoxLayout(buttonPanel, 0));
+		buttonPanel.add(submitFileButton);
+
+		leftMainPanel.add(uploadFileLeftPanel);
+		leftMainPanel.add(buttonPanel);
+
+		// This Listener Detects Submit Button Click
+		submitFileButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				onSubmitButtonClicked();
+			}
+		});
+
+		/******************** Panel 3 For Test ************************/
+
+		JPanel panel3 = new JPanel();
+		panel3.setLayout(new BoxLayout(panel3, 1));
+		panel3.setBorder(BorderFactory.createTitledBorder("Test Panel 3"));
+		panel3.add(new JScrollPane(tree));
+
+		leftMainPanel.add(panel3);
+
+		// TODO REMOVE ALL TAB STUFF
 		house = new JTabbedPane();
 		house.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		house.addChangeListener(new TabChangeListener());
@@ -143,18 +183,73 @@ public class Model extends JSplitPane {
 				}
 			}
 		});
+
+		/**************
+		 * Main Panel (This is where the Simulation Will GO)
+		 ****************************/
 		JPanel panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel, 1));
 		panel.setBorder(BorderFactory.createTitledBorder("Code"));
 		panel.add(house);
+
+		/***************** Setting The Panels ***************************/
 		this.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
 		this.setDividerLocation(250 % mainWindow.getWidth());
-		this.setLeftComponent(panel2);
+		this.setLeftComponent(leftMainPanel);
 		this.setRightComponent(panel);
 
 		decompilationOptions = new DecompilationOptions();
 		decompilationOptions.setSettings(settings);
 		decompilationOptions.setFullDecompilation(true);
+	}
+
+	// BackSpace and Delete Listener for List that holds Uploaded Files
+	private void addUploadedFilesListKeyListener(final JList<String> list, final DefaultListModel<String> listModel) {
+		list.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_DELETE || e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+					if (filesSubbmited) {
+						return;
+					}
+					// If there's nothing in the JList or the User didn't Select
+					// a file to delete nothing happens
+					if (list.getSelectedIndices().length > 0) {
+						int[] selectedIndices = list.getSelectedIndices(); // getting
+																			// the
+																			// items
+																			// user
+																			// selected
+
+						for (int i = selectedIndices.length - 1; i >= 0; i--) {
+							mainWindow.removeFile(listModel.getElementAt(i));
+							listModel.removeElementAt(i); // Deleting selected
+															// items from JList
+							submitButtonAccess(false);
+						}
+					}
+				}
+			}
+
+			@Override
+			public void keyReleased(KeyEvent e) {
+			}
+
+			@Override
+			public void keyTyped(KeyEvent e) {
+			}
+		});
+	}
+
+	/*
+	 * Asks the MainWindows to Check if files are ready to be Submits The files
+	 */
+	public void onSubmitButtonClicked() {
+		filesSubbmited = mainWindow.onSubmitFilesButtonClicked();
+		if (filesSubbmited) {
+			submitButtonAccess(false);
+		}
 	}
 
 	public void showLegal(String legalStr) {
@@ -451,7 +546,7 @@ public class Model extends JSplitPane {
 	}
 
 	public void updateOpenClasses() {
-		// invalidate all open classes (update will hapen at tab change)
+		// invalidate all open classes (update will happen at tab change)
 		for (OpenFile open : hmap) {
 			if (open.getType() != null) {
 				open.invalidateContent();
@@ -572,25 +667,6 @@ public class Model extends JSplitPane {
 		}
 	}
 
-	public DefaultMutableTreeNode loadNodesByNames(DefaultMutableTreeNode node, List<String> originalNames) {
-		List<TreeNodeUserObject> args = new ArrayList<>();
-		for (String originalName : originalNames) {
-			args.add(new TreeNodeUserObject(originalName));
-		}
-		return loadNodesByUserObj(node, args);
-	}
-
-	public DefaultMutableTreeNode loadNodesByUserObj(DefaultMutableTreeNode node, List<TreeNodeUserObject> args) {
-		if (args.size() > 0) {
-			TreeNodeUserObject name = args.remove(0);
-			DefaultMutableTreeNode nod = getChild(node, name);
-			if (nod == null)
-				nod = new DefaultMutableTreeNode(name);
-			node.add(loadNodesByUserObj(nod, args));
-		}
-		return node;
-	}
-
 	@SuppressWarnings("unchecked")
 	public DefaultMutableTreeNode getChild(DefaultMutableTreeNode node, TreeNodeUserObject name) {
 		Enumeration<DefaultMutableTreeNode> entry = node.children();
@@ -603,23 +679,17 @@ public class Model extends JSplitPane {
 		return null;
 	}
 
-	public void loadFile(File file) {
-		if (open)
-			closeFile();
+	// Uploads files Chosen from Recent Files Menu
+	public void checkFileSelected(File file) {
 		this.file = file;
-		
+
 		RecentFiles.add(file.getAbsolutePath());
 		mainWindow.mainMenuBar.updateRecentFiles();
-		loadTree();
+		verifyFile();
 	}
 
-	public void updateTree() {
-		TreeUtil treeUtil = new TreeUtil(tree);
-		treeExpansionState = treeUtil.getExpansionState();
-		loadTree();
-	}
-
-	public void loadTree() {
+	// Verifies files to see if its valid
+	public void verifyFile() {
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
@@ -629,65 +699,50 @@ public class Model extends JSplitPane {
 					}
 					tree.setModel(new DefaultTreeModel(null));
 
+					// Checking If File is too large
 					if (file.length() > MAX_JAR_FILE_SIZE_BYTES) {
-						throw new TooLargeFileException(file.length());
+						System.out.println("File Length  " + file.length());
+						throw new TooLargeFileException(file.length()); // Throwing
+																		// Error
 					}
-					if (file.getName().endsWith(".zip") || file.getName().endsWith(".jar")) {
-						JarFile jfile;
-						jfile = new JarFile(file);
-						getLabel().setText("Loading: " + jfile.getName());
-						bar.setVisible(true);
 
-						JarEntryFilter jarEntryFilter = new JarEntryFilter(jfile);
-						List<String> mass = null;
-						if (luytenPrefs.isFilterOutInnerClassEntries()) {
-							mass = jarEntryFilter.getEntriesWithoutInnerClasses();
-						} else {
-							mass = jarEntryFilter.getAllEntriesFromJar();
-						}
-						buildTreeFromMass(mass);
+					// Throwing error if file does not pass isFile test or
+					// canRead Test
+					/*
+					 * isFile() - Tests whether the file denoted by this
+					 * abstract pathname is a normal file. A file is normal if
+					 * it is not a directory and, in addition, satisfies other
+					 * system-dependent criteria. Any non-directory file created
+					 * by a Java application is guaranteed to be a normal file.
+					 */
 
-						if (state == null) {
-							ITypeLoader jarLoader = new JarTypeLoader(jfile);
-							typeLoader.getTypeLoaders().add(jarLoader);
-							state = new State(file.getCanonicalPath(), file, jfile, jarLoader);
-						}
-						open = true;
-						getLabel().setText("Complete");
+					/*
+					 * canRead() - checks file privileges and returns true if
+					 * the privileges allow the client to read the file
+					 */
+
+					if (!file.isFile() || !file.canRead()) {
+						throw new Exception();
 					} else {
-						TreeNodeUserObject topNodeUserObject = new TreeNodeUserObject(getName(file.getName()));
-						final DefaultMutableTreeNode top = new DefaultMutableTreeNode(topNodeUserObject);
-						tree.setModel(new DefaultTreeModel(top));
-						settings.setTypeLoader(new InputTypeLoader());
-						open = true;
-						getLabel().setText("Complete");
-
-						// open it automatically
-						new Thread() {
-							public void run() {
-								TreePath trp = new TreePath(top.getPath());
-								openEntryByTreePath(trp);
-							};
-						}.start();
+						open = true; // boolean to know the file can be opened
 					}
-
-					if (treeExpansionState != null) {
-						try {
-							TreeUtil treeUtil = new TreeUtil(tree);
-							treeUtil.restoreExpanstionState(treeExpansionState);
-						} catch (Exception e) {
-							Luyten.showExceptionDialog("Exception!", e);
-						}
-					}
+					// Catching and Displaying Error to User
 				} catch (TooLargeFileException e) {
-					getLabel().setText("File is too large: " + file.getName() + " - size: " + e.getReadableFileSize());
-					closeFile();
-				} catch (Exception e1) {
+					System.out.println("TooLargeFileException Called ");
+					Luyten.showExceptionDialog("File: " + file.getName() + "  (Size:  " + file.length()
+							+ " ) too large. " + " Size Limit : " + MAX_JAR_FILE_SIZE_BYTES, e);
+					Luyten.showErrorDialog("File: " + file.getName() + "  (Size:  " + file.length() + " ) too large. "
+							+ " Size Limit : " + MAX_JAR_FILE_SIZE_BYTES);
+					Luyten.showInformationDialog("File: " + file.getName() + "  (Size:  " + file.length()
+							+ " ) too large. " + " Size Limit : " + MAX_JAR_FILE_SIZE_BYTES);
+					open = false;
+				} catch (Exception e1) { // File cannot Open error
 					Luyten.showExceptionDialog("Cannot open " + file.getName() + "!", e1);
 					getLabel().setText("Cannot open: " + file.getName());
-					closeFile();
+					open = false;
 				} finally {
 					mainWindow.onFileLoadEnded(file, open);
+					addFileUploadedToPane(file);
 					bar.setVisible(false);
 				}
 			}
@@ -695,157 +750,24 @@ public class Model extends JSplitPane {
 		}).start();
 	}
 
-	private void buildTreeFromMass(List<String> mass) {
-		if (luytenPrefs.isPackageExplorerStyle()) {
-			buildFlatTreeFromMass(mass);
+	// Adds file to Files Uploaded Files Pane
+	private void addFileUploadedToPane(File file) {
+		String name = file.getName();
+
+		int index = list.getSelectedIndex();
+		if (index == -1) { // no selection, so insert at the beginning
+			index = 0;
 		} else {
-			buildDirectoryTreeFromMass(mass);
+			index++;
 		}
+		listModel.insertElementAt(name, index);
+		list.ensureIndexIsVisible(index);
+		list.setVisibleRowCount(index);
 	}
 
-	private void buildDirectoryTreeFromMass(List<String> mass) {
-		TreeNodeUserObject topNodeUserObject = new TreeNodeUserObject(getName(file.getName()));
-		DefaultMutableTreeNode top = new DefaultMutableTreeNode(topNodeUserObject);
-		List<String> sort = new ArrayList<String>();
-		Collections.sort(mass, String.CASE_INSENSITIVE_ORDER);
-		for (String m : mass)
-			if (m.contains("META-INF") && !sort.contains(m))
-				sort.add(m);
-		Set<String> set = new HashSet<String>();
-		for (String m : mass) {
-			if (m.contains("/")) {
-				set.add(m.substring(0, m.lastIndexOf("/") + 1));
-			}
-		}
-		List<String> packs = Arrays.asList(set.toArray(new String[] {}));
-		Collections.sort(packs, String.CASE_INSENSITIVE_ORDER);
-		Collections.sort(packs, new Comparator<String>() {
-			public int compare(String o1, String o2) {
-				return o2.split("/").length - o1.split("/").length;
-			}
-		});
-		for (String pack : packs)
-			for (String m : mass)
-				if (!m.contains("META-INF") && m.contains(pack) && !m.replace(pack, "").contains("/"))
-					sort.add(m);
-		for (String m : mass)
-			if (!m.contains("META-INF") && !m.contains("/") && !sort.contains(m))
-				sort.add(m);
-		for (String pack : sort) {
-			LinkedList<String> list = new LinkedList<String>(Arrays.asList(pack.split("/")));
-			loadNodesByNames(top, list);
-		}
-		tree.setModel(new DefaultTreeModel(top));
-	}
-
-	private void buildFlatTreeFromMass(List<String> mass) {
-		TreeNodeUserObject topNodeUserObject = new TreeNodeUserObject(getName(file.getName()));
-		DefaultMutableTreeNode top = new DefaultMutableTreeNode(topNodeUserObject);
-
-		TreeMap<String, TreeSet<String>> packages = new TreeMap<>();
-		HashSet<String> classContainingPackageRoots = new HashSet<>();
-
-		Comparator<String> sortByFileExtensionsComparator = new Comparator<String>() {
-			// (assertion: mass does not contain null elements)
-			@Override
-			public int compare(String o1, String o2) {
-				int comp = o1.replaceAll("[^\\.]*\\.", "").compareTo(o2.replaceAll("[^\\.]*\\.", ""));
-				if (comp != 0)
-					return comp;
-				return o1.compareTo(o2);
-			}
-		};
-
-		for (String entry : mass) {
-			String packagePath = "";
-			String packageRoot = "";
-			if (entry.contains("/")) {
-				packagePath = entry.replaceAll("/[^/]*$", "");
-				packageRoot = entry.replaceAll("/.*$", "");
-			}
-			String packageEntry = entry.replace(packagePath + "/", "");
-			if (!packages.containsKey(packagePath)) {
-				packages.put(packagePath, new TreeSet<String>(sortByFileExtensionsComparator));
-			}
-			packages.get(packagePath).add(packageEntry);
-			if (!entry.startsWith("META-INF") && packageRoot.trim().length() > 0
-					&& entry.matches(".*\\.(class|java|prop|properties)$")) {
-				classContainingPackageRoots.add(packageRoot);
-			}
-		}
-
-		// META-INF comes first -> not flat
-		for (String packagePath : packages.keySet()) {
-			if (packagePath.startsWith("META-INF")) {
-				List<String> packagePathElements = Arrays.asList(packagePath.split("/"));
-				for (String entry : packages.get(packagePath)) {
-					ArrayList<String> list = new ArrayList<>(packagePathElements);
-					list.add(entry);
-					loadNodesByNames(top, list);
-				}
-			}
-		}
-
-		// real packages: path starts with a classContainingPackageRoot -> flat
-		for (String packagePath : packages.keySet()) {
-			String packageRoot = packagePath.replaceAll("/.*$", "");
-			if (classContainingPackageRoots.contains(packageRoot)) {
-				for (String entry : packages.get(packagePath)) {
-					ArrayList<TreeNodeUserObject> list = new ArrayList<>();
-					list.add(new TreeNodeUserObject(packagePath, packagePath.replaceAll("/", ".")));
-					list.add(new TreeNodeUserObject(entry));
-					loadNodesByUserObj(top, list);
-				}
-			}
-		}
-
-		// the rest, not real packages but directories -> not flat
-		for (String packagePath : packages.keySet()) {
-			String packageRoot = packagePath.replaceAll("/.*$", "");
-			if (!classContainingPackageRoots.contains(packageRoot) && !packagePath.startsWith("META-INF")
-					&& packagePath.length() > 0) {
-				List<String> packagePathElements = Arrays.asList(packagePath.split("/"));
-				for (String entry : packages.get(packagePath)) {
-					ArrayList<String> list = new ArrayList<>(packagePathElements);
-					list.add(entry);
-					loadNodesByNames(top, list);
-				}
-			}
-		}
-
-		// the default package -> not flat
-		String packagePath = "";
-		if (packages.containsKey(packagePath)) {
-			for (String entry : packages.get(packagePath)) {
-				ArrayList<String> list = new ArrayList<>();
-				list.add(entry);
-				loadNodesByNames(top, list);
-			}
-		}
-		tree.setModel(new DefaultTreeModel(top));
-	}
-
-	public void closeFile() {
-		for (OpenFile co : hmap) {
-			int pos = house.indexOfTab(co.name);
-			if (pos >= 0)
-				house.remove(pos);
-			co.close();
-		}
-
-		final State oldState = state;
-		Model.this.state = null;
-		if (oldState != null) {
-			Closer.tryClose(oldState);
-		}
-
-		hmap.clear();
-		tree.setModel(new DefaultTreeModel(null));
-		metadataSystem = new MetadataSystem(typeLoader);
-		file = null;
-		treeExpansionState = null;
-		open = false;
-		mainWindow.onFileLoadEnded(file, open);
+	// Enables or Disables submitFilebutton
+	public void submitButtonAccess(Boolean access) {
+		submitFileButton.setEnabled(access);
 	}
 
 	public void changeTheme(String xml) {

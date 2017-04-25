@@ -73,7 +73,7 @@ public class FindAllBox extends JDialog {
 					String internalName = StringUtilities.removeRight(entryName, ".class");
 					TypeReference type = Model.metadataSystem.lookupType(internalName);
 					try {
-						mainWindow.getModel().extractClassToTextPane(type, array[array.length - 1], entryName, null);
+						//mainWindow.getModel().extractClassToTextPane(type, array[array.length - 1], entryName, null);
 					} catch (Exception e) {
 						Luyten.showExceptionDialog("Exception!", e);
 					}
