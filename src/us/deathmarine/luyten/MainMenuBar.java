@@ -127,6 +127,7 @@ public class MainMenuBar extends JMenuBar {
 					buildHelpMenu(helpMenu);
 					refreshMenuPopup(helpMenu);
 
+					//Don't Remove RecentFiles///
 					updateRecentFiles();
 				} catch (Exception e) {
 					Luyten.showExceptionDialog("Exception!", e);
@@ -187,10 +188,10 @@ public class MainMenuBar extends JMenuBar {
 			RecentFiles.save();
 	}
 
-	// Building File Menu 
+	// Building File Menu
 	private void buildFileMenu(final JMenu fileMenu) {
-		
-		//Adding Upload File Button
+
+		// Adding Upload File Button
 		fileMenu.removeAll();
 		JMenuItem menuItem = new JMenuItem("Upload File...");
 		menuItem.setAccelerator(
@@ -204,7 +205,7 @@ public class MainMenuBar extends JMenuBar {
 		fileMenu.add(menuItem);
 		fileMenu.addSeparator();
 
-		//Adds Recent Files 
+		// Adds Recent Files
 		recentFiles = new JMenu("Recent Files");
 		fileMenu.add(recentFiles);
 
