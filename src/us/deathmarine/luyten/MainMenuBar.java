@@ -11,32 +11,32 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.net.URI;
-import java.util.Collections;
-import java.util.HashMap;
+//import java.util.Collections;
+//import java.util.HashMap;
 import java.util.ListIterator;
-import java.util.Map;
+//import java.util.Map;
 
-import javax.swing.AbstractAction;
-import javax.swing.AbstractButton;
+//import javax.swing.AbstractAction;
+//import javax.swing.AbstractButton;
 import javax.swing.BoxLayout;
-import javax.swing.ButtonGroup;
-import javax.swing.ButtonModel;
-import javax.swing.JCheckBox;
+//import javax.swing.ButtonGroup;
+//import javax.swing.ButtonModel;
+//import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRadioButtonMenuItem;
+//import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTabbedPane;
 import javax.swing.KeyStroke;
-import javax.swing.text.DefaultEditorKit;
+//import javax.swing.text.DefaultEditorKit;
 
 import com.strobel.Procyon;
 import com.strobel.decompiler.DecompilerSettings;
-import com.strobel.decompiler.languages.Language;
-import com.strobel.decompiler.languages.Languages;
+//import com.strobel.decompiler.languages.Language;
+//import com.strobel.decompiler.languages.Languages;
 
 /**
  * Main menu (only MainWindow should be called from here)
@@ -44,13 +44,13 @@ import com.strobel.decompiler.languages.Languages;
 public class MainMenuBar extends JMenuBar {
 	private static final long serialVersionUID = -7949855817172562075L;
 	private final MainWindow mainWindow;
-	private final Map<String, Language> languageLookup = new HashMap<String, Language>();
+	//private final Map<String, Language> languageLookup = new HashMap<String, Language>();
 
 	private JMenu recentFiles;
 	private JMenuItem clearRecentFiles;
 	
 	////////REMOVE/OPEN///////
-	private JCheckBox flattenSwitchBlocks;
+	/*private JCheckBox flattenSwitchBlocks;
 	private JCheckBox forceExplicitImports;
 	private JCheckBox forceExplicitTypes;
 	private JCheckBox showSyntheticMembers;
@@ -68,7 +68,7 @@ public class MainMenuBar extends JMenuBar {
 	private JCheckBox packageExplorerStyle;
 	private JCheckBox filterOutInnerClassEntries;
 	private JCheckBox singleClickOpenEnabled;
-	private JCheckBox exitByEscEnabled;
+	private JCheckBox exitByEscEnabled;*/
 	
 	////////////REMOVE/CLOSE/////////////
 	
@@ -87,7 +87,7 @@ public class MainMenuBar extends JMenuBar {
 		this.add(fileMenu);
 		
 		/////////REMOVE/OPEN///////
-		final JMenu editMenu = new JMenu("Edit");
+		/*final JMenu editMenu = new JMenu("Edit");
 		editMenu.add(new JMenuItem("..."));
 		this.add(editMenu);
 		final JMenu themesMenu = new JMenu("Themes");
@@ -95,7 +95,7 @@ public class MainMenuBar extends JMenuBar {
 		this.add(themesMenu);
 		final JMenu operationMenu = new JMenu("Operation");
 		operationMenu.add(new JMenuItem("..."));
-		this.add(operationMenu);
+		this.add(operationMenu);*/
 		final JMenu settingsMenu = new JMenu("Settings");
 		settingsMenu.add(new JMenuItem("..."));
 		this.add(settingsMenu);
@@ -114,7 +114,7 @@ public class MainMenuBar extends JMenuBar {
 					refreshMenuPopup(fileMenu);
 					
 					/////REMOVE///////
-					buildEditMenu(editMenu);
+				/*	buildEditMenu(editMenu);
 					refreshMenuPopup(editMenu);
 
 					buildThemesMenu(themesMenu);
@@ -122,6 +122,7 @@ public class MainMenuBar extends JMenuBar {
 
 					buildOperationMenu(operationMenu);
 					refreshMenuPopup(operationMenu);
+					*/
 
 					buildSettingsMenu(settingsMenu, configSaver);
 					refreshMenuPopup(settingsMenu);
@@ -224,7 +225,7 @@ public class MainMenuBar extends JMenuBar {
 		
 
 		//////REMOVE/OPEN//////
-		menuItem = new JMenuItem("Save As...");
+		/*menuItem = new JMenuItem("Save As...");
 		menuItem.setAccelerator(
 				KeyStroke.getKeyStroke(KeyEvent.VK_E, Toolkit.getDefaultToolkit().getMenuShortcutKeyMask()));
 		menuItem.addActionListener(new ActionListener() {
@@ -244,7 +245,7 @@ public class MainMenuBar extends JMenuBar {
 				mainWindow.onSaveAllMenu();
 			}
 		});
-		fileMenu.add(menuItem);
+		fileMenu.add(menuItem);*/
 		//fileMenu.addSeparator();
 		/////////////REMOVE/CLOSE///////////////////
 		
@@ -283,7 +284,7 @@ public class MainMenuBar extends JMenuBar {
 
 	
 	////////REMOVE/////////
-	private void buildEditMenu(JMenu editMenu) {
+	/*private void buildEditMenu(JMenu editMenu) {
 		editMenu.removeAll();
 		JMenuItem menuItem = new JMenuItem("Cut");
 		menuItem.setAccelerator(
@@ -339,13 +340,13 @@ public class MainMenuBar extends JMenuBar {
 			}
 		});
 		editMenu.add(menuItem);
-	}
+	}*/
 	/////REMOVE///////
 	
 	
 
 	//////REMOVE////////
-	private void buildThemesMenu(JMenu themesMenu) {
+	/*private void buildThemesMenu(JMenu themesMenu) {
 		themesMenu.removeAll();
 		themesGroup = new ButtonGroup();
 		JRadioButtonMenuItem a = new JRadioButtonMenuItem(new ThemeAction("Default", "default.xml"));
@@ -377,12 +378,12 @@ public class MainMenuBar extends JMenuBar {
 		a.setSelected("idea.xml".equals(luytenPrefs.getThemeXml()));
 		themesGroup.add(a);
 		themesMenu.add(a);
-	}
+	}*/
 	/////////REMOVE////////
 	
 
 	///////REMOVE////////
-	private void buildOperationMenu(JMenu operationMenu) {
+	/*private void buildOperationMenu(JMenu operationMenu) {
 		operationMenu.removeAll();
 		packageExplorerStyle = new JCheckBox("    Package Explorer Style");
 		packageExplorerStyle.setSelected(luytenPrefs.isPackageExplorerStyle());
@@ -433,7 +434,7 @@ public class MainMenuBar extends JMenuBar {
 			}
 		});
 		operationMenu.add(exitByEscEnabled);
-	}
+	}*/
 
 	private void buildSettingsMenu(JMenu settingsMenu, ConfigSaver configSaver) {
 		settingsMenu.removeAll();
@@ -443,12 +444,15 @@ public class MainMenuBar extends JMenuBar {
 				new Thread() {
 					@Override
 					public void run() {
-						populateSettingsFromSettingsMenu();
+						//populateSettingsFromSettingsMenu();
 						mainWindow.onSettingsChanged();
 					}
 				}.start();
 			}
 		};
+	}
+		/*
+		
 		flattenSwitchBlocks = new JCheckBox("    Flatten Switch Blocks");
 		flattenSwitchBlocks.setSelected(settings.getFlattenSwitchBlocks());
 		flattenSwitchBlocks.setContentAreaFilled(false);
@@ -557,7 +561,7 @@ public class MainMenuBar extends JMenuBar {
 		bytecodeLineNumbers.setFocusable(false);
 		bytecodeLineNumbers.addActionListener(settingsChanged);
 		settingsMenu.add(bytecodeLineNumbers);
-	}
+	}*/
 	/////////REMOVE/CLOSE///////////
 
 	private void buildHelpMenu(JMenu helpMenu) {
@@ -572,7 +576,7 @@ public class MainMenuBar extends JMenuBar {
 		helpMenu.add(menuItem);
 		
 		/////REMOVE/OPEN/////
-		JMenu menuDebug = new JMenu("Debug");
+		/*JMenu menuDebug = new JMenu("Debug");
 		menuItem = new JMenuItem("List JVM Classes");
 		menuItem.addActionListener(new ActionListener() {
 			@Override
@@ -581,7 +585,7 @@ public class MainMenuBar extends JMenuBar {
 			}
 		});
 		menuDebug.add(menuItem);
-		helpMenu.add(menuDebug);
+		helpMenu.add(menuDebug);*/
 		/////REMOVE/CLOSE/////
 		
 		
@@ -629,7 +633,7 @@ public class MainMenuBar extends JMenuBar {
 
 	/////COMMENTOUT/OPEN/////
 	///Could use for data manipulation if we get that far/////
-	private void populateSettingsFromSettingsMenu() {
+	/*private void populateSettingsFromSettingsMenu() {
 		// synchronized: do not disturb decompiler at work (synchronize every
 		// time before run decompiler)
 		synchronized (settings) {
@@ -668,12 +672,12 @@ public class MainMenuBar extends JMenuBar {
 			}
 			settings.setIncludeLineNumbersInBytecode(bytecodeLineNumbers.isSelected());
 		}
-	}
+	}*/
 	/////COMMENTOUT/CLOSE/////
 	
 	
 	/////REMOVE/OPEN/////
-	private class ThemeAction extends AbstractAction {
+	/*private class ThemeAction extends AbstractAction {
 		private static final long serialVersionUID = -6618680171943723199L;
 		private String xml;
 
@@ -687,7 +691,7 @@ public class MainMenuBar extends JMenuBar {
 			luytenPrefs.setThemeXml(xml);
 			mainWindow.onThemesChanged();
 		}
-	}
+	}*/
 	/////REMOVE/CLOSE/////
 
 	private class LinkListener extends MouseAdapter {
