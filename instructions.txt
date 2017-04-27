@@ -1,10 +1,19 @@
 Download a the latest JDK for you architecture if you do not have one.
+	http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
+
+	Steps to adding jdk path if you have not already 
+	https://www.java.com/en/download/help/path.xml
+
 Go to: https://www.eclipse.org and download the latest version of eclipse.
-Make sure you select the java developer version, not the EE version!
+
 Follow through both installers normally.
+
 Go to Github and pull the project. This will contain the native java application.
-Add this to the elipse workspace by clicking on file->open projects from file system->BrowseToCode.
+
+Add this to the elipse workspace by clicking on file->open projects from file system?BrowseToCode.
+
 It will default to an import with maven. This is what we want. Click Finish.
+
 Now we run Maven Clean then Maven install by right clicking on project root folder and hovering
 over the Run As... tab. If we have an error that says that Maven is out of date, then we want
 to right click on the root of the project and hover over Maven. The we want to select update

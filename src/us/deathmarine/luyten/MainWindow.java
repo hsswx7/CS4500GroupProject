@@ -20,6 +20,7 @@ import java.util.Vector;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -32,13 +33,15 @@ import javax.swing.border.BevelBorder;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 
+//TODO In-Progress
+
 /**
  * Dispatcher
  */
 public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 5265556630724988013L;
 
-	private static final String TITLE = "Luyten";
+	private static final String TITLE = "Legrange Reach Research";
 
 	public static Model model;
 	private JProgressBar bar;
@@ -49,14 +52,19 @@ public class MainWindow extends JFrame {
 	private WindowPosition windowPosition;
 	private LuytenPreferences luytenPrefs;
 	private FileDialog fileDialog;
-	private FileSaver fileSaver;
+	// UploaodedFilesContainer will store all files Uploaded by the user
+	private UploadedFilesContainer uploadedFilesContainer;
+	// uploadedFiles will allow me to send the uploadedFilesContainer to file
+	// parsing
+	private UploadeFiles uploadeFiles;
 	public MainMenuBar mainMenuBar;
 
+	// Building The MainWindow
 	public MainWindow(File fileFromCommandLine) {
 		configSaver = ConfigSaver.getLoadedInstance();
 		windowPosition = configSaver.getMainWindowPosition();
 		luytenPrefs = configSaver.getLuytenPreferences();
-		
+
 		mainMenuBar = new MainMenuBar(this);
 		this.setJMenuBar(mainMenuBar);
 
@@ -73,6 +81,7 @@ public class MainWindow extends JFrame {
 		label.setHorizontalAlignment(JLabel.LEFT);
 		panel1.setBorder(new BevelBorder(BevelBorder.LOWERED));
 		panel1.setPreferredSize(new Dimension(this.getWidth() / 2, 20));
+		panel1.setBorder(BorderFactory.createTitledBorder("Panel 1 from MainWindows.java line 82"));
 		panel1.add(label);
 
 		JPanel panel2 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -82,10 +91,12 @@ public class MainWindow extends JFrame {
 		bar.setOpaque(false);
 		bar.setVisible(false);
 		panel2.setPreferredSize(new Dimension(this.getWidth() / 3, 20));
+		panel2.setBorder(BorderFactory.createTitledBorder("Panel 2 from MainWindows.java line 91"));
 		panel2.add(bar);
 
 		model = new Model(this);
 		this.getContentPane().add(model);
+		// TODO the following line to change pane structure
 
 		JSplitPane spt = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, panel1, panel2) {
 			private static final long serialVersionUID = 2189946972124687305L;
@@ -109,7 +120,7 @@ public class MainWindow extends JFrame {
 		spt.setPreferredSize(new Dimension(this.getWidth(), 24));
 		this.add(spt, BorderLayout.SOUTH);
 		if (fileFromCommandLine != null) {
-			model.loadFile(fileFromCommandLine);
+			model.checkFileSelected(fileFromCommandLine);
 		}
 
 		try {
@@ -121,7 +132,7 @@ public class MainWindow extends JFrame {
 		}
 
 		fileDialog = new FileDialog(this);
-		fileSaver = new FileSaver(bar, label);
+		// fileSaver = new FileSaver(bar, label);
 
 		this.setExitOnEscWhenEnabled(model);
 
@@ -129,56 +140,56 @@ public class MainWindow extends JFrame {
 				|| fileFromCommandLine.getName().toLowerCase().endsWith(".zip")) {
 			model.startWarmUpThread();
 		}
-		
-		if(RecentFiles.load() > 0) mainMenuBar.updateRecentFiles();
+
+		if (RecentFiles.load() > 0)
+			mainMenuBar.updateRecentFiles();
 	}
 
+	// This is Where the file will go to once the user selects a file
 	public void onOpenFileMenu() {
+		if (checkIfFileUploadSizeReached()) {
+			return;
+		}
 		File selectedFile = fileDialog.doOpenDialog();
 		if (selectedFile != null) {
+
+			if (checkIfFileAlreadyAdded(selectedFile)) {
+				return;
+			}
+
 			System.out.println("[Open]: Opening " + selectedFile.getAbsolutePath());
-			
-			this.getModel().loadFile(selectedFile);
+
+			this.getModel().checkFileSelected(selectedFile);
 		}
 	}
 
-	public void onCloseFileMenu() {
-		this.getModel().closeFile();
+	// Checks if file upload size is reached
+	public boolean checkIfFileUploadSizeReached() {
+		if (uploadedFilesContainer == null) {
+			uploadedFilesContainer = new UploadedFilesContainer();
+		}
+
+		if (uploadedFilesContainer.getFileUploadSizeLeft() == 0) {
+			Luyten.showErrorDialog(
+					"File Upload Size Limit ( " + uploadedFilesContainer.getMaxFilesAllowed() + " ) Reached!");
+			return true;
+		}
+
+		return false;
 	}
 
-	public void onSaveAsMenu() {
-		RSyntaxTextArea pane = this.getModel().getCurrentTextArea();
-		if (pane == null)
-			return;
-		String tabTitle = this.getModel().getCurrentTabTitle();
-		if (tabTitle == null)
-			return;
-
-		String recommendedFileName = tabTitle.replace(".class", ".java");
-		File selectedFile = fileDialog.doSaveDialog(recommendedFileName);
-		if (selectedFile != null) {
-			fileSaver.saveText(pane.getText(), selectedFile);
+	// Checks if user has already selected the file
+	public boolean checkIfFileAlreadyAdded(File file) {
+		if (uploadedFilesContainer.checkIfFileAlreadyAdded(file)) {
+			Luyten.showErrorDialog("File : " + file.getName() + " already chosen.");
+			return true;
 		}
+		return false;
 	}
 
-	public void onSaveAllMenu() {
-		File openedFile = this.getModel().getOpenedFile();
-		if (openedFile == null)
-			return;
-
-		String fileName = openedFile.getName();
-		if (fileName.endsWith(".class")) {
-			fileName = fileName.replace(".class", ".java");
-		} else if (fileName.toLowerCase().endsWith(".jar")) {
-			fileName = "decompiled-" + fileName.replaceAll("\\.[jJ][aA][rR]", ".zip");
-		} else {
-			fileName = "saved-" + fileName;
-		}
-
-		File selectedFileToSave = fileDialog.doSaveAllDialog(fileName);
-		if (selectedFileToSave != null) {
-			fileSaver.saveAllDecompiled(openedFile, selectedFileToSave);
-		}
+	public void removeFile(String fileName) {
+		System.out.println("Removing File " + fileName);
+		uploadedFilesContainer.removeFile(fileName);
 	}
 
 	public void onExitMenu() {
@@ -302,20 +313,24 @@ public class MainWindow extends JFrame {
 		this.getModel().updateOpenClasses();
 	}
 
-	public void onTreeSettingsChanged() {
-		this.getModel().updateTree();
-	}
-
 	public void onFileDropped(File file) {
 		if (file != null) {
-			this.getModel().loadFile(file);
+			this.getModel().checkFileSelected(file);
 		}
 	}
 
+	// This functions sets the files in the uploadedfilesContainer after the
+	// Models checks the files
 	public void onFileLoadEnded(File file, boolean isSuccess) {
+		// System.out.println("At main window with file : " +file.getName()+"
+		// isSuccess : " + isSuccess);
 		try {
 			if (file != null && isSuccess) {
+				uploadedFilesContainer.add(file);
 				this.setTitle(TITLE + " - " + file.getName());
+				if (uploadedFilesContainer.getFileUploadSizeLeft() == 0) {
+					model.submitButtonAccess(true);
+				}
 			} else {
 				this.setTitle(TITLE);
 			}
@@ -324,10 +339,33 @@ public class MainWindow extends JFrame {
 		}
 	}
 
-	public void onNavigationRequest(String uniqueStr) {
-		this.getModel().navigateTo(uniqueStr);
+	// User clicks the button and this makes sure the user has correctly
+	// Uploaded the files
+	public boolean onSubmitFilesButtonClicked() {
+		System.out.println("Submit Files button Clicked");
+		// Checking if user has not files uploaded
+		if (uploadedFilesContainer == null
+				|| uploadedFilesContainer.getFileUploadSizeLeft() == uploadedFilesContainer.getMaxFilesAllowed()) {
+			Luyten.showErrorDialog("No files Uploaded");
+			return false;
+		} else if (uploadedFilesContainer.getFileUploadSizeLeft() > 0) {
+			Luyten.showErrorDialog("Please Upload " + uploadedFilesContainer.getFileUploadSizeLeft() + " more Files");
+			return true;
+		}
+
+		// TODO TIM you can have your function start from here
+		// If files are uploaded
+		if (uploadedFilesContainer.getFileUploadSizeLeft() == 0) {
+			uploadeFiles = new UploadeFiles();
+			uploadeFiles.setUploadedFiles(uploadedFilesContainer);
+			model.submitButtonAccess(false);
+			return true;
+		}
+		return false;
 	}
 
+	// When opening the client this function Sets windows size to user's
+	// preference
 	private void adjustWindowPositionBySavedState() {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		if (!windowPosition.isSavedWindowPositionValid()) {
