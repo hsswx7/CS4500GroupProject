@@ -10,6 +10,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
+import java.io.IOException;
 import java.net.URI;
 import java.util.Collections;
 import java.util.HashMap;
@@ -220,6 +221,24 @@ public class MainMenuBar extends JMenuBar {
 		});
 		fileMenu.add(clearRecentFiles);
 		fileMenu.addSeparator();
+		
+		// maybe move this somewhere else???
+		JMenuItem riverGen = new JMenuItem("New points.txt");
+		riverGen.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				Runtime runTime = Runtime.getRuntime();
+				try {
+					Process process = runTime.exec(".\\RiverTracer\\RiverTracer.exe");
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		fileMenu.add(riverGen);
+		fileMenu.addSeparator();
+		
 
 		// Only add the exit command for non-OS X. OS X handles its close
 		// automatically
@@ -234,6 +253,8 @@ public class MainMenuBar extends JMenuBar {
 			});
 			fileMenu.add(menuItem);
 		}
+		
+		
 	}
 
 	//////// REMOVE/////////
