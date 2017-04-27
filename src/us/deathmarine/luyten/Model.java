@@ -8,16 +8,12 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.StringWriter;
+import java.io.*;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -39,6 +35,7 @@ import com.strobel.core.VerifyArgument;
 import com.strobel.decompiler.DecompilationOptions;
 import com.strobel.decompiler.DecompilerSettings;
 import com.strobel.decompiler.PlainTextOutput;
+import sun.swing.ImageIconUIResource;
 
 /**
  * Jar-level model
@@ -53,12 +50,11 @@ public class Model extends JSplitPane {
 	public static MetadataSystem metadataSystem = new MetadataSystem(typeLoader);
 
 	private JTree tree;
-	private JList<String> list; // Used to display List of files user decided to
-								// upload
+	// Used to display List of files user decided to upload
+	private JList<String> list; 
 	private DefaultListModel<String> listModel;
 	public JTabbedPane house;
 	private JButton submitFileButton;
-	private JButton deleteFileButton;
 	private JButton uploadFileButton;
 	private File file;
 	private DecompilerSettings settings;
@@ -77,7 +73,7 @@ public class Model extends JSplitPane {
 	private LuytenPreferences luytenPrefs;
 
 	// Building Panes for the MainWindow
-	public Model(MainWindow mainWindow) {
+	public Model(final MainWindow mainWindow) {
 		this.mainWindow = mainWindow;
 		this.bar = mainWindow.getBar();
 		this.setLabel(mainWindow.getLabel());
@@ -124,22 +120,21 @@ public class Model extends JSplitPane {
 		JPanel leftMainPanel = new JPanel();
 		leftMainPanel.setLayout(new BoxLayout(leftMainPanel, BoxLayout.Y_AXIS));
 		
-		JPanel topButtonHolderPanel = new JPanel();
 
-		//deleteFileButton = new JButton ("Delete Selected File");
 		/**********************Upload File Button**************/
-		/*uploadFileButton = new JButton("UploadFiles...");
-		uploadFileButton.setHorizontalAlignment(AbstractButton.RIGHT);
+		uploadFileButton = new JButton("Upload File..");
+		uploadFileButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				mainWindow.onOpenFileMenu();
+			}
+		});
 		
-		
-		topButtonHolderPanel.add(uploadFileButton);
-		topButtonHolderPanel.add(deleteFileButton);
-		
-		leftMainPanel.add(topButtonHolderPanel);*/
+		leftMainPanel.add(uploadFileButton);
 		
 		/*********************** Upload Panel for Files Names ****************/
 		JPanel uploadFileLeftPanel = new JPanel();
-		uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel,2));
+		uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel,1));
 		uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
 		uploadFileLeftPanel.add(listScrollPane);
 
