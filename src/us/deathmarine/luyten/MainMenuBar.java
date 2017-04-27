@@ -101,10 +101,10 @@ public class MainMenuBar extends JMenuBar {
 		this.add(themesMenu);
 		final JMenu operationMenu = new JMenu("Operation");
 		operationMenu.add(new JMenuItem("..."));
-		this.add(operationMenu);*/
+		this.add(operationMenu);
 		final JMenu settingsMenu = new JMenu("Settings");
 		settingsMenu.add(new JMenuItem("..."));
-		this.add(settingsMenu);
+		this.add(settingsMenu);*/
 		////////// REMOVE/CLOSE///////////
 
 		final JMenu helpMenu = new JMenu("Help");
@@ -132,8 +132,8 @@ public class MainMenuBar extends JMenuBar {
 					refreshMenuPopup(operationMenu);
 					*/
 
-					buildSettingsMenu(settingsMenu, configSaver);
-					refreshMenuPopup(settingsMenu);
+					/*buildSettingsMenu(settingsMenu, configSaver);
+					refreshMenuPopup(settingsMenu);*/
 					//////// REMOVE/////////
 
 					buildHelpMenu(helpMenu);
@@ -435,7 +435,7 @@ public class MainMenuBar extends JMenuBar {
 		});
 		operationMenu.add(exitByEscEnabled);
 	}*/
-
+/*
 	private void buildSettingsMenu(JMenu settingsMenu, ConfigSaver configSaver) {
 		settingsMenu.removeAll();
 		ActionListener settingsChanged = new ActionListener() {
@@ -450,7 +450,7 @@ public class MainMenuBar extends JMenuBar {
 				}.start();
 			}
 		};
-	}
+	}*/
 		/*
 		
 		flattenSwitchBlocks = new JCheckBox("    Flatten Switch Blocks");

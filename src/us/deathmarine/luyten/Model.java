@@ -161,7 +161,7 @@ public class Model extends JSplitPane {
 
 		JPanel panel3 = new JPanel();
 		panel3.setLayout(new BoxLayout(panel3, 1));
-		panel3.setBorder(BorderFactory.createTitledBorder("Test Panel 3"));
+		panel3.setBorder(BorderFactory.createTitledBorder("Simulation Controls"));
 		panel3.add(new JScrollPane(tree));
 
 		leftMainPanel.add(panel3);
@@ -184,7 +184,7 @@ public class Model extends JSplitPane {
 		 ****************************/
 		JPanel panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel, 1));
-		panel.setBorder(BorderFactory.createTitledBorder("Code"));
+		panel.setBorder(BorderFactory.createTitledBorder("Simulation"));
 		panel.add(house);
 
 		/***************** Setting The Panels ***************************/

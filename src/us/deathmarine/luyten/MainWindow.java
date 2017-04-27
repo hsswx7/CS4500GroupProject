@@ -116,6 +116,7 @@ public class MainWindow extends JFrame {
 				return location;
 			}
 		};
+		
 		spt.setBorder(new BevelBorder(BevelBorder.LOWERED));
 		spt.setPreferredSize(new Dimension(this.getWidth(), 24));
 		this.add(spt, BorderLayout.SOUTH);
