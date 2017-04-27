@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.prefs.Preferences;
 
+//This file provides the list of files that have recently been opened
+
 public class RecentFiles {
 
 	public static ArrayList<String> paths = new ArrayList<>();
