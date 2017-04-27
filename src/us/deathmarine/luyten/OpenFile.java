@@ -159,7 +159,7 @@ public class OpenFile implements SyntaxConstants {
 		pop.add(item);
 		textArea.setPopupMenu(pop);
 
-		theme.apply(textArea);
+		//theme.apply(textArea);
 
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		final JScrollBar verticalScrollbar = scrollPane.getVerticalScrollBar();

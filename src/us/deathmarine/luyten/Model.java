@@ -8,16 +8,12 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.StringWriter;
+import java.io.*;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -39,6 +35,7 @@ import com.strobel.core.VerifyArgument;
 import com.strobel.decompiler.DecompilationOptions;
 import com.strobel.decompiler.DecompilerSettings;
 import com.strobel.decompiler.PlainTextOutput;
+import sun.swing.ImageIconUIResource;
 
 /**
  * Jar-level model
@@ -53,11 +50,12 @@ public class Model extends JSplitPane {
 	public static MetadataSystem metadataSystem = new MetadataSystem(typeLoader);
 
 	private JTree tree;
-	private JList<String> list; // Used to display List of files user decided to
-								// upload
+	// Used to display List of files user decided to upload
+	private JList<String> list; 
 	private DefaultListModel<String> listModel;
 	public JTabbedPane house;
 	private JButton submitFileButton;
+	private JButton uploadFileButton;
 	private File file;
 	private DecompilerSettings settings;
 	private DecompilationOptions decompilationOptions;
@@ -67,13 +65,15 @@ public class Model extends JSplitPane {
 	private JLabel label;
 	private HashSet<OpenFile> hmap = new HashSet<OpenFile>();
 	private boolean open = false;
-	private boolean filesSubbmited = false; // this allows me check if the files
-											// have been subbmited
+
+	// filesSubbmited allows functions to check if the files have been submitted
+	private boolean filesSubbmited = false;
 	private State state;
 	private ConfigSaver configSaver;
 	private LuytenPreferences luytenPrefs;
 
-	public Model(MainWindow mainWindow) {
+	// Building Panes for the MainWindow
+	public Model(final MainWindow mainWindow) {
 		this.mainWindow = mainWindow;
 		this.bar = mainWindow.getBar();
 		this.setLabel(mainWindow.getLabel());
@@ -81,20 +81,6 @@ public class Model extends JSplitPane {
 		configSaver = ConfigSaver.getLoadedInstance();
 		settings = configSaver.getDecompilerSettings();
 		luytenPrefs = configSaver.getLuytenPreferences();
-
-		try {
-			String themeXml = luytenPrefs.getThemeXml();
-			theme = Theme.load(getClass().getResourceAsStream(LuytenPreferences.THEME_XML_PATH + themeXml));
-		} catch (Exception e1) {
-			try {
-				Luyten.showExceptionDialog("Exception!", e1);
-				String themeXml = LuytenPreferences.DEFAULT_THEME_XML;
-				luytenPrefs.setThemeXml(themeXml);
-				theme = Theme.load(getClass().getResourceAsStream(LuytenPreferences.THEME_XML_PATH + themeXml));
-			} catch (Exception e2) {
-				Luyten.showExceptionDialog("Exception!", e2);
-			}
-		}
 
 		tree = new JTree();
 		tree.setModel(new DefaultTreeModel(null));
@@ -112,9 +98,8 @@ public class Model extends JSplitPane {
 			}
 		});
 
-		/******
-		 * This list is used to display the files chosen by user to upload
-		 *****/
+		/***This list is used to display the files chosen by user to upload*****/
+		//listModel holds on to the Strings (uploaded files names)
 		listModel = new DefaultListModel<String>();
 
 		list = new JList<String>(listModel);
@@ -126,24 +111,34 @@ public class Model extends JSplitPane {
 		DefaultListCellRenderer renderer = (DefaultListCellRenderer) list.getCellRenderer();
 		renderer.setHorizontalAlignment(SwingConstants.CENTER);
 
-		JScrollPane listScrollPane = new JScrollPane(list); // Makes the list
-															// Scrollable
-
-		addUploadedFilesListKeyListener(list, listModel); // Adding Key Listener
-															// to list
+		// The JSrollPane provides a scrollable view for list
+		JScrollPane listScrollPane = new JScrollPane(list);
+		// Adding Key Click listeners to list, and listModel
+		addUploadedFilesListKeyListener(list, listModel);
 
 		// leftMainPanel will be a container for all other left panels
 		JPanel leftMainPanel = new JPanel();
 		leftMainPanel.setLayout(new BoxLayout(leftMainPanel, BoxLayout.Y_AXIS));
+		
 
-		/***********************
-		 * Upload Panel for Files Names
-		 ************************/
+		/**********************Upload File Button**************/
+		uploadFileButton = new JButton("Upload File..");
+		uploadFileButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				mainWindow.onOpenFileMenu();
+			}
+		});
+		
+		leftMainPanel.add(uploadFileButton);
+		
+		/*********************** Upload Panel for Files Names ****************/
 		JPanel uploadFileLeftPanel = new JPanel();
-		uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel, 0));
+		uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel,1));
 		uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
 		uploadFileLeftPanel.add(listScrollPane);
 
+		
 		/******************* Submit File Button ******************************/
 		submitFileButton = new JButton("Submit Uploaded Files");
 		submitFileButton.setEnabled(false);
@@ -210,25 +205,7 @@ public class Model extends JSplitPane {
 			@Override
 			public void keyPressed(KeyEvent e) {
 				if (e.getKeyCode() == KeyEvent.VK_DELETE || e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-					if (filesSubbmited) {
-						return;
-					}
-					// If there's nothing in the JList or the User didn't Select
-					// a file to delete nothing happens
-					if (list.getSelectedIndices().length > 0) {
-						int[] selectedIndices = list.getSelectedIndices(); // getting
-																			// the
-																			// items
-																			// user
-																			// selected
-
-						for (int i = selectedIndices.length - 1; i >= 0; i--) {
-							mainWindow.removeFile(listModel.getElementAt(i));
-							listModel.removeElementAt(i); // Deleting selected
-															// items from JList
-							submitButtonAccess(false);
-						}
-					}
+					deleteUploadedFiles();
 				}
 			}
 
@@ -240,6 +217,25 @@ public class Model extends JSplitPane {
 			public void keyTyped(KeyEvent e) {
 			}
 		});
+	}
+
+	// Deleting uploaded Files if the user has not submitted
+	private void deleteUploadedFiles() {
+		// If user has submitted then files will not be uploaded
+		if (filesSubbmited) {
+			return;
+		}
+		// If there's nothing in the JList or the User didn't Select
+		// a file to delete nothing happens
+		if (list.getSelectedIndices().length > 0) {
+			// Getting the Items you selected and want to delete
+			int[] selectedIndices = list.getSelectedIndices();
+			for (int i = selectedIndices.length - 1; i >= 0; i--) {
+				mainWindow.removeFile(listModel.getElementAt(i));
+				listModel.removeElementAt(i);// Deleting Selected Items
+				submitButtonAccess(false);
+			}
+		}
 	}
 
 	/*
@@ -300,17 +296,6 @@ public class Model extends JSplitPane {
 		house.remove(co);
 		if (open != null)
 			open.close();
-	}
-
-	private String getName(String path) {
-		if (path == null)
-			return "";
-		int i = path.lastIndexOf("/");
-		if (i == -1)
-			i = path.lastIndexOf("\\");
-		if (i != -1)
-			return path.substring(i + 1);
-		return path;
 	}
 
 	private class TreeListener extends MouseAdapter {

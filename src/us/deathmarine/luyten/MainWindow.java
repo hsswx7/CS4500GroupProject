@@ -52,17 +52,14 @@ public class MainWindow extends JFrame {
 	private WindowPosition windowPosition;
 	private LuytenPreferences luytenPrefs;
 	private FileDialog fileDialog;
-	// private FileSaver fileSaver;
-	private UploadedFilesContainer uploadedFilesContainer; // this container
-															// holds an array
-															// foe File Objects
-															// the User wants to
-															// upload
-	private UploadeFiles uploadeFiles; // this will allow me to send the
-										// uploadedFilesContainer to edit the
-										// files
+	// UploaodedFilesContainer will store all files Uploaded by the user
+	private UploadedFilesContainer uploadedFilesContainer;
+	// uploadedFiles will allow me to send the uploadedFilesContainer to file
+	// parsing
+	private UploadeFiles uploadeFiles;
 	public MainMenuBar mainMenuBar;
 
+	// Building The MainWindow
 	public MainWindow(File fileFromCommandLine) {
 		configSaver = ConfigSaver.getLoadedInstance();
 		windowPosition = configSaver.getMainWindowPosition();
@@ -343,7 +340,7 @@ public class MainWindow extends JFrame {
 	}
 
 	// User clicks the button and this makes sure the user has correctly
-	// uplaoded the files
+	// Uploaded the files
 	public boolean onSubmitFilesButtonClicked() {
 		System.out.println("Submit Files button Clicked");
 		// Checking if user has not files uploaded
