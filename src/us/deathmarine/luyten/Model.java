@@ -37,6 +37,15 @@ import com.strobel.decompiler.DecompilerSettings;
 import com.strobel.decompiler.PlainTextOutput;
 import sun.swing.ImageIconUIResource;
 
+import com.jogamp.opengl.GLAutoDrawable;
+import com.jogamp.opengl.GLEventListener;
+import com.jogamp.opengl.GLProfile;
+import com.jogamp.opengl.GLCapabilities;
+import com.jogamp.opengl.awt.GLJPanel;
+import com.jogamp.opengl.util.Animator;
+import javax.swing.JFrame;
+
+
 /**
  * Jar-level model
  */
@@ -184,8 +193,34 @@ public class Model extends JSplitPane {
 		 ****************************/
 		JPanel panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel, 1));
-		panel.setBorder(BorderFactory.createTitledBorder("Code"));
-		panel.add(house);
+		panel.setBorder(BorderFactory.createTitledBorder("Map"));
+
+                GLJPanel gljpanel = new GLJPanel(new GLCapabilities(GLProfile.getDefault()));
+                gljpanel.setPreferredSize(new Dimension(400,400));
+                final DrawMap dm = new DrawMap();
+                final Animator a = new Animator();
+                a.add(gljpanel);
+                a.start();
+                gljpanel.addGLEventListener( new GLEventListener() {
+                        @Override
+                        public void reshape( GLAutoDrawable glautodrawable, int x, int y, int width, int height ) {
+                            dm.setup( glautodrawable.getGL().getGL2(), width, height );
+                        }
+                        
+                        @Override
+                        public void init( GLAutoDrawable glautodrawable ) {
+                        }
+                        
+                        @Override
+                        public void dispose( GLAutoDrawable glautodrawable ) {
+                        }
+                        
+                        @Override
+                        public void display( GLAutoDrawable glautodrawable ) {
+                            dm.render( glautodrawable.getGL().getGL2(), glautodrawable.getSurfaceWidth(), glautodrawable.getSurfaceHeight() );
+                        }
+                    });
+		panel.add(gljpanel);
 
 		/***************** Setting The Panels ***************************/
 		this.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
