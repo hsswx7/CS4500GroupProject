@@ -37,6 +37,16 @@ import com.strobel.decompiler.DecompilerSettings;
 import com.strobel.decompiler.PlainTextOutput;
 import sun.swing.ImageIconUIResource;
 
+import com.jogamp.opengl.GLAutoDrawable;
+import com.jogamp.opengl.GLEventListener;
+import com.jogamp.opengl.GLProfile;
+import com.jogamp.opengl.GLCapabilities;
+import com.jogamp.opengl.awt.GLJPanel;
+import com.jogamp.opengl.util.Animator;
+import javax.swing.JFrame;
+import java.util.concurrent.ThreadLocalRandom;
+
+
 /**
  * Jar-level model
  */
@@ -184,9 +194,43 @@ public class Model extends JSplitPane {
 		 ****************************/
 		JPanel panel = new JPanel();
 		panel.setLayout(new BoxLayout(panel, 1));
-		panel.setBorder(BorderFactory.createTitledBorder("Code"));
-		panel.add(house);
+		panel.setBorder(BorderFactory.createTitledBorder("Map"));
 
+                GLJPanel gljpanel = new GLJPanel(new GLCapabilities(GLProfile.getDefault()));
+                gljpanel.setPreferredSize(new Dimension(400,400));
+                final DrawMap dm = new DrawMap();
+                // Make up a random depth for each day and station
+                double data_points[][] = new double[365][3];
+                for(int i=0; i<data_points.length; ++i)
+                    for(int s=0; s<3; ++s)
+                        data_points[i][s]=ThreadLocalRandom.current().nextDouble(5, 25)/25;
+
+                dm.setDataPoints(data_points);
+                final Animator a = new Animator();
+                a.add(gljpanel);
+                a.start();
+                gljpanel.addGLEventListener( new GLEventListener() {
+                        @Override
+                        public void reshape( GLAutoDrawable glautodrawable, int x, int y, int width, int height ) {
+                            dm.setup( glautodrawable.getGL().getGL2(), width, height );
+                        }
+                        
+                        @Override
+                        public void init( GLAutoDrawable glautodrawable ) {
+                        }
+                        
+                        @Override
+                        public void dispose( GLAutoDrawable glautodrawable ) {
+                        }
+                        
+                        @Override
+                        public void display( GLAutoDrawable glautodrawable ) {
+                            dm.render( glautodrawable.getGL().getGL2(), glautodrawable.getSurfaceWidth(), glautodrawable.getSurfaceHeight() );
+                        }
+                    });
+		panel.add(gljpanel);
+                dm.play();
+                
 		/***************** Setting The Panels ***************************/
 		this.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
 		this.setDividerLocation(250 % mainWindow.getWidth());
