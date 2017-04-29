@@ -52,7 +52,7 @@ import java.util.logging.Logger;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class DrawMap {
-    private double ms_per_day = 300; // How many ms to spend on each day's data point
+    private double ms_per_day = 1000; // How many ms to spend on each day's data point
     private double data_points[][]; // River depth measurements--first axis is the time of the measurement, second axis has an entry for each sample location.
     private double start_time = 0; // The time we began playing the animation
     private boolean now_playing = true; // Playing or paused.
@@ -141,18 +141,19 @@ public class DrawMap {
         double points[][] = {{width*0.9 , height*0.1},
                              {width*0.5 , height*0.4},
                              {width*0.05, height*0.9}};
-        // Calculate per-point colors
         double elapsed = System.currentTimeMillis()-start_time;
         int current_frame_index = Math.min(data_points.length-1,
-                                           (int)(elapsed/ms_per_day)); 
+                                           (int)(elapsed/ms_per_day));
+        // We're going to interpolate in time between samples
+        double tween = (elapsed-current_frame_index*ms_per_day)/ms_per_day;
         double depths[] = data_points[current_frame_index];
-        double colors[][] = {{depths[0], depths[0], 1},
-                             {depths[1], depths[1], 1},
-                             {depths[2], depths[2], 1}};
+        double next_depths[] = data_points[Math.min(current_frame_index+1,data_points.length-1)];
+                
         gl.glLineWidth(20);
         gl.glBegin(GL2.GL_LINE_STRIP);
         for(int i=0; i<points.length; ++i) {
-            gl.glColor3d(colors[i][0],colors[i][1],colors[i][2]);
+            double shade=(1-tween)*depths[i] + tween*next_depths[i];
+            gl.glColor3d(shade,shade,1);
             gl.glVertex2d(points[i][0],points[i][1]);
         }
         gl.glEnd();
