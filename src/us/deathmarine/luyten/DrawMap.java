@@ -58,6 +58,7 @@ public class DrawMap {
     private boolean now_playing = true; // Playing or paused.
     
     private IntBuffer textureName = GLBuffers.newDirectIntBuffer(1);
+    private TextureData mapTexture;
     public DrawMap() {
         data_points = new double[10][3];
         for(int i=0; i<data_points.length; ++i)
@@ -90,7 +91,7 @@ public class DrawMap {
             //System.out.println((texture==null)?"null texture":"path: "+texture.getPath());
 
             /* Texture data is an object containing all the relevant information about texture.    */
-            TextureData data = TextureIO.newTextureData(gl.getGLProfile(), texture, false, TextureIO.GIF);
+            mapTexture = TextureIO.newTextureData(gl.getGLProfile(), texture, false, TextureIO.GIF);
             int level = 0;
             
             gl.glGenTextures(1, textureName);
@@ -99,11 +100,11 @@ public class DrawMap {
             {
                 gl.glTexImage2D(GL_TEXTURE_2D,
                                 level,
-                                data.getInternalFormat(),
-                                data.getWidth(), data.getHeight(),
-                                data.getBorder(),
-                                data.getPixelFormat(), data.getPixelType(),
-                                data.getBuffer());
+                                mapTexture.getInternalFormat(),
+                                mapTexture.getWidth(), mapTexture.getHeight(),
+                                mapTexture.getBorder(),
+                                mapTexture.getPixelFormat(), mapTexture.getPixelType(),
+                                mapTexture.getBuffer());
                 
                 gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_BASE_LEVEL, 0);
                 gl.glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAX_LEVEL, level);
@@ -119,19 +120,23 @@ public class DrawMap {
         }
     }
 
-    protected void render(GL2 gl, int width, int height) {
+    protected void render(GL2 gl, int canvaswidth, int canvasheight) {
         gl.glClear(GL.GL_COLOR_BUFFER_BIT);
 
         gl.glLoadIdentity();
 
         // Draw a quad textured with the map image.
+        float aspect = (float)mapTexture.getHeight()/(float)mapTexture.getWidth();
+        float width = canvasheight/aspect;
+        float height = canvasheight;
+       
         gl.glBindTexture(GL_TEXTURE_2D, textureName.get(0));
         gl.glEnable(GL.GL_TEXTURE_2D);
         gl.glColor3f(1, 1, 1);
         gl.glBegin(GL2.GL_POLYGON);
         gl.glTexCoord2f(0,0); gl.glVertex2f(0, 0);
-        gl.glTexCoord2f(1,0); gl.glVertex2f(width, 0);
-        gl.glTexCoord2f(1,1); gl.glVertex2f(width, height);
+        gl.glTexCoord2f(1,0); gl.glVertex2f(height/aspect, 0);
+        gl.glTexCoord2f(1,1); gl.glVertex2f(height/aspect, height);
         gl.glTexCoord2f(0,1); gl.glVertex2f(0, height);
         gl.glEnd();
         gl.glBindTexture(GL_TEXTURE_2D, 0);
