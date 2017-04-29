@@ -60,7 +60,7 @@ public class DrawMap {
     private IntBuffer textureName = GLBuffers.newDirectIntBuffer(1);
     private TextureData mapTexture;
     public DrawMap() {
-        data_points = new double[10][3];
+        data_points = new double[365][3];
         for(int i=0; i<data_points.length; ++i)
             for(int s=0; s<3; ++s)
                 // Make up a random depth for each day and station
@@ -126,9 +126,11 @@ public class DrawMap {
         gl.glLoadIdentity();
 
         // Draw a quad textured with the map image.
-        float aspect = (float)mapTexture.getHeight()/(float)mapTexture.getWidth();
-        float width = canvasheight/aspect;
+        float textureHeight=mapTexture.getHeight();
+        float textureWidth =mapTexture.getWidth();
+        float aspect = textureHeight/textureWidth;
         float height = canvasheight;
+        float width = height/aspect;
        
         gl.glBindTexture(GL_TEXTURE_2D, textureName.get(0));
         gl.glEnable(GL.GL_TEXTURE_2D);
@@ -142,10 +144,6 @@ public class DrawMap {
         gl.glBindTexture(GL_TEXTURE_2D, 0);
 
         // Draw river
-        // The river's course
-        double points[][] = {{width*0.9 , height*0.1},
-                             {width*0.5 , height*0.4},
-                             {width*0.05, height*0.9}};
         double elapsed = System.currentTimeMillis()-start_time;
         int current_frame_index = Math.min(data_points.length-1,
                                            (int)(elapsed/ms_per_day));
@@ -154,12 +152,19 @@ public class DrawMap {
         double depths[] = data_points[current_frame_index];
         double next_depths[] = data_points[Math.min(current_frame_index+1,data_points.length-1)];
                 
+        // The river's course
+        int course[][] = {{298, 2}, {291, 7}, {284, 10}, {281, 17}, {278, 24}, {277, 33}, {275, 40}, {273, 48}, {270, 56}, {264, 62}, {258, 66}, {252, 70}, {246, 74}, {237, 75}, {228, 76}, {222, 81}, {217, 87}, {213, 93}, {209, 100}, {204, 105}, {198, 109}, {193, 114}, {189, 120}, {183, 127}, {178, 133}, {172, 137}, {165, 140}, {159, 145}, {154, 150}, {150, 157}, {148, 165}, {145, 173}, {141, 180}, {138, 188}, {134, 196}, {129, 202}, {125, 209}, {120, 216}, {114, 222}, {109, 227}, {102, 230}, {94, 233}, {87, 236}, {81, 240}, {74, 243}, {68, 247}, {61, 250}, {56, 255}, {52, 261}, {47, 267}, {41, 271}, {35, 276}, {28, 279}, {23, 284}, {19, 290}, {17, 299}, {16, 308}, {14, 317}, {8, 322}, {4, 328}, {5, 337}, {9, 343}, {9, 344}, {9, 345}, {9, 346}, {9, 347}, {9, 348}, {9, 349}, {9, 350}};
+
         gl.glLineWidth(20);
         gl.glBegin(GL2.GL_LINE_STRIP);
-        for(int i=0; i<points.length; ++i) {
-            double shade=(1-tween)*depths[i] + tween*next_depths[i];
-            gl.glColor3d(shade,shade,1);
-            gl.glVertex2d(points[i][0],points[i][1]);
+        for(int i=0; i<course.length; ++i) {
+            int station=(int)Math.floor(3*(double)i/course.length);
+            double shade=(1-tween)*depths[station] + tween*next_depths[station];
+            double redgreen=Math.max(0,1.75*shade-1);
+            double blue=shade*2;
+            gl.glColor3d(redgreen,redgreen,blue);
+            gl.glVertex2d(width*(course[i][0])/textureWidth,
+                          height*(course[i][1])/textureHeight);
         }
         gl.glEnd();
     }
