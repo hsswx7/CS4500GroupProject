@@ -135,8 +135,8 @@ public class DrawMap {
         gl.glColor3f(1, 1, 1);
         gl.glBegin(GL2.GL_POLYGON);
         gl.glTexCoord2f(0,0); gl.glVertex2f(0, 0);
-        gl.glTexCoord2f(1,0); gl.glVertex2f(height/aspect, 0);
-        gl.glTexCoord2f(1,1); gl.glVertex2f(height/aspect, height);
+        gl.glTexCoord2f(1,0); gl.glVertex2f(width, 0);
+        gl.glTexCoord2f(1,1); gl.glVertex2f(width, height);
         gl.glTexCoord2f(0,1); gl.glVertex2f(0, height);
         gl.glEnd();
         gl.glBindTexture(GL_TEXTURE_2D, 0);
