@@ -49,7 +49,6 @@ import java.nio.ShortBuffer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import java.util.concurrent.ThreadLocalRandom;
 
 public class DrawMap {
     private double ms_per_day = 1000; // How many ms to spend on each day's data point
@@ -59,19 +58,19 @@ public class DrawMap {
     
     private IntBuffer textureName = GLBuffers.newDirectIntBuffer(1);
     private TextureData mapTexture;
+
+    // Public API
     public DrawMap() {
-        data_points = new double[365][3];
-        for(int i=0; i<data_points.length; ++i)
-            for(int s=0; s<3; ++s)
-                // Make up a random depth for each day and station
-                data_points[i][s]=ThreadLocalRandom.current().nextDouble(5, 25)/25;
-        play();
+        data_points = new double[][]{{15,15,15}};
     }
     public void play() {
         start_time=System.currentTimeMillis();
         now_playing=true;
     }
     public void stop() { now_playing=false; }
+    public void setDataPoints(double new_data[][]) { data_points=new_data; }
+
+        
     protected void setup(GL2 gl, int width, int height) {
         gl.glMatrixMode(GL2.GL_PROJECTION);
         gl.glLoadIdentity();

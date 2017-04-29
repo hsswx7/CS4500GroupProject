@@ -44,6 +44,7 @@ import com.jogamp.opengl.GLCapabilities;
 import com.jogamp.opengl.awt.GLJPanel;
 import com.jogamp.opengl.util.Animator;
 import javax.swing.JFrame;
+import java.util.concurrent.ThreadLocalRandom;
 
 
 /**
@@ -198,6 +199,13 @@ public class Model extends JSplitPane {
                 GLJPanel gljpanel = new GLJPanel(new GLCapabilities(GLProfile.getDefault()));
                 gljpanel.setPreferredSize(new Dimension(400,400));
                 final DrawMap dm = new DrawMap();
+                // Make up a random depth for each day and station
+                double data_points[][] = new double[365][3];
+                for(int i=0; i<data_points.length; ++i)
+                    for(int s=0; s<3; ++s)
+                        data_points[i][s]=ThreadLocalRandom.current().nextDouble(5, 25)/25;
+
+                dm.setDataPoints(data_points);
                 final Animator a = new Animator();
                 a.add(gljpanel);
                 a.start();
@@ -221,7 +229,8 @@ public class Model extends JSplitPane {
                         }
                     });
 		panel.add(gljpanel);
-
+                dm.play();
+                
 		/***************** Setting The Panels ***************************/
 		this.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
 		this.setDividerLocation(250 % mainWindow.getWidth());
