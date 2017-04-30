@@ -74,7 +74,7 @@ public class MainWindow extends JFrame {
 		this.setQuitOnWindowClosing();
 		this.setTitle(TITLE);
 		this.setIconImage(new ImageIcon(
-				Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/Luyten.png"))).getImage());
+				Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/kidney.png"))).getImage());
 
 		JPanel panel1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
 		label = new JLabel();
@@ -116,6 +116,7 @@ public class MainWindow extends JFrame {
 				return location;
 			}
 		};
+		
 		spt.setBorder(new BevelBorder(BevelBorder.LOWERED));
 		spt.setPreferredSize(new Dimension(this.getWidth(), 24));
 		this.add(spt, BorderLayout.SOUTH);
