@@ -140,7 +140,7 @@ public class Model extends JSplitPane {
 			}
 		});
 		
-		leftMainPanel.add(uploadFileButton);
+		//leftMainPanel.add(uploadFileButton);
 		
 		/*********************** Upload Panel for Files Names ****************/
 		JPanel uploadFileLeftPanel = new JPanel();
@@ -155,6 +155,7 @@ public class Model extends JSplitPane {
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new BoxLayout(buttonPanel, 0));
 		buttonPanel.add(submitFileButton);
+		buttonPanel.add(uploadFileButton, 0);
 
 		leftMainPanel.add(uploadFileLeftPanel);
 		leftMainPanel.add(buttonPanel);
