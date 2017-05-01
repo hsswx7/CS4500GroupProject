@@ -145,7 +145,7 @@ public class Model extends JSplitPane {
 		/*********************** Upload Panel for Files Names ****************/
 		JPanel uploadFileLeftPanel = new JPanel();
 		uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel,1));
-		uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"),0);
+		uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
 		uploadFileLeftPanel.add(listScrollPane);
 
 		
@@ -293,6 +293,11 @@ public class Model extends JSplitPane {
 			submitButtonAccess(false);
 		}
 	}
+
+	public void onFileParsingError(){
+	    filesSubmitted = false;
+	    submitButtonAccess(true);
+    }
 
 	public void showLegal(String legalStr) {
 		show("Legal", legalStr);
