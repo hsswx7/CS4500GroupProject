@@ -224,7 +224,6 @@ public class Luyten {
 	// Shows an simple Error Dialog without Stack Trace 
 	public static void showErrorDialog(String message){
 		JOptionPane.showMessageDialog(null, message, "Error!", JOptionPane.ERROR_MESSAGE);
-		
 	}
 	
 	public static void showInformationDialog(String message){

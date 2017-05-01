@@ -56,7 +56,6 @@ public class MainWindow extends JFrame {
 	private UploadedFilesContainer uploadedFilesContainer;
 	// uploadedFiles will allow me to send the uploadedFilesContainer to file
 	// parsing
-	private UploadeFiles uploadeFiles;
 	public MainMenuBar mainMenuBar;
 
 	// Building The MainWindow
@@ -357,13 +356,15 @@ public class MainWindow extends JFrame {
 		// TODO TIM you can have your function start from here
 		// If files are uploaded
 		if (uploadedFilesContainer.getFileUploadSizeLeft() == 0) {
-			uploadeFiles = new UploadeFiles();
-			uploadeFiles.setUploadedFiles(uploadedFilesContainer);
+			DataExtractorLoop uploadeFiles = new DataExtractorLoop();
+			uploadeFiles.getData(uploadedFilesContainer);
 			model.submitButtonAccess(false);
 			return true;
 		}
 		return false;
 	}
+
+
 
 	// When opening the client this function Sets windows size to user's
 	// preference
