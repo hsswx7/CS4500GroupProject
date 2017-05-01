@@ -319,7 +319,7 @@ public class MainWindow extends JFrame {
 		}
 	}
 
-	// This functions sets the files in the uploadedfilesContainer after the
+	// This functions sets the files in the uploadedFilesContainer after the
 	// Models checks the files
 	public void onFileLoadEnded(File file, boolean isSuccess) {
 		// System.out.println("At main window with file : " +file.getName()+"

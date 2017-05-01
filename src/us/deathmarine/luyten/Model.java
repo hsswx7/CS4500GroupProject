@@ -76,8 +76,8 @@ public class Model extends JSplitPane {
 	private HashSet<OpenFile> hmap = new HashSet<OpenFile>();
 	private boolean open = false;
 
-	// filesSubbmited allows functions to check if the files have been submitted
-	private boolean filesSubbmited = false;
+	// filesSubmitted allows functions to check if the files have been submitted
+	private boolean filesSubmitted = false;
 	private State state;
 	private ConfigSaver configSaver;
 	private LuytenPreferences luytenPrefs;
@@ -268,7 +268,7 @@ public class Model extends JSplitPane {
 	// Deleting uploaded Files if the user has not submitted
 	private void deleteUploadedFiles() {
 		// If user has submitted then files will not be uploaded
-		if (filesSubbmited) {
+		if (filesSubmitted) {
 			return;
 		}
 		// If there's nothing in the JList or the User didn't Select
@@ -288,8 +288,8 @@ public class Model extends JSplitPane {
 	 * Asks the MainWindows to Check if files are ready to be Submits The files
 	 */
 	public void onSubmitButtonClicked() {
-		filesSubbmited = mainWindow.onSubmitFilesButtonClicked();
-		if (filesSubbmited) {
+		filesSubmitted = mainWindow.onSubmitFilesButtonClicked();
+		if (filesSubmitted) {
 			submitButtonAccess(false);
 		}
 	}
@@ -796,7 +796,7 @@ public class Model extends JSplitPane {
 		list.setVisibleRowCount(index);
 	}
 
-	// Enables or Disables submitFilebutton
+	// Enables or Disables submitFileButton
 	public void submitButtonAccess(Boolean access) {
 		submitFileButton.setEnabled(access);
 	}
@@ -826,21 +826,6 @@ public class Model extends JSplitPane {
 		return openedFile;
 	}
 
-	public String getCurrentTabTitle() {
-		String tabTitle = null;
-		try {
-			int pos = house.getSelectedIndex();
-			if (pos >= 0) {
-				tabTitle = house.getTitleAt(pos);
-			}
-		} catch (Exception e1) {
-			Luyten.showExceptionDialog("Exception!", e1);
-		}
-		if (tabTitle == null) {
-			getLabel().setText("No open tab");
-		}
-		return tabTitle;
-	}
 
 	public RSyntaxTextArea getCurrentTextArea() {
 		RSyntaxTextArea currentTextArea = null;
@@ -889,41 +874,6 @@ public class Model extends JSplitPane {
 		}.start();
 	}
 
-	public void navigateTo(final String uniqueStr) {
-		new Thread(new Runnable() {
-			@Override
-			public void run() {
-				if (uniqueStr == null)
-					return;
-				String[] linkParts = uniqueStr.split("\\|");
-				if (linkParts.length <= 1)
-					return;
-				String destinationTypeStr = linkParts[1];
-				try {
-					bar.setVisible(true);
-					getLabel().setText("Navigating: " + destinationTypeStr.replaceAll("/", "."));
-
-					TypeReference type = metadataSystem.lookupType(destinationTypeStr);
-					if (type == null)
-						throw new RuntimeException("Cannot lookup type: " + destinationTypeStr);
-					TypeDefinition typeDef = type.resolve();
-					if (typeDef == null)
-						throw new RuntimeException("Cannot resolve type: " + destinationTypeStr);
-
-					String tabTitle = typeDef.getName() + ".class";
-					extractClassToTextPane(typeDef, tabTitle, destinationTypeStr, uniqueStr);
-
-					getLabel().setText("Complete");
-				} catch (Exception e) {
-					getLabel().setText("Cannot navigate: " + destinationTypeStr.replaceAll("/", "."));
-					Luyten.showExceptionDialog("Cannot Navigate!", e);
-				} finally {
-					bar.setVisible(false);
-				}
-			}
-		}).start();
-	}
-
 	public JLabel getLabel() {
 		return label;
 	}
@@ -932,8 +882,5 @@ public class Model extends JSplitPane {
 		this.label = label;
 	}
 
-	public State getState() {
-		return state;
-	}
 
 }
