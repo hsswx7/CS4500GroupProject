@@ -145,7 +145,7 @@ public class Model extends JSplitPane {
 		/*********************** Upload Panel for Files Names ****************/
 		JPanel uploadFileLeftPanel = new JPanel();
 		uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel,1));
-		uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
+		uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"),0);
 		uploadFileLeftPanel.add(listScrollPane);
 
 		
