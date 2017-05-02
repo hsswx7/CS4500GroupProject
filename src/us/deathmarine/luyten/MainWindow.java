@@ -77,29 +77,28 @@ public class MainWindow extends JFrame {
 		this.setIconImage(new ImageIcon(
 				Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/kidney.png"))).getImage());
 
-		JPanel panel1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		label = new JLabel();
-		label.setHorizontalAlignment(JLabel.LEFT);
-		panel1.setBorder(new BevelBorder(BevelBorder.LOWERED));
-		panel1.setPreferredSize(new Dimension(this.getWidth() / 2, 20));
-		panel1.setBorder(BorderFactory.createTitledBorder("Panel 1 from MainWindows.java line 82"));
-		panel1.add(label);
-
-		JPanel panel2 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-		bar = new JProgressBar();
-
-		bar.setStringPainted(true);
-		bar.setOpaque(false);
-		bar.setVisible(false);
-		panel2.setPreferredSize(new Dimension(this.getWidth() / 3, 20));
-		panel2.setBorder(BorderFactory.createTitledBorder("Panel 2 from MainWindows.java line 91"));
-		panel2.add(bar);
+//		JPanel panel1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
+//		label = new JLabel();
+//		label.setHorizontalAlignment(JLabel.LEFT);
+//		panel1.setBorder(new BevelBorder(BevelBorder.LOWERED));
+//		panel1.setPreferredSize(new Dimension(this.getWidth() / 2, 20));
+//		panel1.setBorder(BorderFactory.createTitledBorder("Panel 1 from MainWindows.java line 82"));
+//		panel1.add(label);
+//
+//		JPanel panel2 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+//		bar = new JProgressBar();
+//
+//		bar.setStringPainted(true);
+//		bar.setOpaque(false);
+//		bar.setVisible(false);
+//		panel2.setPreferredSize(new Dimension(this.getWidth() / 3, 20));
+//		panel2.setBorder(BorderFactory.createTitledBorder("Panel 2 from MainWindows.java line 91"));
+//		panel2.add(bar);
 
 		model = new Model(this);
 		this.getContentPane().add(model);
-		// TODO the following line to change pane structure
 
-		JSplitPane spt = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, panel1, panel2) {
+		/*JSplitPane spt = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, panel1, panel2) {
 			private static final long serialVersionUID = 2189946972124687305L;
 			private final int location = 400;
 
@@ -116,11 +115,11 @@ public class MainWindow extends JFrame {
 			public int getLastDividerLocation() {
 				return location;
 			}
-		};
+		};*/
 		
-		spt.setBorder(new BevelBorder(BevelBorder.LOWERED));
+		/*spt.setBorder(new BevelBorder(BevelBorder.LOWERED));
 		spt.setPreferredSize(new Dimension(this.getWidth(), 24));
-		this.add(spt, BorderLayout.SOUTH);
+		this.add(spt, BorderLayout.SOUTH);*/
 		if (fileFromCommandLine != null) {
 			model.checkFileSelected(fileFromCommandLine);
 		}
