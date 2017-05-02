@@ -51,7 +51,7 @@ import java.util.logging.Logger;
 
 
 public class DrawMap {
-    private double ms_per_day = 1000; // How many ms to spend on each day's data point
+    private double ms_per_day = 100; // How many ms to spend on each day's data point
     private double data_points[][]; // River depth measurements--first axis is the time of the measurement, second axis has an entry for each sample location.
     private double start_time = 0; // The time we began playing the animation
     private boolean now_playing = true; // Playing or paused.
@@ -158,7 +158,7 @@ public class DrawMap {
         gl.glBegin(GL2.GL_LINE_STRIP);
         for(int i=0; i<course.length; ++i) {
             int station=(int)Math.floor(3*(double)i/course.length);
-            double shade=(1-tween)*depths[station] + tween*next_depths[station];
+            double shade=((1-tween)*depths[station] + tween*next_depths[station])/30;
             double redgreen=Math.max(0,1.75*shade-1);
             double blue=shade*2;
             gl.glColor3d(redgreen,redgreen,blue);

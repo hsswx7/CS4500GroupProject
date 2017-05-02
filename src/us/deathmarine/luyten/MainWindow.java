@@ -357,8 +357,9 @@ public class MainWindow extends JFrame {
 		// If files are uploaded
 		if (uploadedFilesContainer.getFileUploadSizeLeft() == 0) {
 			DataExtractorLoop uploadeFiles = new DataExtractorLoop();
-			uploadeFiles.getData(uploadedFilesContainer);
+			float[][] data = uploadeFiles.getData(uploadedFilesContainer);
 			model.submitButtonAccess(false);
+			model.submitData(data);
 			return true;
 		}
 		return false;

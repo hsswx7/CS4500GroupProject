@@ -49,7 +49,7 @@ public class DataExtractorLoop {
     }
 
 
-    public void getData(UploadedFilesContainer filesUploaded) {
+    public float[][] getData(UploadedFilesContainer filesUploaded) {
         //location of files
         ArrayList<File> Files = filesUploaded.getAllFiles();
         boolean yearsValid = checkYears(filesUploaded);
@@ -58,7 +58,7 @@ public class DataExtractorLoop {
         if (yearsValid && stationValid ) {
             //try and open file, if file does not exist then throw exception
             try {
-                Float riverData[][] = new Float[365][3];//store riverHeight values for each substation.
+                float riverData[][] = new float[365][3];//store riverHeight values for each substation.
                 for (File file : Files) {
 
                     BufferedReader buf = new BufferedReader(new FileReader(file));
@@ -128,16 +128,16 @@ public class DataExtractorLoop {
                         }
                     }
 
-                    for (int i = 0; i < 3; i++) {
-                        Float x = riverData[i][2];
-                        System.out.println(x);
-                    }
+   
 
 
                     buf.close();
 
                     //TODO Send 2D array to Paul's Function hopefully he has a function
+                    
                 }
+                
+                return riverData;
             } catch (Exception e) {
                 // TODO Auto-generated catch block
                 e.printStackTrace();
@@ -155,6 +155,7 @@ public class DataExtractorLoop {
             }
             Luyten.showErrorDialog(errorString.toString());
         }
+		return null;
     }
 
 }

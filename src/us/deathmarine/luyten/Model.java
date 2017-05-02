@@ -51,6 +51,7 @@ import java.util.concurrent.ThreadLocalRandom;
  * Jar-level model
  */
 public class Model extends JSplitPane {
+	final DrawMap dm = new DrawMap();
 	private static final long serialVersionUID = 6896857630400910200L;
 
 	private static final long MAX_JAR_FILE_SIZE_BYTES = 1_000_000_000;
@@ -200,14 +201,9 @@ public class Model extends JSplitPane {
 
                 GLJPanel gljpanel = new GLJPanel(new GLCapabilities(GLProfile.getDefault()));
                 gljpanel.setPreferredSize(new Dimension(400,400));
-                final DrawMap dm = new DrawMap();
-                // Make up a random depth for each day and station
-                double data_points[][] = new double[365][3];
-                for(int i=0; i<data_points.length; ++i)
-                    for(int s=0; s<3; ++s)
-                        data_points[i][s]=ThreadLocalRandom.current().nextDouble(5, 25)/25;
+                
 
-                dm.setDataPoints(data_points);
+                
                 final Animator a = new Animator();
                 a.add(gljpanel);
                 a.start();
@@ -231,7 +227,7 @@ public class Model extends JSplitPane {
                         }
                     });
 		panel.add(gljpanel);
-                dm.play();
+                
                
 		/***************** Setting The Panels ***************************/
 		this.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
@@ -885,6 +881,20 @@ public class Model extends JSplitPane {
 
 	public void setLabel(JLabel label) {
 		this.label = label;
+	}
+
+	public void submitData(float[][] data) {
+		double data2[][] = new double[data.length][data[0].length];
+		for (int i = 0; i < data.length; i++){
+			for (int j = 0; j < data[i].length; j++){
+				data2[i][j]=(double)data[i][j];
+			}
+		}
+//		for (int index = 0; index < 3){
+//			System.out.print();
+//		}
+		dm.setDataPoints(data2);
+		dm.play();
 	}
 
 
