@@ -77,49 +77,9 @@ public class MainWindow extends JFrame {
 		this.setIconImage(new ImageIcon(
 				Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/kidney.png"))).getImage());
 
-//		JPanel panel1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-//		label = new JLabel();
-//		label.setHorizontalAlignment(JLabel.LEFT);
-//		panel1.setBorder(new BevelBorder(BevelBorder.LOWERED));
-//		panel1.setPreferredSize(new Dimension(this.getWidth() / 2, 20));
-//		panel1.setBorder(BorderFactory.createTitledBorder("Panel 1 from MainWindows.java line 82"));
-//		panel1.add(label);
-//
-//		JPanel panel2 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-//		bar = new JProgressBar();
-//
-//		bar.setStringPainted(true);
-//		bar.setOpaque(false);
-//		bar.setVisible(false);
-//		panel2.setPreferredSize(new Dimension(this.getWidth() / 3, 20));
-//		panel2.setBorder(BorderFactory.createTitledBorder("Panel 2 from MainWindows.java line 91"));
-//		panel2.add(bar);
-
 		model = new Model(this);
 		this.getContentPane().add(model);
 
-		/*JSplitPane spt = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, panel1, panel2) {
-			private static final long serialVersionUID = 2189946972124687305L;
-			private final int location = 400;
-
-			{
-				setDividerLocation(location);
-			}
-
-			@Override
-			public int getDividerLocation() {
-				return location;
-			}
-
-			@Override
-			public int getLastDividerLocation() {
-				return location;
-			}
-		};*/
-		
-		/*spt.setBorder(new BevelBorder(BevelBorder.LOWERED));
-		spt.setPreferredSize(new Dimension(this.getWidth(), 24));
-		this.add(spt, BorderLayout.SOUTH);*/
 		if (fileFromCommandLine != null) {
 			model.checkFileSelected(fileFromCommandLine);
 		}
@@ -310,9 +270,9 @@ public class MainWindow extends JFrame {
 		this.getModel().changeTheme(luytenPrefs.getThemeXml());
 	}
 
-	public void onSettingsChanged() {
-		this.getModel().updateOpenClasses();
-	}
+//	public void onSettingsChanged() {
+//		this.getModel().updateOpenClasses();
+//	}
 
 	public void onFileDropped(File file) {
 		if (file != null) {
@@ -328,7 +288,7 @@ public class MainWindow extends JFrame {
 		try {
 			if (file != null && isSuccess) {
 				uploadedFilesContainer.add(file);
-				this.setTitle(TITLE + " - " + file.getName());
+				//this.setTitle(TITLE + " - " + file.getName());
 				if (uploadedFilesContainer.getFileUploadSizeLeft() == 0) {
 					model.submitButtonAccess(true);
 				}

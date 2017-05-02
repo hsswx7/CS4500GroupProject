@@ -54,7 +54,7 @@ public class Model extends JSplitPane {
     private DecompilationOptions decompilationOptions;
     private Theme theme;
     private MainWindow mainWindow;
-    private JProgressBar bar;
+//    private JProgressBar bar;
     private JLabel label;
     private HashSet<OpenFile> hmap = new HashSet<OpenFile>();
     private boolean open = false;
@@ -68,7 +68,7 @@ public class Model extends JSplitPane {
     // Building Panes for the MainWindow
     public Model(final MainWindow mainWindow) {
         this.mainWindow = mainWindow;
-        this.bar = mainWindow.getBar();
+        //this.bar = mainWindow.getBar();
         this.setLabel(mainWindow.getLabel());
 
         configSaver = ConfigSaver.getLoadedInstance();
@@ -79,8 +79,8 @@ public class Model extends JSplitPane {
         tree.setModel(new DefaultTreeModel(null));
         tree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
         tree.setCellRenderer(new CellRenderer());
-        TreeListener tl = new TreeListener();
-        tree.addMouseListener(tl);
+        //TreeListener tl = new TreeListener();
+        //tree.addMouseListener(tl);
         tree.addKeyListener(new KeyAdapter() {
 
             @Override
@@ -161,7 +161,7 @@ public class Model extends JSplitPane {
         leftMainPanel.add(panel3);
 
         // TODO REMOVE ALL TAB STUFF
-        house = new JTabbedPane();
+       /* house = new JTabbedPane();
         house.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
         house.addChangeListener(new TabChangeListener());
         house.addMouseListener(new MouseAdapter() {
@@ -171,7 +171,7 @@ public class Model extends JSplitPane {
                     closeOpenTab(house.getSelectedIndex());
                 }
             }
-        });
+        });*/
 
         /**************
          * Main Panel (This is where the Simulation Will GO)
@@ -326,276 +326,6 @@ public class Model extends JSplitPane {
             open.close();
     }
 
-    private class TreeListener extends MouseAdapter {
-        @Override
-        public void mousePressed(MouseEvent event) {
-            boolean isClickCountMatches = (event.getClickCount() == 1 && luytenPrefs.isSingleClickOpenEnabled())
-                    || (event.getClickCount() == 2 && !luytenPrefs.isSingleClickOpenEnabled());
-            if (!isClickCountMatches)
-                return;
-
-            if (!SwingUtilities.isLeftMouseButton(event))
-                return;
-
-            final TreePath trp = tree.getPathForLocation(event.getX(), event.getY());
-            if (trp == null)
-                return;
-
-            Object lastPathComponent = trp.getLastPathComponent();
-            boolean isLeaf = (lastPathComponent instanceof TreeNode && ((TreeNode) lastPathComponent).isLeaf());
-            if (!isLeaf)
-                return;
-
-            new Thread() {
-                public void run() {
-                    openEntryByTreePath(trp);
-                }
-            }.start();
-        }
-    }
-
-    public void openEntryByTreePath(TreePath trp) {
-        String name = "";
-        String path = "";
-        try {
-            bar.setVisible(true);
-            if (trp.getPathCount() > 1) {
-                for (int i = 1; i < trp.getPathCount(); i++) {
-                    DefaultMutableTreeNode node = (DefaultMutableTreeNode) trp.getPathComponent(i);
-                    TreeNodeUserObject userObject = (TreeNodeUserObject) node.getUserObject();
-                    if (i == trp.getPathCount() - 1) {
-                        name = userObject.getOriginalName();
-                    } else {
-                        path = path + userObject.getOriginalName() + "/";
-                    }
-                }
-                path = path + name;
-
-                if (file.getName().endsWith(".jar") || file.getName().endsWith(".zip")) {
-                    if (state == null) {
-                        JarFile jfile = new JarFile(file);
-                        ITypeLoader jarLoader = new JarTypeLoader(jfile);
-
-                        typeLoader.getTypeLoaders().add(jarLoader);
-                        state = new State(file.getCanonicalPath(), file, jfile, jarLoader);
-                    }
-
-                    JarEntry entry = state.jarFile.getJarEntry(path);
-                    if (entry == null) {
-                        throw new FileEntryNotFoundException();
-                    }
-                    if (entry.getSize() > MAX_UNPACKED_FILE_SIZE_BYTES) {
-                        throw new TooLargeFileException(entry.getSize());
-                    }
-                    String entryName = entry.getName();
-                    if (entryName.endsWith(".class")) {
-                        getLabel().setText("Extracting: " + name);
-                        String internalName = StringUtilities.removeRight(entryName, ".class");
-                        TypeReference type = metadataSystem.lookupType(internalName);
-                        extractClassToTextPane(type, name, path, null);
-                    } else {
-                        getLabel().setText("Opening: " + name);
-                        try (InputStream in = state.jarFile.getInputStream(entry);) {
-                            extractSimpleFileEntryToTextPane(in, name, path);
-                        }
-                    }
-                }
-            } else {
-                name = file.getName();
-                path = file.getPath().replaceAll("\\\\", "/");
-                if (file.length() > MAX_UNPACKED_FILE_SIZE_BYTES) {
-                    throw new TooLargeFileException(file.length());
-                }
-                if (name.endsWith(".class")) {
-                    getLabel().setText("Extracting: " + name);
-                    TypeReference type = metadataSystem.lookupType(path);
-                    extractClassToTextPane(type, name, path, null);
-                } else {
-                    getLabel().setText("Opening: " + name);
-                    try (InputStream in = new FileInputStream(file);) {
-                        extractSimpleFileEntryToTextPane(in, name, path);
-                    }
-                }
-            }
-
-            getLabel().setText("Complete");
-        } catch (FileEntryNotFoundException e) {
-            getLabel().setText("File not found: " + name);
-        } catch (FileIsBinaryException e) {
-            getLabel().setText("Binary resource: " + name);
-        } catch (TooLargeFileException e) {
-            getLabel().setText("File is too large: " + name + " - size: " + e.getReadableFileSize());
-        } catch (Exception e) {
-            getLabel().setText("Cannot open: " + name);
-            Luyten.showExceptionDialog("Unable to open file!", e);
-        } finally {
-            bar.setVisible(false);
-        }
-    }
-
-    void extractClassToTextPane(TypeReference type, String tabTitle, String path, String navigatonLink)
-            throws Exception {
-        if (tabTitle == null || tabTitle.trim().length() < 1 || path == null) {
-            throw new FileEntryNotFoundException();
-        }
-        OpenFile sameTitledOpen = null;
-        for (OpenFile nextOpen : hmap) {
-            if (tabTitle.equals(nextOpen.name)) {
-                sameTitledOpen = nextOpen;
-                break;
-            }
-        }
-        if (sameTitledOpen != null && path.equals(sameTitledOpen.path) && type.equals(sameTitledOpen.getType())
-                && sameTitledOpen.isContentValid()) {
-            sameTitledOpen.setInitialNavigationLink(navigatonLink);
-            addOrSwitchToTab(sameTitledOpen);
-            return;
-        }
-
-        // resolve TypeDefinition
-        TypeDefinition resolvedType = null;
-        if (type == null || ((resolvedType = type.resolve()) == null)) {
-            throw new Exception("Unable to resolve type.");
-        }
-
-        // open tab, store type information, start decompilation
-        if (sameTitledOpen != null) {
-            sameTitledOpen.path = path;
-            sameTitledOpen.invalidateContent();
-            sameTitledOpen.setDecompilerReferences(metadataSystem, settings, decompilationOptions);
-            sameTitledOpen.setType(resolvedType);
-            sameTitledOpen.setInitialNavigationLink(navigatonLink);
-            sameTitledOpen.resetScrollPosition();
-            sameTitledOpen.decompile();
-            addOrSwitchToTab(sameTitledOpen);
-        } else {
-            OpenFile open = new OpenFile(tabTitle, path, theme, mainWindow);
-            open.setDecompilerReferences(metadataSystem, settings, decompilationOptions);
-            open.setType(resolvedType);
-            open.setInitialNavigationLink(navigatonLink);
-            open.decompile();
-            hmap.add(open);
-            addOrSwitchToTab(open);
-        }
-    }
-
-    public void extractSimpleFileEntryToTextPane(InputStream inputStream, String tabTitle, String path)
-            throws Exception {
-        if (inputStream == null || tabTitle == null || tabTitle.trim().length() < 1 || path == null) {
-            throw new FileEntryNotFoundException();
-        }
-        OpenFile sameTitledOpen = null;
-        for (OpenFile nextOpen : hmap) {
-            if (tabTitle.equals(nextOpen.name)) {
-                sameTitledOpen = nextOpen;
-                break;
-            }
-        }
-        if (sameTitledOpen != null && path.equals(sameTitledOpen.path)) {
-            addOrSwitchToTab(sameTitledOpen);
-            return;
-        }
-
-        // build tab content
-        StringBuilder sb = new StringBuilder();
-        long nonprintableCharactersCount = 0;
-        try (InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
-             BufferedReader reader = new BufferedReader(inputStreamReader);) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                sb.append(line).append("\n");
-
-                for (byte nextByte : line.getBytes()) {
-                    if (nextByte <= 0) {
-                        nonprintableCharactersCount++;
-                    }
-                }
-
-            }
-        }
-
-        // guess binary or text
-        String extension = "." + tabTitle.replaceAll("^[^\\.]*$", "").replaceAll("[^\\.]*\\.", "");
-        boolean isTextFile = (OpenFile.WELL_KNOWN_TEXT_FILE_EXTENSIONS.contains(extension)
-                || nonprintableCharactersCount < sb.length() / 5);
-        if (!isTextFile) {
-            throw new FileIsBinaryException();
-        }
-
-        // open tab
-        if (sameTitledOpen != null) {
-            sameTitledOpen.path = path;
-            sameTitledOpen.setDecompilerReferences(metadataSystem, settings, decompilationOptions);
-            sameTitledOpen.resetScrollPosition();
-            sameTitledOpen.setContent(sb.toString());
-            addOrSwitchToTab(sameTitledOpen);
-        } else {
-            OpenFile open = new OpenFile(tabTitle, path, theme, mainWindow);
-            open.setDecompilerReferences(metadataSystem, settings, decompilationOptions);
-            open.setContent(sb.toString());
-            hmap.add(open);
-            addOrSwitchToTab(open);
-        }
-    }
-
-    private class TabChangeListener implements ChangeListener {
-        @Override
-        public void stateChanged(ChangeEvent e) {
-            int selectedIndex = house.getSelectedIndex();
-            if (selectedIndex < 0) {
-                return;
-            }
-            for (OpenFile open : hmap) {
-                if (house.indexOfTab(open.name) == selectedIndex) {
-
-                    if (open.getType() != null && !open.isContentValid()) {
-                        updateOpenClass(open);
-                        break;
-                    }
-
-                }
-            }
-        }
-    }
-
-    public void updateOpenClasses() {
-        // invalidate all open classes (update will happen at tab change)
-        for (OpenFile open : hmap) {
-            if (open.getType() != null) {
-                open.invalidateContent();
-            }
-        }
-        // update the current open tab - if it is a class
-        for (OpenFile open : hmap) {
-            if (open.getType() != null && isTabInForeground(open)) {
-                updateOpenClass(open);
-                break;
-            }
-        }
-    }
-
-    private void updateOpenClass(final OpenFile open) {
-        if (open.getType() == null) {
-            return;
-        }
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    bar.setVisible(true);
-                    getLabel().setText("Extracting: " + open.name);
-                    open.invalidateContent();
-                    open.decompile();
-                    getLabel().setText("Complete");
-                } catch (Exception e) {
-                    getLabel().setText("Error, cannot update: " + open.name);
-                } finally {
-                    bar.setVisible(false);
-                }
-            }
-        }).start();
-    }
-
     private boolean isTabInForeground(OpenFile open) {
         String title = open.name;
         int selectedIndex = house.getSelectedIndex();
@@ -742,10 +472,6 @@ public class Model extends JSplitPane {
                     // Catching and Displaying Error to User
                 } catch (TooLargeFileException e) {
                     System.out.println("TooLargeFileException Called ");
-                    Luyten.showExceptionDialog("File: " + file.getName() + "  (Size:  " + file.length()
-                            + " ) too large. " + " Size Limit : " + MAX_JAR_FILE_SIZE_BYTES, e);
-                    Luyten.showErrorDialog("File: " + file.getName() + "  (Size:  " + file.length() + " ) too large. "
-                            + " Size Limit : " + MAX_JAR_FILE_SIZE_BYTES);
                     Luyten.showInformationDialog("File: " + file.getName() + "  (Size:  " + file.length()
                             + " ) too large. " + " Size Limit : " + MAX_JAR_FILE_SIZE_BYTES);
                     open = false;
@@ -756,7 +482,6 @@ public class Model extends JSplitPane {
                 } finally {
                     mainWindow.onFileLoadEnded(file, open);
                     addFileUploadedToPane(file);
-                    bar.setVisible(false);
                 }
             }
 
