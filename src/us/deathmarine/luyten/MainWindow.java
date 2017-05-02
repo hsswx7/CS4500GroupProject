@@ -13,8 +13,10 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.BitSet;
 import java.util.Iterator;
 import java.util.Vector;
 
@@ -41,7 +43,7 @@ import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 5265556630724988013L;
 
-	private static final String TITLE = "Legrange Reach Research";
+	private static final String TITLE = "La Grange Reach";
 
 	public static Model model;
 	private JProgressBar bar;
@@ -56,7 +58,6 @@ public class MainWindow extends JFrame {
 	private UploadedFilesContainer uploadedFilesContainer;
 	// uploadedFiles will allow me to send the uploadedFilesContainer to file
 	// parsing
-	private UploadeFiles uploadeFiles;
 	public MainMenuBar mainMenuBar;
 
 	// Building The MainWindow
@@ -76,50 +77,9 @@ public class MainWindow extends JFrame {
 		this.setIconImage(new ImageIcon(
 				Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/kidney.png"))).getImage());
 
-		JPanel panel1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		label = new JLabel();
-		label.setHorizontalAlignment(JLabel.LEFT);
-		panel1.setBorder(new BevelBorder(BevelBorder.LOWERED));
-		panel1.setPreferredSize(new Dimension(this.getWidth() / 2, 20));
-		panel1.setBorder(BorderFactory.createTitledBorder("Panel 1 from MainWindows.java line 82"));
-		panel1.add(label);
-
-		JPanel panel2 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-		bar = new JProgressBar();
-
-		bar.setStringPainted(true);
-		bar.setOpaque(false);
-		bar.setVisible(false);
-		panel2.setPreferredSize(new Dimension(this.getWidth() / 3, 20));
-		panel2.setBorder(BorderFactory.createTitledBorder("Panel 2 from MainWindows.java line 91"));
-		panel2.add(bar);
-
 		model = new Model(this);
 		this.getContentPane().add(model);
-		// TODO the following line to change pane structure
 
-		JSplitPane spt = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, panel1, panel2) {
-			private static final long serialVersionUID = 2189946972124687305L;
-			private final int location = 400;
-
-			{
-				setDividerLocation(location);
-			}
-
-			@Override
-			public int getDividerLocation() {
-				return location;
-			}
-
-			@Override
-			public int getLastDividerLocation() {
-				return location;
-			}
-		};
-		
-		spt.setBorder(new BevelBorder(BevelBorder.LOWERED));
-		spt.setPreferredSize(new Dimension(this.getWidth(), 24));
-		this.add(spt, BorderLayout.SOUTH);
 		if (fileFromCommandLine != null) {
 			model.checkFileSelected(fileFromCommandLine);
 		}
@@ -310,9 +270,9 @@ public class MainWindow extends JFrame {
 		this.getModel().changeTheme(luytenPrefs.getThemeXml());
 	}
 
-	public void onSettingsChanged() {
-		this.getModel().updateOpenClasses();
-	}
+//	public void onSettingsChanged() {
+//		this.getModel().updateOpenClasses();
+//	}
 
 	public void onFileDropped(File file) {
 		if (file != null) {
@@ -320,7 +280,7 @@ public class MainWindow extends JFrame {
 		}
 	}
 
-	// This functions sets the files in the uploadedfilesContainer after the
+	// This functions sets the files in the uploadedFilesContainer after the
 	// Models checks the files
 	public void onFileLoadEnded(File file, boolean isSuccess) {
 		// System.out.println("At main window with file : " +file.getName()+"
@@ -328,7 +288,7 @@ public class MainWindow extends JFrame {
 		try {
 			if (file != null && isSuccess) {
 				uploadedFilesContainer.add(file);
-				this.setTitle(TITLE + " - " + file.getName());
+				//this.setTitle(TITLE + " - " + file.getName());
 				if (uploadedFilesContainer.getFileUploadSizeLeft() == 0) {
 					model.submitButtonAccess(true);
 				}
@@ -343,7 +303,6 @@ public class MainWindow extends JFrame {
 	// User clicks the button and this makes sure the user has correctly
 	// Uploaded the files
 	public boolean onSubmitFilesButtonClicked() {
-		System.out.println("Submit Files button Clicked");
 		// Checking if user has not files uploaded
 		if (uploadedFilesContainer == null
 				|| uploadedFilesContainer.getFileUploadSizeLeft() == uploadedFilesContainer.getMaxFilesAllowed()) {
@@ -351,18 +310,65 @@ public class MainWindow extends JFrame {
 			return false;
 		} else if (uploadedFilesContainer.getFileUploadSizeLeft() > 0) {
 			Luyten.showErrorDialog("Please Upload " + uploadedFilesContainer.getFileUploadSizeLeft() + " more Files");
-			return true;
+			return false;
 		}
 
-		// TODO TIM you can have your function start from here
+		// checking Station's to make sure the files are from three different stations 
+		if(!checkStationName(uploadedFilesContainer)){
+			Luyten.showErrorDialog("Please Upload Files from the three different Stations");
+			return false;
+		}
+
+		// checking the year of the uploaded Files
+		if(!checkYearOfUploadedFiles(uploadedFilesContainer)){
+		    Luyten.showErrorDialog("Uploaded Files are not from the same year");
+		    return false;
+        }
+		
+		
+		
 		// If files are uploaded
 		if (uploadedFilesContainer.getFileUploadSizeLeft() == 0) {
-			uploadeFiles = new UploadeFiles();
-			uploadeFiles.setUploadedFiles(uploadedFilesContainer);
+			DataExtractorLoop uploadeFiles = new DataExtractorLoop();
+			uploadeFiles.getData(uploadedFilesContainer);
 			model.submitButtonAccess(false);
 			return true;
 		}
 		return false;
+	}
+	
+	//Checking if uploaded files are three different stations 
+    private boolean checkStationName(UploadedFilesContainer filesContainer) {
+        int bitSize = filesContainer.getMaxFilesAllowed();
+        BitSet bitSet = new BitSet(bitSize);
+        bitSet.set(0, bitSize);
+        // the bits are all true and if three unique stations are found then bits are set to false maing is length 0
+        for (File file : filesContainer.getAllFiles()){
+            try {
+                BufferedReader buf = new BufferedReader(new FileReader(file.getAbsolutePath()));
+                String lineFetched = null;
+                lineFetched = buf.readLine();//make sure a valid file is uploaded.
+
+                if (lineFetched.contains("Peoria")) {
+                    bitSet.set(0,false);
+                } else if (lineFetched.contains("Havana")) {
+                    bitSet.set(1,false);
+                } else if (lineFetched.contains("Beardstown")) {
+                    bitSet.set(2,false);
+                }
+
+            }catch (Exception e){
+                Luyten.showExceptionDialog("checkStationName", e);
+            }
+        }
+
+        // if length is not zero this means one of the stations is not included 
+        return (bitSet.length() == 0); //if it's == 0 then true is returned else false
+    }
+
+    //Checking if the uploaded files are from the same year - true if same year | false if not
+    private boolean checkYearOfUploadedFiles(UploadedFilesContainer filesContainer){
+		return true;
 	}
 
 	// When opening the client this function Sets windows size to user's

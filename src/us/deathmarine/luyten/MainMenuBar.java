@@ -117,6 +117,7 @@ public class MainMenuBar extends JMenuBar {
 				try {
 					// build menu later
 					buildFileMenu(fileMenu);
+                    updateRecentFiles();
 					refreshMenuPopup(fileMenu);
 
 					
@@ -138,9 +139,6 @@ public class MainMenuBar extends JMenuBar {
 
 					buildHelpMenu(helpMenu);
 					refreshMenuPopup(helpMenu);
-
-					//Don't Remove RecentFiles///
-					updateRecentFiles();
 				} catch (Exception e) {
 					Luyten.showExceptionDialog("Exception!", e);
 				}
