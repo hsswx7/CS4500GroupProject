@@ -159,7 +159,7 @@ public class OpenFile implements SyntaxConstants {
 		pop.add(item);
 		textArea.setPopupMenu(pop);
 
-		theme.apply(textArea);
+		//theme.apply(textArea);
 
 		scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
 		final JScrollBar verticalScrollbar = scrollPane.getVerticalScrollBar();
@@ -656,7 +656,7 @@ public class OpenFile implements SyntaxConstants {
 		if (isLocallyNavigable(clickedReferenceUniqueStr)) {
 			onLocalNavigationRequest(clickedReferenceUniqueStr);
 		} else if (linkProvider.isLinkNavigable(clickedReferenceUniqueStr)) {
-			onOutboundNavigationRequest(clickedReferenceUniqueStr);
+			//onOutboundNavigationRequest(clickedReferenceUniqueStr);
 		} else {
 			JLabel label = this.mainWindow.getLabel();
 			if (label == null)
@@ -729,9 +729,9 @@ public class OpenFile implements SyntaxConstants {
 		});
 	}
 
-	private void onOutboundNavigationRequest(String uniqueStr) {
+	/*private void onOutboundNavigationRequest(String uniqueStr) {
 		mainWindow.onNavigationRequest(uniqueStr);
-	}
+	}*/
 
 	public void setDecompilerReferences(MetadataSystem metadataSystem, DecompilerSettings settings,
 			DecompilationOptions decompilationOptions) {

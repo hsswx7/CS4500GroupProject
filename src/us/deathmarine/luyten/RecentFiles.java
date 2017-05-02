@@ -4,7 +4,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.prefs.Preferences;
 
-//TODO Remove
 //This file provides the list of files that have recently been opened
 
 public class RecentFiles {
@@ -57,10 +56,10 @@ public class RecentFiles {
 		for (int i = 0; i < paths.size(); i++) {
 			if (i != 0) sb.append(',');
 			
-			/*if (!new File(paths.get(i)).exists()) {
+			if (!new File(paths.get(i)).exists()) {
 				paths.remove(i);
 				continue;
-			}*/
+			}
 			sb.append("\"").append(paths.get(i)).append("\"");
 		}
 		

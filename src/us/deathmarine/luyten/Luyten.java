@@ -75,7 +75,7 @@ public class Luyten {
 		if (mainWindow != null) {
 			synchronized (pendingFiles) {
 				for (File f : pendingFiles) {
-					mainWindow.getModel().loadFile(f);
+					mainWindow.getModel().checkFileSelected(f);
 				}
 				pendingFiles.clear();
 			}
@@ -220,4 +220,14 @@ public class Luyten {
 		pane.add(link);
 		JOptionPane.showMessageDialog(null, pane, "Error!", JOptionPane.ERROR_MESSAGE);
 	}
+	
+	// Shows an simple Error Dialog without Stack Trace 
+	public static void showErrorDialog(String message){
+		JOptionPane.showMessageDialog(null, message, "Error!", JOptionPane.ERROR_MESSAGE);
+	}
+	
+	public static void showInformationDialog(String message){
+		JOptionPane.showMessageDialog(null, message, "Success", JOptionPane.INFORMATION_MESSAGE);
+	}
+	
 }

@@ -1,6 +1,6 @@
 package us.deathmarine.luyten;
 
-import java.awt.event.ActionEvent;
+/*import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -37,14 +37,15 @@ import com.strobel.core.StringUtilities;
 import com.strobel.decompiler.DecompilationOptions;
 import com.strobel.decompiler.DecompilerSettings;
 import com.strobel.decompiler.PlainTextOutput;
-import com.strobel.decompiler.languages.java.JavaFormattingOptions;
+import com.strobel.decompiler.languages.java.JavaFormattingOptions; */
 
 /**
  * Performs Save and Save All
+ * This Can be Removed 
  */
 public class FileSaver {
 
-	private JProgressBar bar;
+	/*private JProgressBar bar;
 	private JLabel label;
 	private boolean cancel;
 	private boolean extracting;
@@ -331,4 +332,5 @@ public class FileSaver {
 		sb.append("Min(s): ").append(min).append(" Sec: ").append(sec);
 		return sb.toString();
 	}
+	*/
 }

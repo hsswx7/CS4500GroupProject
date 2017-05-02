@@ -13,13 +13,16 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.BitSet;
 import java.util.Iterator;
 import java.util.Vector;
 
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
@@ -32,9 +35,7 @@ import javax.swing.border.BevelBorder;
 
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 
-
 //TODO In-Progress
-
 
 /**
  * Dispatcher
@@ -42,7 +43,7 @@ import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 5265556630724988013L;
 
-	private static final String TITLE = "Luyten";
+	private static final String TITLE = "La Grange Reach";
 
 	public static Model model;
 	private JProgressBar bar;
@@ -53,14 +54,18 @@ public class MainWindow extends JFrame {
 	private WindowPosition windowPosition;
 	private LuytenPreferences luytenPrefs;
 	private FileDialog fileDialog;
-	private FileSaver fileSaver;
+	// UploaodedFilesContainer will store all files Uploaded by the user
+	private UploadedFilesContainer uploadedFilesContainer;
+	// uploadedFiles will allow me to send the uploadedFilesContainer to file
+	// parsing
 	public MainMenuBar mainMenuBar;
 
+	// Building The MainWindow
 	public MainWindow(File fileFromCommandLine) {
 		configSaver = ConfigSaver.getLoadedInstance();
 		windowPosition = configSaver.getMainWindowPosition();
 		luytenPrefs = configSaver.getLuytenPreferences();
-		
+
 		mainMenuBar = new MainMenuBar(this);
 		this.setJMenuBar(mainMenuBar);
 
@@ -70,51 +75,13 @@ public class MainWindow extends JFrame {
 		this.setQuitOnWindowClosing();
 		this.setTitle(TITLE);
 		this.setIconImage(new ImageIcon(
-				Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/Luyten.png"))).getImage());
-
-		JPanel panel1 = new JPanel(new FlowLayout(FlowLayout.LEFT));
-		label = new JLabel();
-		label.setHorizontalAlignment(JLabel.LEFT);
-		panel1.setBorder(new BevelBorder(BevelBorder.LOWERED));
-		panel1.setPreferredSize(new Dimension(this.getWidth() / 2, 20));
-		panel1.add(label);
-
-		JPanel panel2 = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-		bar = new JProgressBar();
-
-		bar.setStringPainted(true);
-		bar.setOpaque(false);
-		bar.setVisible(false);
-		panel2.setPreferredSize(new Dimension(this.getWidth() / 3, 20));
-		panel2.add(bar);
+				Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/resources/kidney.png"))).getImage());
 
 		model = new Model(this);
 		this.getContentPane().add(model);
-		// TODO the following line to change pane structure
-		
-		JSplitPane spt = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, panel1, panel2) {
-			private static final long serialVersionUID = 2189946972124687305L;
-			private final int location = 400;
 
-			{
-				setDividerLocation(location);
-			}
-
-			@Override
-			public int getDividerLocation() {
-				return location;
-			}
-
-			@Override
-			public int getLastDividerLocation() {
-				return location;
-			}
-		};
-		spt.setBorder(new BevelBorder(BevelBorder.LOWERED));
-		spt.setPreferredSize(new Dimension(this.getWidth(), 24));
-		this.add(spt, BorderLayout.SOUTH);
 		if (fileFromCommandLine != null) {
-			model.loadFile(fileFromCommandLine);
+			model.checkFileSelected(fileFromCommandLine);
 		}
 
 		try {
@@ -126,7 +93,7 @@ public class MainWindow extends JFrame {
 		}
 
 		fileDialog = new FileDialog(this);
-		//fileSaver = new FileSaver(bar, label);
+		// fileSaver = new FileSaver(bar, label);
 
 		this.setExitOnEscWhenEnabled(model);
 
@@ -134,56 +101,56 @@ public class MainWindow extends JFrame {
 				|| fileFromCommandLine.getName().toLowerCase().endsWith(".zip")) {
 			model.startWarmUpThread();
 		}
-		
-		if(RecentFiles.load() > 0) mainMenuBar.updateRecentFiles();
+
+		if (RecentFiles.load() > 0)
+			mainMenuBar.updateRecentFiles();
 	}
 
+	// This is Where the file will go to once the user selects a file
 	public void onOpenFileMenu() {
+		if (checkIfFileUploadSizeReached()) {
+			return;
+		}
 		File selectedFile = fileDialog.doOpenDialog();
 		if (selectedFile != null) {
+
+			if (checkIfFileAlreadyAdded(selectedFile)) {
+				return;
+			}
+
 			System.out.println("[Open]: Opening " + selectedFile.getAbsolutePath());
-			
-			this.getModel().loadFile(selectedFile);
+
+			this.getModel().checkFileSelected(selectedFile);
 		}
 	}
 
-	public void onCloseFileMenu() {
-		this.getModel().closeFile();
+	// Checks if file upload size is reached
+	public boolean checkIfFileUploadSizeReached() {
+		if (uploadedFilesContainer == null) {
+			uploadedFilesContainer = new UploadedFilesContainer();
+		}
+
+		if (uploadedFilesContainer.getFileUploadSizeLeft() == 0) {
+			Luyten.showErrorDialog(
+					"File Upload Size Limit ( " + uploadedFilesContainer.getMaxFilesAllowed() + " ) Reached!");
+			return true;
+		}
+
+		return false;
 	}
 
-	public void onSaveAsMenu() {
-		RSyntaxTextArea pane = this.getModel().getCurrentTextArea();
-		if (pane == null)
-			return;
-		String tabTitle = this.getModel().getCurrentTabTitle();
-		if (tabTitle == null)
-			return;
-
-		String recommendedFileName = tabTitle.replace(".class", ".java");
-		File selectedFile = fileDialog.doSaveDialog(recommendedFileName);
-		if (selectedFile != null) {
-			fileSaver.saveText(pane.getText(), selectedFile);
+	// Checks if user has already selected the file
+	public boolean checkIfFileAlreadyAdded(File file) {
+		if (uploadedFilesContainer.checkIfFileAlreadyAdded(file)) {
+			Luyten.showErrorDialog("File : " + file.getName() + " already chosen.");
+			return true;
 		}
+		return false;
 	}
 
-	public void onSaveAllMenu() {
-		File openedFile = this.getModel().getOpenedFile();
-		if (openedFile == null)
-			return;
-
-		String fileName = openedFile.getName();
-		if (fileName.endsWith(".class")) {
-			fileName = fileName.replace(".class", ".java");
-		} else if (fileName.toLowerCase().endsWith(".jar")) {
-			fileName = "decompiled-" + fileName.replaceAll("\\.[jJ][aA][rR]", ".zip");
-		} else {
-			fileName = "saved-" + fileName;
-		}
-
-		File selectedFileToSave = fileDialog.doSaveAllDialog(fileName);
-		if (selectedFileToSave != null) {
-			fileSaver.saveAllDecompiled(openedFile, selectedFileToSave);
-		}
+	public void removeFile(String fileName) {
+		System.out.println("Removing File " + fileName);
+		uploadedFilesContainer.removeFile(fileName);
 	}
 
 	public void onExitMenu() {
@@ -303,24 +270,28 @@ public class MainWindow extends JFrame {
 		this.getModel().changeTheme(luytenPrefs.getThemeXml());
 	}
 
-	public void onSettingsChanged() {
-		this.getModel().updateOpenClasses();
-	}
-
-	public void onTreeSettingsChanged() {
-		this.getModel().updateTree();
-	}
+//	public void onSettingsChanged() {
+//		this.getModel().updateOpenClasses();
+//	}
 
 	public void onFileDropped(File file) {
 		if (file != null) {
-			this.getModel().loadFile(file);
+			this.getModel().checkFileSelected(file);
 		}
 	}
 
+	// This functions sets the files in the uploadedFilesContainer after the
+	// Models checks the files
 	public void onFileLoadEnded(File file, boolean isSuccess) {
+		// System.out.println("At main window with file : " +file.getName()+"
+		// isSuccess : " + isSuccess);
 		try {
 			if (file != null && isSuccess) {
-				this.setTitle(TITLE + " - " + file.getName());
+				uploadedFilesContainer.add(file);
+				//this.setTitle(TITLE + " - " + file.getName());
+				if (uploadedFilesContainer.getFileUploadSizeLeft() == 0) {
+					model.submitButtonAccess(true);
+				}
 			} else {
 				this.setTitle(TITLE);
 			}
@@ -329,10 +300,79 @@ public class MainWindow extends JFrame {
 		}
 	}
 
-	public void onNavigationRequest(String uniqueStr) {
-		this.getModel().navigateTo(uniqueStr);
+	// User clicks the button and this makes sure the user has correctly
+	// Uploaded the files
+	public boolean onSubmitFilesButtonClicked() {
+		// Checking if user has not files uploaded
+		if (uploadedFilesContainer == null
+				|| uploadedFilesContainer.getFileUploadSizeLeft() == uploadedFilesContainer.getMaxFilesAllowed()) {
+			Luyten.showErrorDialog("No files Uploaded");
+			return false;
+		} else if (uploadedFilesContainer.getFileUploadSizeLeft() > 0) {
+			Luyten.showErrorDialog("Please Upload " + uploadedFilesContainer.getFileUploadSizeLeft() + " more Files");
+			return false;
+		}
+
+		// checking Station's to make sure the files are from three different stations 
+		if(!checkStationName(uploadedFilesContainer)){
+			Luyten.showErrorDialog("Please Upload Files from the three different Stations");
+			return false;
+		}
+
+		// checking the year of the uploaded Files
+		if(!checkYearOfUploadedFiles(uploadedFilesContainer)){
+		    Luyten.showErrorDialog("Uploaded Files are not from the same year");
+		    return false;
+        }
+		
+		
+		
+		// If files are uploaded
+		if (uploadedFilesContainer.getFileUploadSizeLeft() == 0) {
+			DataExtractorLoop uploadeFiles = new DataExtractorLoop();
+			uploadeFiles.getData(uploadedFilesContainer);
+			model.submitButtonAccess(false);
+			return true;
+		}
+		return false;
+	}
+	
+	//Checking if uploaded files are three different stations 
+    private boolean checkStationName(UploadedFilesContainer filesContainer) {
+        int bitSize = filesContainer.getMaxFilesAllowed();
+        BitSet bitSet = new BitSet(bitSize);
+        bitSet.set(0, bitSize);
+        // the bits are all true and if three unique stations are found then bits are set to false maing is length 0
+        for (File file : filesContainer.getAllFiles()){
+            try {
+                BufferedReader buf = new BufferedReader(new FileReader(file.getAbsolutePath()));
+                String lineFetched = null;
+                lineFetched = buf.readLine();//make sure a valid file is uploaded.
+
+                if (lineFetched.contains("Peoria")) {
+                    bitSet.set(0,false);
+                } else if (lineFetched.contains("Havana")) {
+                    bitSet.set(1,false);
+                } else if (lineFetched.contains("Beardstown")) {
+                    bitSet.set(2,false);
+                }
+
+            }catch (Exception e){
+                Luyten.showExceptionDialog("checkStationName", e);
+            }
+        }
+
+        // if length is not zero this means one of the stations is not included 
+        return (bitSet.length() == 0); //if it's == 0 then true is returned else false
+    }
+
+    //Checking if the uploaded files are from the same year - true if same year | false if not
+    private boolean checkYearOfUploadedFiles(UploadedFilesContainer filesContainer){
+		return true;
 	}
 
+	// When opening the client this function Sets windows size to user's
+	// preference
 	private void adjustWindowPositionBySavedState() {
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 		if (!windowPosition.isSavedWindowPositionValid()) {

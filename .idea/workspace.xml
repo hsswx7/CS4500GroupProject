@@ -1,0 +1,2083 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="252a06cc-d3e8-4576-a746-c2abce4bddd5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/MainMenuBar.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/MainMenuBar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java" />
+    </list>
+    <ignored path="$PROJECT_DIR$/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="luyten" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3058">
+              <caret line="327" column="0" lean-forward="false" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#Model#0" expanded="false" />
+                <element signature="method#Model#0;class#Model#0" expanded="false" />
+                <element signature="e#3034#3294#0" expanded="true" />
+                <element signature="e#3293#3294#0" expanded="true" />
+                <element signature="e#4537#4710#0" expanded="true" />
+                <element signature="e#4709#4710#0" expanded="true" />
+                <element signature="e#5682#5851#0" expanded="true" />
+                <element signature="e#5850#5851#0" expanded="true" />
+                <element signature="e#10579#10580#0" expanded="true" />
+                <element signature="e#10618#10619#0" expanded="true" />
+                <element signature="e#10940#11908#0" expanded="true" />
+                <element signature="e#11907#11908#0" expanded="true" />
+                <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+                <element signature="class#State#0;class#Model#0" expanded="false" />
+                <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+                <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+                <element signature="class#Tab#0;class#Model#0" expanded="false" />
+                <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+                <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+                <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+                <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+                <element signature="method#getChild#0;class#Model#0" expanded="false" />
+                <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+                <element signature="e#16352#16406#0" expanded="false" />
+                <element signature="e#18608#18609#0" expanded="true" />
+                <element signature="e#18659#18660#0" expanded="true" />
+                <marker date="1493737486650" expanded="false" signature="15744:15814" ph="(Runnable) () → {" />
+                <marker date="1493737486650" expanded="false" signature="18018:18034" ph="}" />
+                <marker date="1493737486650" expanded="false" signature="18148:18511" ph="{...}" />
+                <marker date="1493737486650" expanded="false" signature="18702:19110" ph="{...}" />
+                <marker date="1493737486650" expanded="false" signature="19144:19379" ph="{...}" />
+                <marker date="1493737486650" expanded="false" signature="19430:19980" ph="{...}" />
+                <marker date="1493737486650" expanded="false" signature="20018:21554" ph="{...}" />
+                <marker date="1493737486650" expanded="false" signature="20028:20074" ph="(Thread) run() → {" />
+                <marker date="1493737486650" expanded="false" signature="21524:21539" ph="}" />
+                <marker date="1493737486650" expanded="false" signature="21584:21595" ph=" { " />
+                <marker date="1493737486650" expanded="false" signature="21608:21614" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RecentFiles.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataExtractorLoop.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+              <folding>
+                <element signature="e#522#579#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UploadedFilesContainer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/UploadedFilesContainer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+              <folding>
+                <element signature="method#add#0;class#UploadedFilesContainer#0" expanded="false" />
+                <element signature="e#620#621#0" expanded="true" />
+                <element signature="e#672#673#0" expanded="true" />
+                <element signature="method#removeFile#1;class#UploadedFilesContainer#0" expanded="false" />
+                <element signature="method#checkIfFileAlreadyAdded#0;class#UploadedFilesContainer#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Luyten.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="4026">
+              <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="226" selection-end-column="5" />
+              <folding>
+                <element signature="e#1688#2000#0" expanded="false" />
+                <element signature="e#1999#2000#0" expanded="false" />
+                <element signature="e#4689#5431#0" expanded="false" />
+                <element signature="e#4938#5117#0" expanded="false" />
+                <element signature="e#5116#5117#0" expanded="false" />
+                <element signature="e#5430#5431#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JarEntryFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/JarEntryFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="132">
+              <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#367#368#0" expanded="false" />
+                <element signature="e#392#393#0" expanded="false" />
+                <element signature="e#887#895#0" expanded="false" />
+                <element signature="e#938#946#0" expanded="false" />
+                <element signature="e#1875#1876#0" expanded="false" />
+                <element signature="e#1894#1895#0" expanded="false" />
+                <element signature="e#1934#1935#0" expanded="false" />
+                <element signature="e#1959#1960#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="104" column="35" lean-forward="true" selection-start-line="104" selection-start-column="35" selection-end-line="104" selection-end-column="35" />
+              <folding>
+                <element signature="docComment;class#MainWindow#0" expanded="false" />
+                <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
+                <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
+                <marker date="1493743093735" expanded="false" signature="3263:3601" ph="{...}" />
+                <marker date="1493743093735" expanded="false" signature="3692:4021" ph="{...}" />
+                <marker date="1493743093735" expanded="false" signature="4123:4301" ph="{...}" />
+                <marker date="1493743093735" expanded="false" signature="4344:4446" ph="{...}" />
+                <marker date="1493743093735" expanded="false" signature="4473:4478" ph=" { " />
+                <marker date="1493743093735" expanded="false" signature="4485:4488" ph=" }" />
+                <marker date="1493743093735" expanded="false" signature="4521:4818" ph="{...}" />
+                <marker date="1493743093735" expanded="false" signature="4846:5114" ph="{...}" />
+                <marker date="1493743093735" expanded="false" signature="5145:5331" ph="{...}" />
+                <marker date="1493743093735" expanded="false" signature="5360:5667" ph="{...}" />
+                <marker date="1493743093735" expanded="false" signature="5364:5401" ph="(Thread) run() → {" />
+                <marker date="1493743093735" expanded="false" signature="5649:5655" ph="}" />
+                <marker date="1493743093735" expanded="false" signature="5704:6235" ph="{...}" />
+                <marker date="1493743093735" expanded="false" signature="6286:6879" ph="{...}" />
+                <marker date="1493743093735" expanded="false" signature="6911:7550" ph="{...}" />
+                <marker date="1493743093735" expanded="false" signature="7582:7587" ph=" { " />
+                <marker date="1493743093735" expanded="false" signature="7642:7645" ph=" }" />
+                <marker date="1493743093735" expanded="true" signature="7647:7729" ph="//..." />
+                <marker date="1493743093735" expanded="false" signature="7769:7843" ph="{...}" />
+                <marker date="1493743093735" expanded="true" signature="8006:8477" ph="{...}" />
+                <marker date="1493743093735" expanded="false" signature="8010:8112" ph="//..." />
+                <marker date="1493743093735" expanded="true" signature="8617:9794" ph="{...}" />
+                <marker date="1493743093735" expanded="true" signature="9933:11107" ph="{...}" />
+                <marker date="1493743093735" expanded="true" signature="11287:11291" ph=" { " />
+                <marker date="1493743093735" expanded="true" signature="11303:11306" ph=" }" />
+                <marker date="1493743093735" expanded="false" signature="12111:12202" ph="(ComponentAdapter) componentResized(e) → {" />
+                <marker date="1493743093735" expanded="false" signature="12614:12621" ph="}" />
+                <marker date="1493743093735" expanded="false" signature="12873:12957" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+                <marker date="1493743093735" expanded="false" signature="13048:13054" ph="}" />
+                <marker date="1493743093735" expanded="false" signature="13144:13228" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+                <marker date="1493743093735" expanded="false" signature="13328:13334" ph="}" />
+                <marker date="1493743093735" expanded="false" signature="13407:13492" ph="(WindowAdapter) windowClosing(e) → { " />
+                <marker date="1493743093735" expanded="false" signature="13499:13508" ph=" }" />
+                <marker date="1493743093735" expanded="false" signature="13536:13786" ph="{...}" />
+                <marker date="1493743093735" expanded="false" signature="14386:14391" ph=" { " />
+                <marker date="1493743093735" expanded="false" signature="14404:14407" ph=" }" />
+                <marker date="1493743093735" expanded="false" signature="14438:14443" ph=" { " />
+                <marker date="1493743093735" expanded="false" signature="14454:14457" ph=" }" />
+                <marker date="1493743093735" expanded="false" signature="14484:14489" ph=" { " />
+                <marker date="1493743093735" expanded="false" signature="14502:14505" ph=" }" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainMenuBar.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainMenuBar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="151">
+              <caret line="119" column="40" lean-forward="false" selection-start-line="119" selection-start-column="40" selection-end-line="119" selection-end-column="40" />
+              <folding>
+                <element signature="e#6268#6440#0" expanded="true" />
+                <element signature="e#6439#6440#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>JB</find>
+      <find>JBu</find>
+      <find>JBut</find>
+      <find>JButt</find>
+      <find>JButton</find>
+      <find>l</find>
+      <find>lef</find>
+      <find>left</find>
+      <find>left b</find>
+      <find>left bu</find>
+      <find>left but</find>
+      <find>left button</find>
+      <find>J</find>
+      <find>Jb</find>
+      <find>Jbu</find>
+      <find>Jbut</find>
+      <find>Jbutto</find>
+      <find>Jbutton</find>
+      <find>file.png</find>
+      <find>Luyten.png</find>
+      <find>public void getData(UploadedFilesContainer filesUploaded) {         //location of files         ArrayList&lt;File&gt; Files = filesUploaded.getAllFiles();         //boolean stationValid = checkStationName(filesUploaded);             //try and open file, if file does not exist then throw exception             try {                 Float riverData[][] = new Float[365][3];//store riverHeight values for each substation.                 for (File file : Files) {                      BufferedReader buf = new BufferedReader(new FileReader(file));                      String stationName = null;                     String lineFetched = null;                     String[] stringArray;                     String patternString = &quot;^\\d{1,2}\\.\\d{1,2}&quot;;// regular expression dates .*25.56*.                     Pattern pattern = Pattern.compile(patternString);//find multiple cases of patern                     int counter = 0;                       lineFetched = buf.readLine();//make sure a valid file is uploaded.                     if (!lineFetched.contains(&quot;Historic Data For Illinois River&quot;))                         throw new Exception(&quot;Not valid file&quot;);                     else {                          if (lineFetched.contains(&quot;Peoria&quot;)) {                             stationName = &quot;Peoria&quot;;//put in the proper order                         } else if (lineFetched.contains(&quot;Havana&quot;)) {                             stationName = &quot;Havana&quot;;                         } else if (lineFetched.contains(&quot;Beardstown&quot;)) {                             stationName = &quot;Beardstown&quot;;                         } else {                             Luyten.showErrorDialog(&quot;No known Station Name&quot;);                             throw new Exception(&quot;No known Station Name&quot;);                         }                     }                     //System.out.println(stationName);                       while (true) {                         lineFetched = buf.readLine();                         if (lineFetched == null) {                             break;                         } else {                               stringArray = lineFetched.split(&quot;\t&quot;);                               for (String each : stringArray) {</find>
+      <find>bar</find>
+      <find>Clear Recent</find>
+      <find>RecentFiles</find>
+      <find>Recent</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/FileDialog.java" />
+        <option value="/usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/javax/swing/JTabbedPane.class" />
+        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/CellRenderer.java" />
+        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/UploadeFiles.java" />
+        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java" />
+        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java" />
+        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java" />
+        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java" />
+        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java" />
+        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/MainMenuBar.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="width" value="1924" />
+    <option name="height" value="1038" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="luyten" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS4500GroupProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="luyten" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS4500GroupProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="luyten" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="luyten" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CS4500GroupProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
+    <property name="js.eslint.eslintPackage" value="" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="EXTRA_OPTIONS" value="" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+      <method />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Cold Fusion runner description" factoryName="Cold Fusion" custom_browser="" web_path="">
+      <method />
+    </configuration>
+    <configuration default="true" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="myFilePath" />
+      <option name="GLUE" />
+      <option name="myNameFilter" />
+      <option name="myGeneratedName" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlashRunConfigurationType" factoryName="Flash App">
+      <option name="BCName" value="" />
+      <option name="IOSSimulatorSdkPath" value="" />
+      <option name="adlOptions" value="" />
+      <option name="airProgramParameters" value="" />
+      <option name="appDescriptorForEmulator" value="Android" />
+      <option name="debugTransport" value="USB" />
+      <option name="debuggerSdkRaw" value="BC SDK" />
+      <option name="emulator" value="NexusOne" />
+      <option name="emulatorAdlOptions" value="" />
+      <option name="fastPackaging" value="true" />
+      <option name="fullScreenHeight" value="0" />
+      <option name="fullScreenWidth" value="0" />
+      <option name="launchUrl" value="false" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
+        </LauncherParameters>
+      </option>
+      <option name="mobileRunTarget" value="Emulator" />
+      <option name="moduleName" value="" />
+      <option name="overriddenMainClass" value="" />
+      <option name="overriddenOutputFileName" value="" />
+      <option name="overrideMainClass" value="false" />
+      <option name="runTrusted" value="true" />
+      <option name="screenDpi" value="0" />
+      <option name="screenHeight" value="0" />
+      <option name="screenWidth" value="0" />
+      <option name="url" value="http://" />
+      <option name="usbDebugPort" value="7936" />
+      <method />
+    </configuration>
+    <configuration default="true" type="FlexUnitRunConfigurationType" factoryName="FlexUnit" appDescriptorForEmulator="Android" class_name="" emulatorAdlOptions="" method_name="" package_name="" scope="Class">
+      <option name="BCName" value="" />
+      <option name="launcherParameters">
+        <LauncherParameters>
+          <option name="browser" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+          <option name="launcherType" value="OSDefault" />
+          <option name="newPlayerInstance" value="false" />
+          <option name="playerPath" value="/usr/bin/flashplayerdebugger" />
+        </LauncherParameters>
+      </option>
+      <option name="moduleName" value="" />
+      <option name="trusted" value="true" />
+      <method />
+    </configuration>
+    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <method />
+    </configuration>
+    <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="run-app" />
+      <setting name="passParentEnv" value="true" />
+      <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
+      <setting name="depsClasspath" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="true" type="JarApplication" factoryName="JAR Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SCRATCH_FILE_ID" value="0" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="luyten" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ScalaTestRunConfiguration" factoryName="ScalaTest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Specs2RunConfiguration" factoryName="Specs2">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
+    <configuration default="true" type="uTestRunConfiguration" factoryName="utest">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="package" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="searchForTest" value="Across module dependencies" />
+      <setting name="testName" value="" />
+      <setting name="testKind" value="Class" />
+      <setting name="showProgressMessages" value="true" />
+      <classRegexps />
+      <testRegexps />
+      <envs />
+      <method />
+    </configuration>
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="252a06cc-d3e8-4576-a746-c2abce4bddd5" name="Default" comment="" />
+      <created>1492112922021</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1492112922021</updated>
+      <workItem from="1492112930432" duration="1356000" />
+      <workItem from="1492636961273" duration="82000" />
+      <workItem from="1492882592146" duration="7365000" />
+      <workItem from="1492911433114" duration="203000" />
+      <workItem from="1492912830997" duration="1467000" />
+      <workItem from="1493141016807" duration="8463000" />
+      <workItem from="1493659054350" duration="6343000" />
+      <workItem from="1493667911553" duration="212000" />
+      <workItem from="1493668265273" duration="1129000" />
+      <workItem from="1493694084715" duration="5104000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="31724000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="0" width="1924" height="1038" extended-state="1" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19264069" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="4" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="method#Model#0;class#Model#0" expanded="false" />
+            <element signature="e#3034#3294#0" expanded="true" />
+            <element signature="e#3293#3294#0" expanded="true" />
+            <element signature="e#4537#4710#0" expanded="true" />
+            <element signature="e#4709#4710#0" expanded="true" />
+            <element signature="e#5682#5851#0" expanded="true" />
+            <element signature="e#5850#5851#0" expanded="true" />
+            <element signature="e#10579#10580#0" expanded="true" />
+            <element signature="e#10618#10619#0" expanded="true" />
+            <element signature="e#10940#11908#0" expanded="true" />
+            <element signature="e#11907#11908#0" expanded="true" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="e#16352#16406#0" expanded="false" />
+            <element signature="e#18608#18609#0" expanded="true" />
+            <element signature="e#18659#18660#0" expanded="true" />
+            <marker date="1493737486650" expanded="false" signature="15744:15814" ph="(Runnable) () → {" />
+            <marker date="1493737486650" expanded="false" signature="18018:18034" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="18148:18511" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="18702:19110" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19144:19379" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19430:19980" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20018:21554" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20028:20074" ph="(Thread) run() → {" />
+            <marker date="1493737486650" expanded="false" signature="21524:21539" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="21584:21595" ph=" { " />
+            <marker date="1493737486650" expanded="false" signature="21608:21614" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding>
+            <element signature="e#522#579#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/UploadedFilesContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="method#add#0;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="method#removeFile#1;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="method#checkIfFileAlreadyAdded#0;class#UploadedFilesContainer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4026">
+          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="226" selection-end-column="5" />
+          <folding>
+            <element signature="e#1688#2000#0" expanded="false" />
+            <element signature="e#1999#2000#0" expanded="false" />
+            <element signature="e#4689#5431#0" expanded="false" />
+            <element signature="e#4938#5117#0" expanded="false" />
+            <element signature="e#5116#5117#0" expanded="false" />
+            <element signature="e#5430#5431#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/JarEntryFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#367#368#0" expanded="false" />
+            <element signature="e#392#393#0" expanded="false" />
+            <element signature="e#887#895#0" expanded="false" />
+            <element signature="e#938#946#0" expanded="false" />
+            <element signature="e#1875#1876#0" expanded="false" />
+            <element signature="e#1894#1895#0" expanded="false" />
+            <element signature="e#1934#1935#0" expanded="false" />
+            <element signature="e#1959#1960#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1958">
+          <caret line="364" column="5" lean-forward="false" selection-start-line="364" selection-start-column="5" selection-end-line="364" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#MainWindow#0" expanded="false" />
+            <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
+            <marker date="1493743093735" expanded="false" signature="3263:3601" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="3692:4021" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4123:4301" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4344:4446" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4473:4478" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="4485:4488" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="4521:4818" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4846:5114" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5145:5331" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5360:5667" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5364:5401" ph="(Thread) run() → {" />
+            <marker date="1493743093735" expanded="false" signature="5649:5655" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="5704:6235" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6286:6879" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6911:7550" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="7582:7587" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="7642:7645" ph=" }" />
+            <marker date="1493743093735" expanded="true" signature="7647:7729" ph="//..." />
+            <marker date="1493743093735" expanded="false" signature="7769:7843" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="8006:8477" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="8010:8112" ph="//..." />
+            <marker date="1493743093735" expanded="true" signature="8617:9794" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="9933:11107" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="11287:11291" ph=" { " />
+            <marker date="1493743093735" expanded="true" signature="11303:11306" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="12111:12202" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="12614:12621" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="12873:12957" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13048:13054" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13144:13228" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13328:13334" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13407:13492" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493743093735" expanded="false" signature="13499:13508" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="13536:13786" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="14386:14391" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14404:14407" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14438:14443" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14454:14457" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14484:14489" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14502:14505" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="method#Model#0;class#Model#0" expanded="false" />
+            <element signature="e#3034#3294#0" expanded="true" />
+            <element signature="e#3293#3294#0" expanded="true" />
+            <element signature="e#4537#4710#0" expanded="true" />
+            <element signature="e#4709#4710#0" expanded="true" />
+            <element signature="e#5682#5851#0" expanded="true" />
+            <element signature="e#5850#5851#0" expanded="true" />
+            <element signature="e#10579#10580#0" expanded="true" />
+            <element signature="e#10618#10619#0" expanded="true" />
+            <element signature="e#10940#11908#0" expanded="true" />
+            <element signature="e#11907#11908#0" expanded="true" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="e#16352#16406#0" expanded="false" />
+            <element signature="e#18608#18609#0" expanded="true" />
+            <element signature="e#18659#18660#0" expanded="true" />
+            <marker date="1493737486650" expanded="false" signature="15744:15814" ph="(Runnable) () → {" />
+            <marker date="1493737486650" expanded="false" signature="18018:18034" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="18148:18511" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="18702:19110" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19144:19379" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19430:19980" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20018:21554" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20028:20074" ph="(Thread) run() → {" />
+            <marker date="1493737486650" expanded="false" signature="21524:21539" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="21584:21595" ph=" { " />
+            <marker date="1493737486650" expanded="false" signature="21608:21614" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding>
+            <element signature="e#522#579#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/UploadedFilesContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="method#add#0;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="method#removeFile#1;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="method#checkIfFileAlreadyAdded#0;class#UploadedFilesContainer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4906">
+          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="226" selection-end-column="5" />
+          <folding>
+            <element signature="e#1688#2000#0" expanded="false" />
+            <element signature="e#1999#2000#0" expanded="false" />
+            <element signature="e#4689#5431#0" expanded="false" />
+            <element signature="e#4938#5117#0" expanded="false" />
+            <element signature="e#5116#5117#0" expanded="false" />
+            <element signature="e#5430#5431#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/JarEntryFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#367#368#0" expanded="false" />
+            <element signature="e#392#393#0" expanded="false" />
+            <element signature="e#887#895#0" expanded="false" />
+            <element signature="e#938#946#0" expanded="false" />
+            <element signature="e#1875#1876#0" expanded="false" />
+            <element signature="e#1894#1895#0" expanded="false" />
+            <element signature="e#1934#1935#0" expanded="false" />
+            <element signature="e#1959#1960#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1958">
+          <caret line="364" column="5" lean-forward="true" selection-start-line="364" selection-start-column="5" selection-end-line="364" selection-end-column="5" />
+          <folding>
+            <element signature="docComment;class#MainWindow#0" expanded="false" />
+            <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
+            <marker date="1493743093735" expanded="false" signature="3263:3601" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="3692:4021" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4123:4301" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4344:4446" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4473:4478" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="4485:4488" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="4521:4818" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4846:5114" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5145:5331" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5360:5667" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5364:5401" ph="(Thread) run() → {" />
+            <marker date="1493743093735" expanded="false" signature="5649:5655" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="5704:6235" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6286:6879" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6911:7550" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="7582:7587" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="7642:7645" ph=" }" />
+            <marker date="1493743093735" expanded="true" signature="7647:7729" ph="//..." />
+            <marker date="1493743093735" expanded="false" signature="7769:7843" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="8006:8477" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="8010:8112" ph="//..." />
+            <marker date="1493743093735" expanded="true" signature="8617:9794" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="9933:11107" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="11287:11291" ph=" { " />
+            <marker date="1493743093735" expanded="true" signature="11303:11306" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="12111:12202" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="12614:12621" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="12873:12957" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13048:13054" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13144:13228" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13328:13334" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13407:13492" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493743093735" expanded="false" signature="13499:13508" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="13536:13786" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="14386:14391" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14404:14407" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14438:14443" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14454:14457" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14484:14489" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14502:14505" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1474">
+          <caret line="290" column="52" lean-forward="true" selection-start-line="290" selection-start-column="52" selection-end-line="290" selection-end-column="52" />
+          <folding>
+            <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="method#Model#0;class#Model#0" expanded="false" />
+            <element signature="e#3034#3294#0" expanded="true" />
+            <element signature="e#3293#3294#0" expanded="true" />
+            <element signature="e#4537#4710#0" expanded="true" />
+            <element signature="e#4709#4710#0" expanded="true" />
+            <element signature="e#5682#5851#0" expanded="true" />
+            <element signature="e#5850#5851#0" expanded="true" />
+            <element signature="e#10579#10580#0" expanded="true" />
+            <element signature="e#10618#10619#0" expanded="true" />
+            <element signature="e#10940#11908#0" expanded="true" />
+            <element signature="e#11907#11908#0" expanded="true" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="e#16352#16406#0" expanded="false" />
+            <element signature="e#18608#18609#0" expanded="true" />
+            <element signature="e#18659#18660#0" expanded="true" />
+            <marker date="1493737486650" expanded="false" signature="15744:15814" ph="(Runnable) () → {" />
+            <marker date="1493737486650" expanded="false" signature="18018:18034" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="18148:18511" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="18702:19110" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19144:19379" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19430:19980" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20018:21554" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20028:20074" ph="(Thread) run() → {" />
+            <marker date="1493737486650" expanded="false" signature="21524:21539" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="21584:21595" ph=" { " />
+            <marker date="1493737486650" expanded="false" signature="21608:21614" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding>
+            <element signature="e#522#579#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/UploadedFilesContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="method#add#0;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="method#removeFile#1;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="method#checkIfFileAlreadyAdded#0;class#UploadedFilesContainer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4708">
+          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="226" selection-end-column="5" />
+          <folding>
+            <element signature="e#1688#2000#0" expanded="false" />
+            <element signature="e#1999#2000#0" expanded="false" />
+            <element signature="e#4689#5431#0" expanded="false" />
+            <element signature="e#4938#5117#0" expanded="false" />
+            <element signature="e#5116#5117#0" expanded="false" />
+            <element signature="e#5430#5431#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/JarEntryFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#367#368#0" expanded="false" />
+            <element signature="e#392#393#0" expanded="false" />
+            <element signature="e#887#895#0" expanded="false" />
+            <element signature="e#938#946#0" expanded="false" />
+            <element signature="e#1875#1876#0" expanded="false" />
+            <element signature="e#1894#1895#0" expanded="false" />
+            <element signature="e#1934#1935#0" expanded="false" />
+            <element signature="e#1959#1960#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#MainWindow#0" expanded="false" />
+            <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
+            <marker date="1493743093735" expanded="false" signature="3263:3601" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="3692:4021" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4123:4301" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4344:4446" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4473:4478" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="4485:4488" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="4521:4818" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4846:5114" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5145:5331" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5360:5667" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5364:5401" ph="(Thread) run() → {" />
+            <marker date="1493743093735" expanded="false" signature="5649:5655" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="5704:6235" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6286:6879" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6911:7550" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="7582:7587" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="7642:7645" ph=" }" />
+            <marker date="1493743093735" expanded="true" signature="7647:7729" ph="//..." />
+            <marker date="1493743093735" expanded="false" signature="7769:7843" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="8006:8477" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="8010:8112" ph="//..." />
+            <marker date="1493743093735" expanded="true" signature="8617:9794" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="9933:11107" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="11287:11291" ph=" { " />
+            <marker date="1493743093735" expanded="true" signature="11303:11306" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="12111:12202" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="12614:12621" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="12873:12957" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13048:13054" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13144:13228" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13328:13334" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13407:13492" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493743093735" expanded="false" signature="13499:13508" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="13536:13786" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="14386:14391" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14404:14407" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14438:14443" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14454:14457" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14484:14489" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14502:14505" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="method#Model#0;class#Model#0" expanded="false" />
+            <element signature="e#3034#3294#0" expanded="true" />
+            <element signature="e#3293#3294#0" expanded="true" />
+            <element signature="e#4537#4710#0" expanded="true" />
+            <element signature="e#4709#4710#0" expanded="true" />
+            <element signature="e#5682#5851#0" expanded="true" />
+            <element signature="e#5850#5851#0" expanded="true" />
+            <element signature="e#10579#10580#0" expanded="true" />
+            <element signature="e#10618#10619#0" expanded="true" />
+            <element signature="e#10940#11908#0" expanded="true" />
+            <element signature="e#11907#11908#0" expanded="true" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="e#16352#16406#0" expanded="false" />
+            <element signature="e#18608#18609#0" expanded="true" />
+            <element signature="e#18659#18660#0" expanded="true" />
+            <marker date="1493737486650" expanded="false" signature="15744:15814" ph="(Runnable) () → {" />
+            <marker date="1493737486650" expanded="false" signature="18018:18034" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="18148:18511" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="18702:19110" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19144:19379" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19430:19980" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20018:21554" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20028:20074" ph="(Thread) run() → {" />
+            <marker date="1493737486650" expanded="false" signature="21524:21539" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="21584:21595" ph=" { " />
+            <marker date="1493737486650" expanded="false" signature="21608:21614" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/JarEntryFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#367#368#0" expanded="false" />
+            <element signature="e#392#393#0" expanded="false" />
+            <element signature="e#887#895#0" expanded="false" />
+            <element signature="e#938#946#0" expanded="false" />
+            <element signature="e#1875#1876#0" expanded="false" />
+            <element signature="e#1894#1895#0" expanded="false" />
+            <element signature="e#1934#1935#0" expanded="false" />
+            <element signature="e#1959#1960#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="968">
+          <caret line="75" column="20" lean-forward="true" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+          <folding>
+            <element signature="docComment;class#MainWindow#0" expanded="false" />
+            <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
+            <marker date="1493743093735" expanded="false" signature="3263:3601" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="3692:4021" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4123:4301" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4344:4446" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4473:4478" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="4485:4488" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="4521:4818" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4846:5114" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5145:5331" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5360:5667" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5364:5401" ph="(Thread) run() → {" />
+            <marker date="1493743093735" expanded="false" signature="5649:5655" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="5704:6235" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6286:6879" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6911:7550" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="7582:7587" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="7642:7645" ph=" }" />
+            <marker date="1493743093735" expanded="true" signature="7647:7729" ph="//..." />
+            <marker date="1493743093735" expanded="false" signature="7769:7843" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="8006:8477" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="8010:8112" ph="//..." />
+            <marker date="1493743093735" expanded="true" signature="8617:9794" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="9933:11107" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="11287:11291" ph=" { " />
+            <marker date="1493743093735" expanded="true" signature="11303:11306" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="12111:12202" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="12614:12621" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="12873:12957" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13048:13054" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13144:13228" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13328:13334" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13407:13492" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493743093735" expanded="false" signature="13499:13508" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="13536:13786" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="14386:14391" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14404:14407" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14438:14443" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14454:14457" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14484:14489" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14502:14505" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1276">
+          <caret line="58" column="37" lean-forward="true" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
+          <folding>
+            <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="method#Model#0;class#Model#0" expanded="false" />
+            <element signature="e#3034#3294#0" expanded="true" />
+            <element signature="e#3293#3294#0" expanded="true" />
+            <element signature="e#4537#4710#0" expanded="true" />
+            <element signature="e#4709#4710#0" expanded="true" />
+            <element signature="e#5682#5851#0" expanded="true" />
+            <element signature="e#5850#5851#0" expanded="true" />
+            <element signature="e#10579#10580#0" expanded="true" />
+            <element signature="e#10618#10619#0" expanded="true" />
+            <element signature="e#10940#11908#0" expanded="true" />
+            <element signature="e#11907#11908#0" expanded="true" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="e#16352#16406#0" expanded="false" />
+            <element signature="e#18608#18609#0" expanded="true" />
+            <element signature="e#18659#18660#0" expanded="true" />
+            <marker date="1493737486650" expanded="false" signature="15744:15814" ph="(Runnable) () → {" />
+            <marker date="1493737486650" expanded="false" signature="18018:18034" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="18148:18511" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="18702:19110" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19144:19379" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19430:19980" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20018:21554" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20028:20074" ph="(Thread) run() → {" />
+            <marker date="1493737486650" expanded="false" signature="21524:21539" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="21584:21595" ph=" { " />
+            <marker date="1493737486650" expanded="false" signature="21608:21614" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#MainWindow#0" expanded="false" />
+            <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
+            <marker date="1493743093735" expanded="false" signature="3263:3601" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="3692:4021" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4123:4301" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4344:4446" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4473:4478" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="4485:4488" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="4521:4818" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4846:5114" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5145:5331" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5360:5667" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5364:5401" ph="(Thread) run() → {" />
+            <marker date="1493743093735" expanded="false" signature="5649:5655" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="5704:6235" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6286:6879" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6911:7550" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="7582:7587" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="7642:7645" ph=" }" />
+            <marker date="1493743093735" expanded="true" signature="7647:7729" ph="//..." />
+            <marker date="1493743093735" expanded="false" signature="7769:7843" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="8006:8477" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="8010:8112" ph="//..." />
+            <marker date="1493743093735" expanded="true" signature="8617:9794" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="9933:11107" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="11287:11291" ph=" { " />
+            <marker date="1493743093735" expanded="true" signature="11303:11306" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="12111:12202" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="12614:12621" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="12873:12957" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13048:13054" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13144:13228" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13328:13334" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13407:13492" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493743093735" expanded="false" signature="13499:13508" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="13536:13786" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="14386:14391" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14404:14407" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14438:14443" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14454:14457" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14484:14489" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14502:14505" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="72" column="42" lean-forward="true" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
+          <folding>
+            <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="method#Model#0;class#Model#0" expanded="false" />
+            <element signature="e#3034#3294#0" expanded="true" />
+            <element signature="e#3293#3294#0" expanded="true" />
+            <element signature="e#4537#4710#0" expanded="true" />
+            <element signature="e#4709#4710#0" expanded="true" />
+            <element signature="e#5682#5851#0" expanded="true" />
+            <element signature="e#5850#5851#0" expanded="true" />
+            <element signature="e#10579#10580#0" expanded="true" />
+            <element signature="e#10618#10619#0" expanded="true" />
+            <element signature="e#10940#11908#0" expanded="true" />
+            <element signature="e#11907#11908#0" expanded="true" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="e#16352#16406#0" expanded="false" />
+            <element signature="e#18608#18609#0" expanded="true" />
+            <element signature="e#18659#18660#0" expanded="true" />
+            <marker date="1493737486650" expanded="false" signature="15744:15814" ph="(Runnable) () → {" />
+            <marker date="1493737486650" expanded="false" signature="18018:18034" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="18148:18511" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="18702:19110" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19144:19379" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19430:19980" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20018:21554" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20028:20074" ph="(Thread) run() → {" />
+            <marker date="1493737486650" expanded="false" signature="21524:21539" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="21584:21595" ph=" { " />
+            <marker date="1493737486650" expanded="false" signature="21608:21614" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1921">
+          <caret line="366" column="116" lean-forward="false" selection-start-line="366" selection-start-column="116" selection-end-line="366" selection-end-column="116" />
+          <folding>
+            <element signature="docComment;class#MainWindow#0" expanded="false" />
+            <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
+            <marker date="1493743093735" expanded="false" signature="3263:3601" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="3692:4021" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4123:4301" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4344:4446" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4473:4478" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="4485:4488" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="4521:4818" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4846:5114" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5145:5331" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5360:5667" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5364:5401" ph="(Thread) run() → {" />
+            <marker date="1493743093735" expanded="false" signature="5649:5655" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="5704:6235" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6286:6879" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6911:7550" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="7582:7587" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="7642:7645" ph=" }" />
+            <marker date="1493743093735" expanded="true" signature="7647:7729" ph="//..." />
+            <marker date="1493743093735" expanded="false" signature="7769:7843" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="8006:8477" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="8010:8112" ph="//..." />
+            <marker date="1493743093735" expanded="true" signature="8617:9794" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="9933:11107" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="11287:11291" ph=" { " />
+            <marker date="1493743093735" expanded="true" signature="11303:11306" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="12111:12202" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="12614:12621" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="12873:12957" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13048:13054" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13144:13228" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13328:13334" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13407:13492" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493743093735" expanded="false" signature="13499:13508" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="13536:13786" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="14386:14391" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14404:14407" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14438:14443" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14454:14457" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14484:14489" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14502:14505" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="method#Model#0;class#Model#0" expanded="false" />
+            <element signature="e#3034#3294#0" expanded="true" />
+            <element signature="e#3293#3294#0" expanded="true" />
+            <element signature="e#4537#4710#0" expanded="true" />
+            <element signature="e#4709#4710#0" expanded="true" />
+            <element signature="e#5682#5851#0" expanded="true" />
+            <element signature="e#5850#5851#0" expanded="true" />
+            <element signature="e#10579#10580#0" expanded="true" />
+            <element signature="e#10618#10619#0" expanded="true" />
+            <element signature="e#10940#11908#0" expanded="true" />
+            <element signature="e#11907#11908#0" expanded="true" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="e#16352#16406#0" expanded="false" />
+            <element signature="e#18608#18609#0" expanded="true" />
+            <element signature="e#18659#18660#0" expanded="true" />
+            <marker date="1493737486650" expanded="false" signature="15744:15814" ph="(Runnable) () → {" />
+            <marker date="1493737486650" expanded="false" signature="18018:18034" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="18148:18511" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="18702:19110" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19144:19379" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19430:19980" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20018:21554" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20028:20074" ph="(Thread) run() → {" />
+            <marker date="1493737486650" expanded="false" signature="21524:21539" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="21584:21595" ph=" { " />
+            <marker date="1493737486650" expanded="false" signature="21608:21614" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1734">
+          <caret line="162" column="46" lean-forward="false" selection-start-line="162" selection-start-column="46" selection-end-line="162" selection-end-column="46" />
+          <folding>
+            <element signature="docComment;class#MainWindow#0" expanded="false" />
+            <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
+            <marker date="1493743093735" expanded="false" signature="3263:3601" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="3692:4021" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4123:4301" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4344:4446" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4473:4478" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="4485:4488" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="4521:4818" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4846:5114" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5145:5331" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5360:5667" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5364:5401" ph="(Thread) run() → {" />
+            <marker date="1493743093735" expanded="false" signature="5649:5655" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="5704:6235" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6286:6879" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6911:7550" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="7582:7587" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="7642:7645" ph=" }" />
+            <marker date="1493743093735" expanded="true" signature="7647:7729" ph="//..." />
+            <marker date="1493743093735" expanded="false" signature="7769:7843" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="8006:8477" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="8010:8112" ph="//..." />
+            <marker date="1493743093735" expanded="true" signature="8617:9794" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="9933:11107" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="11287:11291" ph=" { " />
+            <marker date="1493743093735" expanded="true" signature="11303:11306" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="12111:12202" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="12614:12621" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="12873:12957" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13048:13054" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13144:13228" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13328:13334" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13407:13492" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493743093735" expanded="false" signature="13499:13508" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="13536:13786" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="14386:14391" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14404:14407" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14438:14443" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14454:14457" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14484:14489" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14502:14505" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/FileDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/FileDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/FileDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="20">
+          <caret line="10" column="3" lean-forward="false" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/javax/swing/JTabbedPane.class" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_131/src.zip!/javax/swing/JFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="659" column="16" lean-forward="false" selection-start-line="659" selection-start-column="16" selection-end-line="659" selection-end-column="16" />
+          <folding>
+            <element signature="e#23171#23172#0" expanded="false" />
+            <element signature="e#23212#23213#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/CellRenderer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/JarEntryFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#367#368#0" expanded="false" />
+            <element signature="e#392#393#0" expanded="false" />
+            <element signature="e#887#895#0" expanded="false" />
+            <element signature="e#938#946#0" expanded="false" />
+            <element signature="e#1875#1876#0" expanded="false" />
+            <element signature="e#1894#1895#0" expanded="false" />
+            <element signature="e#1934#1935#0" expanded="false" />
+            <element signature="e#1959#1960#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4026">
+          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="226" selection-end-column="5" />
+          <folding>
+            <element signature="e#1688#2000#0" expanded="false" />
+            <element signature="e#1999#2000#0" expanded="false" />
+            <element signature="e#4689#5431#0" expanded="false" />
+            <element signature="e#4938#5117#0" expanded="false" />
+            <element signature="e#5116#5117#0" expanded="false" />
+            <element signature="e#5430#5431#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/UploadeFiles.java" />
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/LinkProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6558">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+          <folding>
+            <element signature="e#522#579#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/UploadedFilesContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="method#add#0;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="method#removeFile#1;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="method#checkIfFileAlreadyAdded#0;class#UploadedFilesContainer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3058">
+          <caret line="327" column="0" lean-forward="false" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="method#Model#0;class#Model#0" expanded="false" />
+            <element signature="e#3034#3294#0" expanded="true" />
+            <element signature="e#3293#3294#0" expanded="true" />
+            <element signature="e#4537#4710#0" expanded="true" />
+            <element signature="e#4709#4710#0" expanded="true" />
+            <element signature="e#5682#5851#0" expanded="true" />
+            <element signature="e#5850#5851#0" expanded="true" />
+            <element signature="e#10579#10580#0" expanded="true" />
+            <element signature="e#10618#10619#0" expanded="true" />
+            <element signature="e#10940#11908#0" expanded="true" />
+            <element signature="e#11907#11908#0" expanded="true" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="e#16352#16406#0" expanded="false" />
+            <element signature="e#18608#18609#0" expanded="true" />
+            <element signature="e#18659#18660#0" expanded="true" />
+            <marker date="1493737486650" expanded="false" signature="15744:15814" ph="(Runnable) () → {" />
+            <marker date="1493737486650" expanded="false" signature="18018:18034" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="18148:18511" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="18702:19110" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19144:19379" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="19430:19980" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20018:21554" ph="{...}" />
+            <marker date="1493737486650" expanded="false" signature="20028:20074" ph="(Thread) run() → {" />
+            <marker date="1493737486650" expanded="false" signature="21524:21539" ph="}" />
+            <marker date="1493737486650" expanded="false" signature="21584:21595" ph=" { " />
+            <marker date="1493737486650" expanded="false" signature="21608:21614" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="104" column="35" lean-forward="true" selection-start-line="104" selection-start-column="35" selection-end-line="104" selection-end-column="35" />
+          <folding>
+            <element signature="docComment;class#MainWindow#0" expanded="false" />
+            <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
+            <marker date="1493743093735" expanded="false" signature="3263:3601" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="3692:4021" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4123:4301" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4344:4446" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4473:4478" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="4485:4488" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="4521:4818" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="4846:5114" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5145:5331" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5360:5667" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="5364:5401" ph="(Thread) run() → {" />
+            <marker date="1493743093735" expanded="false" signature="5649:5655" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="5704:6235" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6286:6879" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="6911:7550" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="7582:7587" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="7642:7645" ph=" }" />
+            <marker date="1493743093735" expanded="true" signature="7647:7729" ph="//..." />
+            <marker date="1493743093735" expanded="false" signature="7769:7843" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="8006:8477" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="8010:8112" ph="//..." />
+            <marker date="1493743093735" expanded="true" signature="8617:9794" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="9933:11107" ph="{...}" />
+            <marker date="1493743093735" expanded="true" signature="11287:11291" ph=" { " />
+            <marker date="1493743093735" expanded="true" signature="11303:11306" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="12111:12202" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="12614:12621" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="12873:12957" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13048:13054" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13144:13228" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493743093735" expanded="false" signature="13328:13334" ph="}" />
+            <marker date="1493743093735" expanded="false" signature="13407:13492" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493743093735" expanded="false" signature="13499:13508" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="13536:13786" ph="{...}" />
+            <marker date="1493743093735" expanded="false" signature="14386:14391" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14404:14407" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14438:14443" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14454:14457" ph=" }" />
+            <marker date="1493743093735" expanded="false" signature="14484:14489" ph=" { " />
+            <marker date="1493743093735" expanded="false" signature="14502:14505" ph=" }" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainMenuBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="119" column="40" lean-forward="false" selection-start-line="119" selection-start-column="40" selection-end-line="119" selection-end-column="40" />
+          <folding>
+            <element signature="e#6268#6440#0" expanded="true" />
+            <element signature="e#6439#6440#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

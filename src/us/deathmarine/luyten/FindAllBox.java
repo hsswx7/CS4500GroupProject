@@ -67,17 +67,7 @@ public class FindAllBox extends JDialog {
 				@SuppressWarnings("unchecked")
 				JList<String> list = (JList<String>) evt.getSource();
 				if (evt.getClickCount() == 2) {
-					int index = list.locationToIndex(evt.getPoint());
-					String entryName = (String) list.getModel().getElementAt(index);
-					String[] array = entryName.split("/");
-					String internalName = StringUtilities.removeRight(entryName, ".class");
-					TypeReference type = Model.metadataSystem.lookupType(internalName);
-					try {
-						mainWindow.getModel().extractClassToTextPane(type, array[array.length - 1], entryName, null);
-					} catch (Exception e) {
-						Luyten.showExceptionDialog("Exception!", e);
-					}
-
+					int index = list.locationToIndex(evt.getPoint());			
 				}
 			}
 		});
