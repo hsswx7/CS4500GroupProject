@@ -12,6 +12,44 @@ public class DataExtractorLoop {
 
 
     private boolean checkYears(UploadedFilesContainer filesContainer) {
+    	ArrayList<String> yearCheck = new ArrayList<String>();
+    	for(File file : filesContainer.getAllFiles()){
+    		try{
+    			BufferedReader buf = new BufferedReader(new FileReader(file.getAbsolutePath()));
+    			String patternString = "^\\d{1,2}\\/\\d{1,2}\\/\\d{4}.*";//look for the first data in data
+    			Pattern pattern = Pattern.compile(patternString);
+    			String lineFetched = null;
+    			boolean foundYear = false;//look for the first year
+    			
+    			while(!foundYear){
+    				 lineFetched = buf.readLine();
+                     if (lineFetched == null) {
+                         break;
+                     } else {
+                    	 Matcher matcher = pattern.matcher(lineFetched);
+                    	 boolean matches = matcher.matches();
+                    	 if (matches){
+                    		 Pattern getYear = Pattern.compile(".*\\/(.?\\d{4})");
+                    		 Matcher findYear = getYear.matcher(lineFetched);
+                    		 if (findYear.find()){//when the year is found stop and add to list
+                    			 yearCheck.add(findYear.group(1));
+                    			 foundYear = true;
+                    		 } 
+                    	 }
+                       }
+    			}
+    			
+    		} catch (Exception e){
+    			Luyten.showExceptionDialog("checkYears", e);
+    		}
+    	}//end of file loop
+    	int index = yearCheck.size();
+    	for (int i = 0; i < index; i++){
+    		if (!yearCheck.get(0).equals(yearCheck.get(i))){
+    			return false;
+    		}
+			
+    	}
         return true;
     }
 
