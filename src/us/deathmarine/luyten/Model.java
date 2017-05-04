@@ -34,197 +34,248 @@ import java.util.jar.JarFile;
  * Jar-level model
  */
 public class Model extends JSplitPane {
-    private static final long serialVersionUID = 6896857630400910200L;
+	final DrawMap dm = new DrawMap();
+	private static final long serialVersionUID = 6896857630400910200L;
 
-    private static final long MAX_JAR_FILE_SIZE_BYTES = 1_000_000_000;
-    private static final long MAX_UNPACKED_FILE_SIZE_BYTES = 1_000_000;
+	private static final long MAX_JAR_FILE_SIZE_BYTES = 1_000_000_000;
+	private static final long MAX_UNPACKED_FILE_SIZE_BYTES = 1_000_000;
 
-    private static LuytenTypeLoader typeLoader = new LuytenTypeLoader();
-    public static MetadataSystem metadataSystem = new MetadataSystem(typeLoader);
+	private static LuytenTypeLoader typeLoader = new LuytenTypeLoader();
+	public static MetadataSystem metadataSystem = new MetadataSystem(typeLoader);
 
-    private JTree tree;
-    // Used to display List of files user decided to upload
-    private JList<String> list;
-    private DefaultListModel<String> listModel;
-    public JTabbedPane house;
-    private JButton submitFileButton;
-    private JButton uploadFileButton;
-    private File file;
-    private DecompilerSettings settings;
-    private DecompilationOptions decompilationOptions;
-    private Theme theme;
-    private MainWindow mainWindow;
-//    private JProgressBar bar;
-    private JLabel label;
-    private HashSet<OpenFile> hmap = new HashSet<OpenFile>();
-    private boolean open = false;
+	private JTree tree;
+	// Used to display List of files user decided to upload
+	private JList<String> list; 
+	private DefaultListModel<String> listModel;
+	public JTabbedPane house;
+	private JButton submitFileButton;
+	private JButton uploadFileButton;
+	private File file;
+	private DecompilerSettings settings;
+	private DecompilationOptions decompilationOptions;
+	private Theme theme;
+	private MainWindow mainWindow;
+	private JProgressBar bar;
+	private JLabel label;
+	private HashSet<OpenFile> hmap = new HashSet<OpenFile>();
+	private boolean open = false;
 
-    // filesSubmitted allows functions to check if the files have been submitted
-    private boolean filesSubmitted = false;
-    private State state;
-    private ConfigSaver configSaver;
-    private LuytenPreferences luytenPrefs;
+	// filesSubmitted allows functions to check if the files have been submitted
+	private boolean filesSubmitted = false;
+	private State state;
+	private ConfigSaver configSaver;
+	private LuytenPreferences luytenPrefs;
 
-    // Building Panes for the MainWindow
-    public Model(final MainWindow mainWindow) {
-        this.mainWindow = mainWindow;
-        //this.bar = mainWindow.getBar();
-        this.setLabel(mainWindow.getLabel());
+	// Building Panes for the MainWindow
+	public Model(final MainWindow mainWindow) {
+		this.mainWindow = mainWindow;
+		this.bar = mainWindow.getBar();
+		this.setLabel(mainWindow.getLabel());
 
-        configSaver = ConfigSaver.getLoadedInstance();
-        settings = configSaver.getDecompilerSettings();
-        luytenPrefs = configSaver.getLuytenPreferences();
+		configSaver = ConfigSaver.getLoadedInstance();
+		settings = configSaver.getDecompilerSettings();
+		luytenPrefs = configSaver.getLuytenPreferences();
 
-        tree = new JTree();
-        tree.setModel(new DefaultTreeModel(null));
-        tree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
-        tree.setCellRenderer(new CellRenderer());
-        //TreeListener tl = new TreeListener();
-        //tree.addMouseListener(tl);
-        tree.addKeyListener(new KeyAdapter() {
+		tree = new JTree();
+		tree.setModel(new DefaultTreeModel(null));
+		tree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+		tree.setCellRenderer(new CellRenderer());
+		TreeListener tl = new TreeListener();
+		tree.addMouseListener(tl);
+		tree.addKeyListener(new KeyAdapter() {
 
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    // openEntryByTreePath(tree.getSelectionPath());
-                }
-            }
-        });
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+					// openEntryByTreePath(tree.getSelectionPath());
+				}
+			}
+		});
 
-        /***This list is used to display the files chosen by user to upload*****/
-        //listModel holds on to the Strings (uploaded files names)
-        listModel = new DefaultListModel<String>();
+		/***This list is used to display the files chosen by user to upload*****/
+		//listModel holds on to the Strings (uploaded files names)
+		listModel = new DefaultListModel<String>();
 
-        list = new JList<String>(listModel);
-        list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
-        list.setLayoutOrientation(JList.VERTICAL);
-        list.setVisibleRowCount(-1);
+		list = new JList<String>(listModel);
+		list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+		list.setLayoutOrientation(JList.VERTICAL);
+		list.setVisibleRowCount(-1);
 
-        // renderer allows JList to center String Names Added
-        DefaultListCellRenderer renderer = (DefaultListCellRenderer) list.getCellRenderer();
-        renderer.setHorizontalAlignment(SwingConstants.CENTER);
+		// renderer allows JList to center String Names Added
+		DefaultListCellRenderer renderer = (DefaultListCellRenderer) list.getCellRenderer();
+		renderer.setHorizontalAlignment(SwingConstants.CENTER);
 
-        // The JSrollPane provides a scrollable view for list
-        JScrollPane listScrollPane = new JScrollPane(list);
-        // Adding Key Click listeners to list, and listModel
-        addUploadedFilesListKeyListener(list, listModel);
+		// The JSrollPane provides a scrollable view for list
+		JScrollPane listScrollPane = new JScrollPane(list);
+		// Adding Key Click listeners to list, and listModel
+		addUploadedFilesListKeyListener(list, listModel);
 
-        // leftMainPanel will be a container for all other left panels
-        JPanel leftMainPanel = new JPanel();
-        leftMainPanel.setLayout(new BoxLayout(leftMainPanel, BoxLayout.Y_AXIS));
+		// leftMainPanel will be a container for all other left panels
+		JPanel leftMainPanel = new JPanel();
+		leftMainPanel.setLayout(new BoxLayout(leftMainPanel, BoxLayout.Y_AXIS));
+		
 
+		/**********************Upload File Button**************/
+		uploadFileButton = new JButton("Upload File..");
+		uploadFileButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				mainWindow.onOpenFileMenu();
+			}
+		});
+		
+		//leftMainPanel.add(uploadFileButton);
+		
+		/*********************** Upload Panel for Files Names ****************/
+		JPanel uploadFileLeftPanel = new JPanel();
+		uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel,1));
+		uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
+		uploadFileLeftPanel.add(listScrollPane);
 
-        /**********************Upload File Button**************/
-        uploadFileButton = new JButton("Upload File..");
-        uploadFileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                mainWindow.onOpenFileMenu();
-            }
-        });
+		
+		/******************* Submit File Button ******************************/
+		submitFileButton = new JButton("Submit Uploaded Files");
+		submitFileButton.setEnabled(false);
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.setLayout(new BoxLayout(buttonPanel, 0));
+		buttonPanel.add(submitFileButton);
+		buttonPanel.add(uploadFileButton, 0);
 
-        //leftMainPanel.add(uploadFileButton);
+		leftMainPanel.add(uploadFileLeftPanel);
+		leftMainPanel.add(buttonPanel);
 
-        /*********************** Upload Panel for Files Names ****************/
-        JPanel uploadFileLeftPanel = new JPanel();
-        uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel, 1));
-        uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
-        uploadFileLeftPanel.add(listScrollPane);
+		// This Listener Detects Submit Button Click
+		submitFileButton.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				onSubmitButtonClicked();
+			}
+		});
 
+		/******************** Panel 3 For Test ************************/
 
-        /******************* Submit File Button ******************************/
-        submitFileButton = new JButton("Submit Uploaded Files");
-        submitFileButton.setEnabled(false);
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new BoxLayout(buttonPanel, 0));
-        buttonPanel.add(submitFileButton);
-        buttonPanel.add(uploadFileButton, 0);
+		JPanel panel3 = new JPanel();
+		panel3.setLayout(new BoxLayout(panel3, 1));
+		panel3.setBorder(BorderFactory.createTitledBorder("Simulation Controls"));
+		panel3.add(new JScrollPane(tree));
 
-        leftMainPanel.add(uploadFileLeftPanel);
-        leftMainPanel.add(buttonPanel);
+		leftMainPanel.add(panel3);
 
-        // This Listener Detects Submit Button Click
-        submitFileButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                onSubmitButtonClicked();
-            }
-        });
+		// TODO REMOVE ALL TAB STUFF
+		house = new JTabbedPane();
+		house.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
+		house.addChangeListener(new TabChangeListener());
+		house.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (SwingUtilities.isMiddleMouseButton(e)) {
+					closeOpenTab(house.getSelectedIndex());
+				}
+			}
+		});
 
-        /******************** Panel 3 For Test ************************/
+		/**************
+		 * Main Panel (This is where the Simulation Will GO)
+		 ****************************/
+		JPanel panel = new JPanel();
+		panel.setLayout(new BoxLayout(panel, 1));
 
-        JPanel panel3 = new JPanel();
-        panel3.setLayout(new BoxLayout(panel3, 1));
-        panel3.setBorder(BorderFactory.createTitledBorder("Simulation Controls"));
-        panel3.add(new JScrollPane(tree));
+		panel.setBorder(BorderFactory.createTitledBorder("Map"));
 
-        leftMainPanel.add(panel3);
+                GLJPanel gljpanel = new GLJPanel(new GLCapabilities(GLProfile.getDefault()));
+                gljpanel.setPreferredSize(new Dimension(400,400));
+                
 
-        // TODO REMOVE ALL TAB STUFF
-       /* house = new JTabbedPane();
-        house.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-        house.addChangeListener(new TabChangeListener());
-        house.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                if (SwingUtilities.isMiddleMouseButton(e)) {
-                    closeOpenTab(house.getSelectedIndex());
-                }
-            }
-        });*/
+                
+                final Animator a = new Animator();
+                a.add(gljpanel);
+                a.start();
+                gljpanel.addGLEventListener( new GLEventListener() {
+                        @Override
+                        public void reshape( GLAutoDrawable glautodrawable, int x, int y, int width, int height ) {
+                            dm.setup( glautodrawable.getGL().getGL2(), width, height );
+                        }
+                        
+                        @Override
+                        public void init( GLAutoDrawable glautodrawable ) {
+                        }
+                        
+                        @Override
+                        public void dispose( GLAutoDrawable glautodrawable ) {
+                        }
+                        
+                        @Override
+                        public void display( GLAutoDrawable glautodrawable ) {
+                            dm.render( glautodrawable.getGL().getGL2(), glautodrawable.getSurfaceWidth(), glautodrawable.getSurfaceHeight() );
+                        }
+                    });
+		panel.add(gljpanel);
+                
+               
+		/***************** Setting The Panels ***************************/
+		this.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
+		this.setDividerLocation(250 % mainWindow.getWidth());
+		this.setLeftComponent(leftMainPanel);
+		this.setRightComponent(panel);
 
-        /**************
-         * Main Panel (This is where the Simulation Will GO)
-         ****************************/
-        JPanel panel = new JPanel();
-        panel.setLayout(new BoxLayout(panel, 1));
+		decompilationOptions = new DecompilationOptions();
+		decompilationOptions.setSettings(settings);
+		decompilationOptions.setFullDecompilation(true);
+	}
 
-        panel.setBorder(BorderFactory.createTitledBorder("Map"));
+	// BackSpace and Delete Listener for List that holds Uploaded Files
+	private void addUploadedFilesListKeyListener(final JList<String> list, final DefaultListModel<String> listModel) {
+		list.addKeyListener(new KeyListener() {
 
-        GLJPanel gljpanel = new GLJPanel(new GLCapabilities(GLProfile.getDefault()));
-        gljpanel.setPreferredSize(new Dimension(400, 400));
-        final DrawMap dm = new DrawMap();
-        // Make up a random depth for each day and station
-        double data_points[][] = new double[365][3];
-        for (int i = 0; i < data_points.length; ++i)
-            for (int s = 0; s < 3; ++s)
-                data_points[i][s] = ThreadLocalRandom.current().nextDouble(5, 25) / 25;
+			@Override
+			public void keyPressed(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_DELETE || e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+					deleteUploadedFiles();
+				}
+			}
 
-        dm.setDataPoints(data_points);
-        final Animator a = new Animator();
-        a.add(gljpanel);
-        a.start();
-        gljpanel.addGLEventListener(new GLEventListener() {
-            @Override
-            public void reshape(GLAutoDrawable glautodrawable, int x, int y, int width, int height) {
-                dm.setup(glautodrawable.getGL().getGL2(), width, height);
-            }
+			@Override
+			public void keyReleased(KeyEvent e) {
+			}
 
-            @Override
-            public void init(GLAutoDrawable glautodrawable) {
-            }
+			@Override
+			public void keyTyped(KeyEvent e) {
+			}
+		});
+	}
 
-            @Override
-            public void dispose(GLAutoDrawable glautodrawable) {
-            }
+	// Deleting uploaded Files if the user has not submitted
+	private void deleteUploadedFiles() {
+		// If user has submitted then files will not be uploaded
+		if (filesSubmitted) {
+			return;
+		}
+		// If there's nothing in the JList or the User didn't Select
+		// a file to delete nothing happens
+		if (list.getSelectedIndices().length > 0) {
+			// Getting the Items you selected and want to delete
+			int[] selectedIndices = list.getSelectedIndices();
+			for (int i = selectedIndices.length - 1; i >= 0; i--) {
+				mainWindow.removeFile(listModel.getElementAt(i));
+				listModel.removeElementAt(i);// Deleting Selected Items
+				submitButtonAccess(false);
+			}
+		}
+	}
 
-            @Override
-            public void display(GLAutoDrawable glautodrawable) {
-                dm.render(glautodrawable.getGL().getGL2(), glautodrawable.getSurfaceWidth(), glautodrawable.getSurfaceHeight());
-            }
-        });
-        panel.add(gljpanel);
-        dm.play();
+	/*
+	 * Asks the MainWindows to Check if files are ready to be Submits The files
+	 */
+	public void onSubmitButtonClicked() {
+		filesSubmitted = mainWindow.onSubmitFilesButtonClicked();
+		if (filesSubmitted) {
+			submitButtonAccess(false);
+		}
+	}
 
-        /***************** Setting The Panels ***************************/
-        this.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
-        this.setDividerLocation(250 % mainWindow.getWidth());
-        this.setLeftComponent(leftMainPanel);
-        this.setRightComponent(panel);
-
-        decompilationOptions = new DecompilationOptions();
-        decompilationOptions.setSettings(settings);
-        decompilationOptions.setFullDecompilation(true);
+	public void onFileParsingError(){
+	    filesSubmitted = false;
+	    submitButtonAccess(true);
     }
 
     // BackSpace and Delete Listener for List that holds Uploaded Files
@@ -588,6 +639,20 @@ public class Model extends JSplitPane {
     public void setLabel(JLabel label) {
         this.label = label;
     }
+
+	public void submitData(float[][] data) {
+		double data2[][] = new double[data.length][data[0].length];
+		for (int i = 0; i < data.length; i++){
+			for (int j = 0; j < data[i].length; j++){
+				data2[i][j]=(double)data[i][j];
+			}
+		}
+//		for (int index = 0; index < 3){
+//			System.out.print();
+//		}
+		dm.setDataPoints(data2);
+		dm.play();
+	}
 
 
 }

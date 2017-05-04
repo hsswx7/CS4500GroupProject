@@ -11,40 +11,44 @@ public class DataExtractorLoop {
 
     private MainWindow mainWindow; //Gives access to function of the MainWindow
 
-    // Parsing through the uploaded files
-    public void getData(UploadedFilesContainer filesUploaded) {
+
+    public float[][] getData(UploadedFilesContainer filesUploaded) {
         //location of files
         ArrayList<File> Files = filesUploaded.getAllFiles();
-        //boolean stationValid = checkStationName(filesUploaded);
-        //try and open file, if file does not exist then throw exception
-        try {
-            Float riverData[][] = new Float[365][3];//store riverHeight values for each substation.
-            for (File file : Files) {
+        boolean yearsValid = checkYears(filesUploaded);
+        boolean stationValid = checkStationName(filesUploaded);
 
-                BufferedReader buf = new BufferedReader(new FileReader(file));
+        if (yearsValid && stationValid ) {
+            //try and open file, if file does not exist then throw exception
+            try {
+                float riverData[][] = new float[365][3];//store riverHeight values for each substation.
+                for (File file : Files) {
 
-                String stationName = null;
-                String lineFetched = null;
-                String[] stringArray;
-                String patternString = "^\\d{1,2}\\.\\d{1,2}";// regular expression dates .*25.56*.
-                Pattern pattern = Pattern.compile(patternString);//find multiple cases of patern
-                int counter = 0;
+                    BufferedReader buf = new BufferedReader(new FileReader(file));
+
+                    String stationName = null;
+                    String lineFetched = null;
+                    String[] stringArray;
+                    String patternString = "^\\d{1,2}\\.\\d{1,2}";// regular expression dates .*25.56*.
+                    Pattern pattern = Pattern.compile(patternString);//find multiple cases of patern
+                    int counter = 0;
 
 
-                lineFetched = buf.readLine();//make sure a valid file is uploaded.
-                if (!lineFetched.contains("Historic Data For Illinois River"))
-                    throw new Exception("Not valid file");
-                else {
+                    lineFetched = buf.readLine();//make sure a valid file is uploaded.
+                    if (!lineFetched.contains("Historic Data For Illinois River"))
+                        throw new Exception("Not valid file");
+                    else {
 
-                    if (lineFetched.contains("Peoria")) {
-                        stationName = "Peoria";//put in the proper order
-                    } else if (lineFetched.contains("Havana")) {
-                        stationName = "Havana";
-                    } else if (lineFetched.contains("Beardstown")) {
-                        stationName = "Beardstown";
-                    } else {
-                        Luyten.showErrorDialog("No known Station Name");
-                        throw new Exception("No known Station Name");
+                        if (lineFetched.contains("Peoria")) {
+                            stationName = "Peoria";//put in the proper order
+                        } else if (lineFetched.contains("Havana")) {
+                            stationName = "Havana";
+                        } else if (lineFetched.contains("Beardstown")) {
+                            stationName = "Beardstown";
+                        } else {
+                            Luyten.showErrorDialog("No known Station Name");
+                            throw new Exception("No known Station Name");
+                        }
                     }
                 }
                 //System.out.println(stationName);
@@ -85,25 +89,19 @@ public class DataExtractorLoop {
                             }
                         }
 
-                    }
-                }
+
+   
 
                 for (int i = 0; i < 3; i++) {
                     Float x = riverData[i][2];
                     System.out.println(x);
                 }
-
-
+                    //TODO Send 2D array to Paul's Function hopefully he has a function
+                    
+                }
                 buf.close();
+                return riverData;
 
-                //TODO Send 2D array to Paul's Function hopefully he has a function
-            }
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-            System.out.println("File not Found");
-        }
-    }
 
 
 }
