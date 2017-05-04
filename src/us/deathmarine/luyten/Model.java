@@ -17,23 +17,18 @@ import com.strobel.decompiler.PlainTextOutput;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.Theme;
 import org.fife.ui.rtextarea.RTextScrollPane;
-import sun.swing.ImageIconUIResource;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.border.TitledBorder;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
-import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.jar.JarFile;
-import javax.swing.UIManager;
 
 
 /**
@@ -49,54 +44,38 @@ public class Model extends JSplitPane {
     public JTabbedPane house;
     private JTree tree;
     private JList<String> list; // Used to display List of files user decided to upload
-    private DefaultListModel<String> listModel;
-    private JButton submitFileButton;
-    private JButton uploadFileButton;
-    private JButton playSimulationBtn;
+    private DefaultListModel<String> listModel; //Model holds the Items
+    private JButton submitFileButton; // Buttons to Submit the files Line 140
+    private JButton startSimulation; // Button to Start the Simulation Line 128
+    private JButton resetSimulationBtn; //Used to reset everything so user can rerun Simulation
     private File file;
     private DecompilerSettings settings;
     private DecompilationOptions decompilationOptions;
     private Theme theme;
     private MainWindow mainWindow;
-    private JProgressBar bar;
     private JLabel label;
     private HashSet<OpenFile> hmap = new HashSet<OpenFile>();
     private boolean open = false;
 
     // filesSubmitted allows functions to check if the files have been submitted
     private boolean filesSubmitted = false;
-    private State state;
     private ConfigSaver configSaver;
-    private LuytenPreferences luytenPrefs;
 
     // Building Panes for the MainWindow
     public Model(final MainWindow mainWindow) {
         this.mainWindow = mainWindow;
-        this.bar = mainWindow.getBar();
+        mainWindow.getBar();
         this.setLabel(mainWindow.getLabel());
 
         configSaver = ConfigSaver.getLoadedInstance();
         settings = configSaver.getDecompilerSettings();
-        luytenPrefs = configSaver.getLuytenPreferences();
 
         tree = new JTree();
         tree.setModel(new DefaultTreeModel(null));
         tree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
         tree.setCellRenderer(new CellRenderer());
-//		TreeListener tl = new TreeListener();
-//		tree.addMouseListener(tl);
-        tree.addKeyListener(new KeyAdapter() {
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-                    // openEntryByTreePath(tree.getSelectionPath());
-                }
-            }
-        });
 
         /***This list is used to display the files chosen by user to upload*****/
-        //listModel holds on to the Strings (uploaded files names)
         listModel = new DefaultListModel<String>();
 
         list = new JList<String>(listModel);
@@ -123,19 +102,19 @@ public class Model extends JSplitPane {
         /*********************** Upload Panel for Files Names ****************/
         JPanel uploadFileLeftPanel = new JPanel();
         uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel, 1));
-        uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
+        uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder(null, "Files Uploaded", TitledBorder.CENTER, TitledBorder.CENTER, new Font("times new roman",Font.PLAIN,16)));
         uploadFileLeftPanel.setToolTipText("Use Delete or BackSpace to Remove Uploaded File");
         uploadFileLeftPanel.add(listScrollPane);
 
 
-        /**********************Upload File Button**************/
+        /**********************startSimulation File Button**************/
 
-        uploadFileButton = new JButton("Upload Files..");
-        uploadFileButton.setIcon(new ImageIcon(getClass().getResource("/resources/file.png")));
-        uploadFileButton.setHorizontalAlignment(SwingConstants.LEFT);
-        uploadFileButton.setToolTipText("Maximum of 3 Files Allowed");
+        startSimulation = new JButton("Upload Files..");
+        startSimulation.setIcon(new ImageIcon(getClass().getResource("/resources/famfamfam_mini_icons/folder_new.gif")));
+        startSimulation.setHorizontalAlignment(SwingConstants.LEFT);
+        startSimulation.setToolTipText("Maximum of 3 Files Allowed");
 
-        uploadFileButton.addActionListener(new ActionListener() {
+        startSimulation.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 mainWindow.onOpenFileMenu();
@@ -143,8 +122,10 @@ public class Model extends JSplitPane {
         });
 
         /******************* Submit File Button ******************************/
-        submitFileButton = new JButton("Submit Uploaded Files");
-//        submitFileButton.setEnabled(false);
+        submitFileButton = new JButton("Start Simulation");
+        submitFileButton.setIcon(new ImageIcon(getClass().getResource("/resources/famfamfam_mini_icons/action_go.gif")));
+        submitFileButton.setHorizontalAlignment(SwingConstants.LEFT);
+        submitFileButton.setEnabled(false);
 
         // This Listener Detects Submit Button Click
         submitFileButton.addActionListener(new ActionListener() {
@@ -158,16 +139,18 @@ public class Model extends JSplitPane {
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, 0));
         buttonPanel.add(submitFileButton);
-        buttonPanel.add(uploadFileButton, 0);
+        buttonPanel.add(startSimulation, 0);
 
-        /**********************Play Simulation Button *********************/
-        playSimulationBtn = new JButton("Start Simulation");
-        playSimulationBtn.setEnabled(false);
+        /**********************Reset Simulation Button *********************/
+        resetSimulationBtn = new JButton("Reset");
+        resetSimulationBtn.setIcon(new ImageIcon(getClass().getResource("/resources/famfamfam_mini_icons/page_refresh.gif")));
+        resetSimulationBtn.setHorizontalAlignment(SwingConstants.LEFT);
+        resetSimulationBtn.setEnabled(false);
 
         /********************Second Simulation Button Panel ************************/
         JPanel simulationButtonPanel = new JPanel();
         simulationButtonPanel.setLayout(new BoxLayout(simulationButtonPanel,0));
-        simulationButtonPanel.add(playSimulationBtn,0);
+        //simulationButtonPanel.add(resetSimulationBtn,0);
 
 
         /*********************Adding items to Left Main Panel *************/
@@ -184,22 +167,8 @@ public class Model extends JSplitPane {
 
         leftMainPanel.add(panel3);
 
-        // TODO REMOVE ALL TAB STUFF
-        house = new JTabbedPane();
-        house.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-//		house.addChangeListener(new TabChangeListener());
-        house.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                if (SwingUtilities.isMiddleMouseButton(e)) {
-                    closeOpenTab(house.getSelectedIndex());
-                }
-            }
-        });
 
-        /**************
-         * Main Panel (This is where the Simulation Will GO)
-         ****************************/
+         /***** Main Panel This is where the map is added *****/
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, 1));
 
@@ -236,7 +205,7 @@ public class Model extends JSplitPane {
 
         /***************** Setting The Panels ***************************/
         this.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
-        this.setDividerLocation(270 % mainWindow.getWidth());
+        this.setDividerLocation(280 % mainWindow.getWidth());
         this.setLeftComponent(leftMainPanel);
         this.setRightComponent(panel);
 
@@ -300,48 +269,6 @@ public class Model extends JSplitPane {
         if (filesSubmitted) {
             submitButtonAccess(false);
         }
-    }
-
-    public void showLegal(String legalStr) {
-        show("Legal", legalStr);
-    }
-
-    public void show(String name, String contents) {
-        OpenFile open = new OpenFile(name, "*/" + name, theme, mainWindow);
-        open.setContent(contents);
-        hmap.add(open);
-    }
-
-    public void closeOpenTab(int index) {
-        RTextScrollPane co = (RTextScrollPane) house.getComponentAt(index);
-        RSyntaxTextArea pane = (RSyntaxTextArea) co.getViewport().getView();
-        OpenFile open = null;
-        for (OpenFile file : hmap)
-            if (pane.equals(file.textArea))
-                open = file;
-        if (open != null && hmap.contains(open))
-            hmap.remove(open);
-        house.remove(co);
-        if (open != null)
-            open.close();
-    }
-
-    private boolean isTabInForeground(OpenFile open) {
-        String title = open.name;
-        int selectedIndex = house.getSelectedIndex();
-        return (selectedIndex >= 0 && selectedIndex == house.indexOfTab(title));
-    }
-
-    @SuppressWarnings("unchecked")
-    public DefaultMutableTreeNode getChild(DefaultMutableTreeNode node, TreeNodeUserObject name) {
-        Enumeration<DefaultMutableTreeNode> entry = node.children();
-        while (entry.hasMoreElements()) {
-            DefaultMutableTreeNode nods = entry.nextElement();
-            if (((TreeNodeUserObject) nods.getUserObject()).getOriginalName().equals(name.getOriginalName())) {
-                return nods;
-            }
-        }
-        return null;
     }
 
     // Uploads files Chosen from Recent Files Menu
@@ -510,6 +437,8 @@ public class Model extends JSplitPane {
         this.label = label;
     }
 
+    //This Function is called when the start simulation button is clicked
+    // Submits data to DrawMap for DrawMap to simulate
     public void submitData(float[][] data) {
         double data2[][] = new double[data.length][data[0].length];
         for (int i = 0; i < data.length; i++) {
@@ -522,6 +451,7 @@ public class Model extends JSplitPane {
 //		}
         dm.setDataPoints(data2);
         dm.play();
+
     }
 
     final class State implements AutoCloseable {
@@ -547,24 +477,6 @@ public class Model extends JSplitPane {
 
         public File getFile() {
             return file;
-        }
-
-        public String getKey() {
-            return key;
-        }
-    }
-
-    private class CloseTab extends MouseAdapter {
-        String title;
-
-        public CloseTab(String title) {
-            this.title = title;
-        }
-
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            int index = house.indexOfTab(title);
-            closeOpenTab(index);
         }
     }
 }

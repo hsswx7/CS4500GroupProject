@@ -39,6 +39,11 @@ public class DrawMap {
         now_playing = false;
     }
 
+    //Lets reset know when simulation has stoped
+    public boolean getPlayingStatus(){
+        return now_playing;
+    }
+
     public void setDataPoints(double new_data[][]) {
         data_points = new_data;
     }
