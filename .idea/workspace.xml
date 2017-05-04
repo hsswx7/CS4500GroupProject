@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="252a06cc-d3e8-4576-a746-c2abce4bddd5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,28 +29,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Model.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2574">
-              <caret line="727" column="22" lean-forward="true" selection-start-line="727" selection-start-column="22" selection-end-line="727" selection-end-column="22" />
+            <state relative-caret-position="3014">
+              <caret line="334" column="47" lean-forward="false" selection-start-line="334" selection-start-column="47" selection-end-line="334" selection-end-column="47" />
               <folding>
                 <element signature="docComment;class#Model#0" expanded="false" />
-                <element signature="method#Model#0;class#Model#0" expanded="false" />
-                <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-                <element signature="method#show#0;class#Model#0" expanded="false" />
-                <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
-                <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
-                <element signature="class#TreeListener#0;class#Model#0" expanded="false" />
-                <element signature="method#mousePressed#0;class#TreeListener#0;class#Model#0" expanded="false" />
-                <element signature="method#openEntryByTreePath#0;class#Model#0" expanded="false" />
-                <element signature="method#extractClassToTextPane#0;class#Model#0" expanded="false" />
-                <element signature="method#extractSimpleFileEntryToTextPane#0;class#Model#0" expanded="false" />
-                <element signature="class#TabChangeListener#0;class#Model#0" expanded="false" />
-                <element signature="method#stateChanged#0;class#TabChangeListener#0;class#Model#0" expanded="false" />
-                <element signature="method#updateOpenClasses#0;class#Model#0" expanded="false" />
-                <element signature="method#updateOpenClass#0;class#Model#0" expanded="false" />
-                <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
                 <element signature="class#State#0;class#Model#0" expanded="false" />
                 <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
                 <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -61,26 +46,29 @@
                 <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
                 <element signature="method#getChild#0;class#Model#0" expanded="false" />
                 <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
-                <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-                <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
-                <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
-                <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
-                <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
-                <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataExtractorLoop.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RecentFiles.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1232">
+              <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataExtractorLoop.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+            <state relative-caret-position="-1254">
+              <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#334#335#0" expanded="true" />
-                <element signature="e#361#362#0" expanded="true" />
+                <element signature="e#522#579#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -89,10 +77,12 @@
       <file leaf-file-name="UploadedFilesContainer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/UploadedFilesContainer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
+            <state relative-caret-position="396">
               <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding>
                 <element signature="method#add#0;class#UploadedFilesContainer#0" expanded="false" />
+                <element signature="e#620#621#0" expanded="true" />
+                <element signature="e#672#673#0" expanded="true" />
                 <element signature="method#removeFile#1;class#UploadedFilesContainer#0" expanded="false" />
                 <element signature="method#checkIfFileAlreadyAdded#0;class#UploadedFilesContainer#0" expanded="false" />
               </folding>
@@ -103,11 +93,9 @@
       <file leaf-file-name="Luyten.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4708">
+            <state relative-caret-position="4224">
               <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="226" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -125,35 +113,32 @@
       <file leaf-file-name="MainWindow.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="632">
-              <caret line="364" column="5" lean-forward="true" selection-start-line="364" selection-start-column="5" selection-end-line="364" selection-end-column="5" />
+            <state relative-caret-position="731">
+              <caret line="404" column="20" lean-forward="false" selection-start-line="404" selection-start-column="20" selection-end-line="404" selection-end-column="20" />
               <folding>
-                <element signature="docComment;class#MainWindow#0" expanded="false" />
-                <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-                <element signature="class#3228:3599" expanded="false" />
-                <element signature="initializer##0;class#3228:3599" expanded="false" />
-                <element signature="method#onOpenFileMenu#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#checkIfFileUploadSizeReached#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#checkIfFileAlreadyAdded#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#removeFile#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#onSelectAllMenu#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#onFindMenu#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#onFindAllMenu#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#onLegalMenu#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#onListLoadedClasses#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#list#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#getLegalStr#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#onFileDropped#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#onFileLoadEnded#0;class#MainWindow#0" expanded="false" />
-                <element signature="e#9285#9354#0" expanded="false" />
-                <element signature="e#10396#10450#0" expanded="false" />
+                <element signature="e#5660#5661#0" expanded="true" />
+                <element signature="e#5682#5683#0" expanded="true" />
+                <element signature="e#6826#7267#0" expanded="true" />
+                <element signature="e#7266#7267#0" expanded="true" />
+                <element signature="e#8879#8880#0" expanded="true" />
+                <element signature="e#8949#8950#0" expanded="true" />
+                <element signature="e#13033#13041#0" expanded="true" />
                 <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
-                <element signature="method#quit#0;class#MainWindow#0" expanded="false" />
                 <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainMenuBar.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainMenuBar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-10500">
+              <caret line="119" column="40" lean-forward="false" selection-start-line="119" selection-start-column="40" selection-end-line="119" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -182,6 +167,11 @@
       <find>Jbutton</find>
       <find>file.png</find>
       <find>Luyten.png</find>
+      <find>public void getData(UploadedFilesContainer filesUploaded) {         //location of files         ArrayList&lt;File&gt; Files = filesUploaded.getAllFiles();         //boolean stationValid = checkStationName(filesUploaded);             //try and open file, if file does not exist then throw exception             try {                 Float riverData[][] = new Float[365][3];//store riverHeight values for each substation.                 for (File file : Files) {                      BufferedReader buf = new BufferedReader(new FileReader(file));                      String stationName = null;                     String lineFetched = null;                     String[] stringArray;                     String patternString = &quot;^\\d{1,2}\\.\\d{1,2}&quot;;// regular expression dates .*25.56*.                     Pattern pattern = Pattern.compile(patternString);//find multiple cases of patern                     int counter = 0;                       lineFetched = buf.readLine();//make sure a valid file is uploaded.                     if (!lineFetched.contains(&quot;Historic Data For Illinois River&quot;))                         throw new Exception(&quot;Not valid file&quot;);                     else {                          if (lineFetched.contains(&quot;Peoria&quot;)) {                             stationName = &quot;Peoria&quot;;//put in the proper order                         } else if (lineFetched.contains(&quot;Havana&quot;)) {                             stationName = &quot;Havana&quot;;                         } else if (lineFetched.contains(&quot;Beardstown&quot;)) {                             stationName = &quot;Beardstown&quot;;                         } else {                             Luyten.showErrorDialog(&quot;No known Station Name&quot;);                             throw new Exception(&quot;No known Station Name&quot;);                         }                     }                     //System.out.println(stationName);                       while (true) {                         lineFetched = buf.readLine();                         if (lineFetched == null) {                             break;                         } else {                               stringArray = lineFetched.split(&quot;\t&quot;);                               for (String each : stringArray) {</find>
+      <find>bar</find>
+      <find>Clear Recent</find>
+      <find>RecentFiles</find>
+      <find>Recent</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -204,8 +194,10 @@
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/UploadeFiles.java" />
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java" />
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java" />
-        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java" />
+        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java" />
+        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/MainMenuBar.java" />
+        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java" />
       </list>
     </option>
   </component>
@@ -223,9 +215,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="width" value="1932" />
-    <option name="height" value="1038" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -243,7 +236,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -290,8 +282,9 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -787,11 +780,14 @@
       <workItem from="1493141016807" duration="8463000" />
       <workItem from="1493659054350" duration="6343000" />
       <workItem from="1493667911553" duration="212000" />
+      <workItem from="1493668265273" duration="1129000" />
+      <workItem from="1493694084715" duration="5104000" />
+      <workItem from="1493859448711" duration="1033000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25491000" />
+    <option name="totallyTimeSpent" value="32757000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -803,7 +799,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -820,7 +816,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298969" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1955819" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19387755" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -833,7 +829,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -853,27 +849,90 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="13" column="41" lean-forward="false" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#522#579#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/UploadedFilesContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="method#add#0;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="method#removeFile#1;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="method#checkIfFileAlreadyAdded#0;class#UploadedFilesContainer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4224">
+          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="226" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/JarEntryFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1518">
+          <caret line="104" column="35" lean-forward="true" selection-start-line="104" selection-start-column="35" selection-end-line="104" selection-end-column="35" />
+          <folding>
+            <element signature="e#5660#5661#0" expanded="true" />
+            <element signature="e#5682#5683#0" expanded="true" />
+            <element signature="e#6826#7267#0" expanded="true" />
+            <element signature="e#7266#7267#0" expanded="true" />
+            <element signature="e#8879#8880#0" expanded="true" />
+            <element signature="e#8949#8950#0" expanded="true" />
+            <element signature="e#13033#13041#0" expanded="true" />
+            <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainMenuBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1474">
-          <caret line="290" column="52" lean-forward="true" selection-start-line="290" selection-start-column="52" selection-end-line="290" selection-end-column="52" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
-            <element signature="method#Model#0;class#Model#0" expanded="false" />
-            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-            <element signature="method#show#0;class#Model#0" expanded="false" />
-            <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
-            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
-            <element signature="class#TreeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#mousePressed#0;class#TreeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#openEntryByTreePath#0;class#Model#0" expanded="false" />
-            <element signature="method#extractClassToTextPane#0;class#Model#0" expanded="false" />
-            <element signature="method#extractSimpleFileEntryToTextPane#0;class#Model#0" expanded="false" />
-            <element signature="class#TabChangeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#stateChanged#0;class#TabChangeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#updateOpenClasses#0;class#Model#0" expanded="false" />
-            <element signature="method#updateOpenClass#0;class#Model#0" expanded="false" />
-            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
             <element signature="class#State#0;class#Model#0" expanded="false" />
             <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
             <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -884,12 +943,88 @@
             <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
             <element signature="method#getChild#0;class#Model#0" expanded="false" />
             <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
-            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
-            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
-            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
-            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
-            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#522#579#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/UploadedFilesContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="method#add#0;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="method#removeFile#1;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="method#checkIfFileAlreadyAdded#0;class#UploadedFilesContainer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4026">
+          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="226" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/JarEntryFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1958">
+          <caret line="364" column="5" lean-forward="false" selection-start-line="364" selection-start-column="5" selection-end-line="364" selection-end-column="5" />
+          <folding>
+            <element signature="e#5660#5661#0" expanded="true" />
+            <element signature="e#5682#5683#0" expanded="true" />
+            <element signature="e#6826#7267#0" expanded="true" />
+            <element signature="e#7266#7267#0" expanded="true" />
+            <element signature="e#8879#8880#0" expanded="true" />
+            <element signature="e#8949#8950#0" expanded="true" />
+            <element signature="e#13033#13041#0" expanded="true" />
+            <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -900,8 +1035,89 @@
           <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#334#335#0" expanded="true" />
-            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#522#579#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/UploadedFilesContainer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding>
+            <element signature="method#add#0;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
+            <element signature="method#removeFile#1;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="method#checkIfFileAlreadyAdded#0;class#UploadedFilesContainer#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4906">
+          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="226" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/JarEntryFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1958">
+          <caret line="364" column="5" lean-forward="true" selection-start-line="364" selection-start-column="5" selection-end-line="364" selection-end-column="5" />
+          <folding>
+            <element signature="e#5660#5661#0" expanded="true" />
+            <element signature="e#5682#5683#0" expanded="true" />
+            <element signature="e#6826#7267#0" expanded="true" />
+            <element signature="e#7266#7267#0" expanded="true" />
+            <element signature="e#8879#8880#0" expanded="true" />
+            <element signature="e#8949#8950#0" expanded="true" />
+            <element signature="e#13033#13041#0" expanded="true" />
+            <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1474">
+          <caret line="290" column="52" lean-forward="true" selection-start-line="290" selection-start-column="52" selection-end-line="290" selection-end-column="52" />
+          <folding>
+            <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#522#579#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -912,6 +1128,8 @@
           <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding>
             <element signature="method#add#0;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
             <element signature="method#removeFile#1;class#UploadedFilesContainer#0" expanded="false" />
             <element signature="method#checkIfFileAlreadyAdded#0;class#UploadedFilesContainer#0" expanded="false" />
           </folding>
@@ -922,9 +1140,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4708">
           <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="226" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -941,30 +1157,17 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#MainWindow#0" expanded="false" />
-            <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="class#3228:3599" expanded="false" />
-            <element signature="initializer##0;class#3228:3599" expanded="false" />
-            <element signature="method#onOpenFileMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFileUploadSizeReached#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFileAlreadyAdded#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#removeFile#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onSelectAllMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFindMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFindAllMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onLegalMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onListLoadedClasses#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#list#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#getLegalStr#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFileDropped#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFileLoadEnded#0;class#MainWindow#0" expanded="false" />
-            <element signature="e#9285#9354#0" expanded="false" />
-            <element signature="e#10396#10450#0" expanded="false" />
+            <element signature="e#5660#5661#0" expanded="true" />
+            <element signature="e#5682#5683#0" expanded="true" />
+            <element signature="e#6826#7267#0" expanded="true" />
+            <element signature="e#7266#7267#0" expanded="true" />
+            <element signature="e#8879#8880#0" expanded="true" />
+            <element signature="e#8949#8950#0" expanded="true" />
+            <element signature="e#13033#13041#0" expanded="true" />
             <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#quit#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -976,21 +1179,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
-            <element signature="method#Model#0;class#Model#0" expanded="false" />
-            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-            <element signature="method#show#0;class#Model#0" expanded="false" />
-            <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
-            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
-            <element signature="class#TreeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#mousePressed#0;class#TreeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#openEntryByTreePath#0;class#Model#0" expanded="false" />
-            <element signature="method#extractClassToTextPane#0;class#Model#0" expanded="false" />
-            <element signature="method#extractSimpleFileEntryToTextPane#0;class#Model#0" expanded="false" />
-            <element signature="class#TabChangeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#stateChanged#0;class#TabChangeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#updateOpenClasses#0;class#Model#0" expanded="false" />
-            <element signature="method#updateOpenClass#0;class#Model#0" expanded="false" />
-            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
             <element signature="class#State#0;class#Model#0" expanded="false" />
             <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
             <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -1001,12 +1189,6 @@
             <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
             <element signature="method#getChild#0;class#Model#0" expanded="false" />
             <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
-            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
-            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
-            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
-            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
-            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1024,30 +1206,17 @@
         <state relative-caret-position="968">
           <caret line="75" column="20" lean-forward="true" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
           <folding>
-            <element signature="docComment;class#MainWindow#0" expanded="false" />
-            <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="class#3228:3599" expanded="false" />
-            <element signature="initializer##0;class#3228:3599" expanded="false" />
-            <element signature="method#onOpenFileMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFileUploadSizeReached#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFileAlreadyAdded#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#removeFile#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onSelectAllMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFindMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFindAllMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onLegalMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onListLoadedClasses#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#list#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#getLegalStr#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFileDropped#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFileLoadEnded#0;class#MainWindow#0" expanded="false" />
-            <element signature="e#9285#9354#0" expanded="false" />
-            <element signature="e#10396#10450#0" expanded="false" />
+            <element signature="e#5660#5661#0" expanded="true" />
+            <element signature="e#5682#5683#0" expanded="true" />
+            <element signature="e#6826#7267#0" expanded="true" />
+            <element signature="e#7266#7267#0" expanded="true" />
+            <element signature="e#8879#8880#0" expanded="true" />
+            <element signature="e#8949#8950#0" expanded="true" />
+            <element signature="e#13033#13041#0" expanded="true" />
             <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#quit#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -1059,21 +1228,6 @@
           <caret line="58" column="37" lean-forward="true" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
-            <element signature="method#Model#0;class#Model#0" expanded="false" />
-            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-            <element signature="method#show#0;class#Model#0" expanded="false" />
-            <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
-            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
-            <element signature="class#TreeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#mousePressed#0;class#TreeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#openEntryByTreePath#0;class#Model#0" expanded="false" />
-            <element signature="method#extractClassToTextPane#0;class#Model#0" expanded="false" />
-            <element signature="method#extractSimpleFileEntryToTextPane#0;class#Model#0" expanded="false" />
-            <element signature="class#TabChangeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#stateChanged#0;class#TabChangeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#updateOpenClasses#0;class#Model#0" expanded="false" />
-            <element signature="method#updateOpenClass#0;class#Model#0" expanded="false" />
-            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
             <element signature="class#State#0;class#Model#0" expanded="false" />
             <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
             <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -1084,12 +1238,6 @@
             <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
             <element signature="method#getChild#0;class#Model#0" expanded="false" />
             <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
-            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
-            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
-            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
-            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
-            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1099,30 +1247,17 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="docComment;class#MainWindow#0" expanded="false" />
-            <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="class#3228:3599" expanded="false" />
-            <element signature="initializer##0;class#3228:3599" expanded="false" />
-            <element signature="method#onOpenFileMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFileUploadSizeReached#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFileAlreadyAdded#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#removeFile#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onSelectAllMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFindMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFindAllMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onLegalMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onListLoadedClasses#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#list#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#getLegalStr#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFileDropped#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFileLoadEnded#0;class#MainWindow#0" expanded="false" />
-            <element signature="e#9285#9354#0" expanded="false" />
-            <element signature="e#10396#10450#0" expanded="false" />
+            <element signature="e#5660#5661#0" expanded="true" />
+            <element signature="e#5682#5683#0" expanded="true" />
+            <element signature="e#6826#7267#0" expanded="true" />
+            <element signature="e#7266#7267#0" expanded="true" />
+            <element signature="e#8879#8880#0" expanded="true" />
+            <element signature="e#8949#8950#0" expanded="true" />
+            <element signature="e#13033#13041#0" expanded="true" />
             <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#quit#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -1134,21 +1269,6 @@
           <caret line="72" column="42" lean-forward="true" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
-            <element signature="method#Model#0;class#Model#0" expanded="false" />
-            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-            <element signature="method#show#0;class#Model#0" expanded="false" />
-            <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
-            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
-            <element signature="class#TreeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#mousePressed#0;class#TreeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#openEntryByTreePath#0;class#Model#0" expanded="false" />
-            <element signature="method#extractClassToTextPane#0;class#Model#0" expanded="false" />
-            <element signature="method#extractSimpleFileEntryToTextPane#0;class#Model#0" expanded="false" />
-            <element signature="class#TabChangeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#stateChanged#0;class#TabChangeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#updateOpenClasses#0;class#Model#0" expanded="false" />
-            <element signature="method#updateOpenClass#0;class#Model#0" expanded="false" />
-            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
             <element signature="class#State#0;class#Model#0" expanded="false" />
             <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
             <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -1159,12 +1279,6 @@
             <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
             <element signature="method#getChild#0;class#Model#0" expanded="false" />
             <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
-            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
-            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
-            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
-            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
-            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1174,30 +1288,17 @@
         <state relative-caret-position="1921">
           <caret line="366" column="116" lean-forward="false" selection-start-line="366" selection-start-column="116" selection-end-line="366" selection-end-column="116" />
           <folding>
-            <element signature="docComment;class#MainWindow#0" expanded="false" />
-            <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="class#3228:3599" expanded="false" />
-            <element signature="initializer##0;class#3228:3599" expanded="false" />
-            <element signature="method#onOpenFileMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFileUploadSizeReached#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFileAlreadyAdded#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#removeFile#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onSelectAllMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFindMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFindAllMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onLegalMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onListLoadedClasses#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#list#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#getLegalStr#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFileDropped#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFileLoadEnded#0;class#MainWindow#0" expanded="false" />
-            <element signature="e#9285#9354#0" expanded="false" />
-            <element signature="e#10396#10450#0" expanded="false" />
+            <element signature="e#5660#5661#0" expanded="true" />
+            <element signature="e#5682#5683#0" expanded="true" />
+            <element signature="e#6826#7267#0" expanded="true" />
+            <element signature="e#7266#7267#0" expanded="true" />
+            <element signature="e#8879#8880#0" expanded="true" />
+            <element signature="e#8949#8950#0" expanded="true" />
+            <element signature="e#13033#13041#0" expanded="true" />
             <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#quit#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -1209,21 +1310,6 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
-            <element signature="method#Model#0;class#Model#0" expanded="false" />
-            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-            <element signature="method#show#0;class#Model#0" expanded="false" />
-            <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
-            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
-            <element signature="class#TreeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#mousePressed#0;class#TreeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#openEntryByTreePath#0;class#Model#0" expanded="false" />
-            <element signature="method#extractClassToTextPane#0;class#Model#0" expanded="false" />
-            <element signature="method#extractSimpleFileEntryToTextPane#0;class#Model#0" expanded="false" />
-            <element signature="class#TabChangeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#stateChanged#0;class#TabChangeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#updateOpenClasses#0;class#Model#0" expanded="false" />
-            <element signature="method#updateOpenClass#0;class#Model#0" expanded="false" />
-            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
             <element signature="class#State#0;class#Model#0" expanded="false" />
             <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
             <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -1234,12 +1320,6 @@
             <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
             <element signature="method#getChild#0;class#Model#0" expanded="false" />
             <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
-            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
-            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
-            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
-            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
-            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1249,30 +1329,17 @@
         <state relative-caret-position="1734">
           <caret line="162" column="46" lean-forward="false" selection-start-line="162" selection-start-column="46" selection-end-line="162" selection-end-column="46" />
           <folding>
-            <element signature="docComment;class#MainWindow#0" expanded="false" />
-            <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="class#3228:3599" expanded="false" />
-            <element signature="initializer##0;class#3228:3599" expanded="false" />
-            <element signature="method#onOpenFileMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFileUploadSizeReached#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFileAlreadyAdded#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#removeFile#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onSelectAllMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFindMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFindAllMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onLegalMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onListLoadedClasses#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#list#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#getLegalStr#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFileDropped#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFileLoadEnded#0;class#MainWindow#0" expanded="false" />
-            <element signature="e#9285#9354#0" expanded="false" />
-            <element signature="e#10396#10450#0" expanded="false" />
+            <element signature="e#5660#5661#0" expanded="true" />
+            <element signature="e#5682#5683#0" expanded="true" />
+            <element signature="e#6826#7267#0" expanded="true" />
+            <element signature="e#7266#7267#0" expanded="true" />
+            <element signature="e#8879#8880#0" expanded="true" />
+            <element signature="e#8949#8950#0" expanded="true" />
+            <element signature="e#13033#13041#0" expanded="true" />
             <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#quit#0;class#MainWindow#0" expanded="false" />
             <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
           </folding>
         </state>
@@ -1330,104 +1397,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4224">
+          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="226" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/UploadeFiles.java" />
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/LinkProvider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6558">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/UploadedFilesContainer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
+        <state relative-caret-position="396">
           <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding>
             <element signature="method#add#0;class#UploadedFilesContainer#0" expanded="false" />
+            <element signature="e#620#621#0" expanded="true" />
+            <element signature="e#672#673#0" expanded="true" />
             <element signature="method#removeFile#1;class#UploadedFilesContainer#0" expanded="false" />
             <element signature="method#checkIfFileAlreadyAdded#0;class#UploadedFilesContainer#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4708">
-          <caret line="223" column="0" lean-forward="false" selection-start-line="223" selection-start-column="0" selection-end-line="226" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/UploadeFiles.java" />
-    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="27" column="42" lean-forward="false" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#334#335#0" expanded="true" />
-            <element signature="e#361#362#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/LinkProvider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="364" column="5" lean-forward="true" selection-start-line="364" selection-start-column="5" selection-end-line="364" selection-end-column="5" />
-          <folding>
-            <element signature="docComment;class#MainWindow#0" expanded="false" />
-            <element signature="method#MainWindow#0;class#MainWindow#0" expanded="false" />
-            <element signature="class#3228:3599" expanded="false" />
-            <element signature="initializer##0;class#3228:3599" expanded="false" />
-            <element signature="method#onOpenFileMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFileUploadSizeReached#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#checkIfFileAlreadyAdded#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#removeFile#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onSelectAllMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFindMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFindAllMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onLegalMenu#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onListLoadedClasses#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#list#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#getLegalStr#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFileDropped#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#onFileLoadEnded#0;class#MainWindow#0" expanded="false" />
-            <element signature="e#9285#9354#0" expanded="false" />
-            <element signature="e#10396#10450#0" expanded="false" />
-            <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#quit#0;class#MainWindow#0" expanded="false" />
-            <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2574">
-          <caret line="727" column="22" lean-forward="true" selection-start-line="727" selection-start-column="22" selection-end-line="727" selection-end-column="22" />
+        <state relative-caret-position="3014">
+          <caret line="334" column="47" lean-forward="false" selection-start-line="334" selection-start-column="47" selection-end-line="334" selection-end-column="47" />
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
-            <element signature="method#Model#0;class#Model#0" expanded="false" />
-            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-            <element signature="method#show#0;class#Model#0" expanded="false" />
-            <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
-            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
-            <element signature="class#TreeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#mousePressed#0;class#TreeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#openEntryByTreePath#0;class#Model#0" expanded="false" />
-            <element signature="method#extractClassToTextPane#0;class#Model#0" expanded="false" />
-            <element signature="method#extractSimpleFileEntryToTextPane#0;class#Model#0" expanded="false" />
-            <element signature="class#TabChangeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#stateChanged#0;class#TabChangeListener#0;class#Model#0" expanded="false" />
-            <element signature="method#updateOpenClasses#0;class#Model#0" expanded="false" />
-            <element signature="method#updateOpenClass#0;class#Model#0" expanded="false" />
-            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
             <element signature="class#State#0;class#Model#0" expanded="false" />
             <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
             <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -1438,12 +1451,54 @@
             <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
             <element signature="method#getChild#0;class#Model#0" expanded="false" />
             <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
-            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
-            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
-            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
-            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
-            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainMenuBar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10500">
+          <caret line="119" column="40" lean-forward="false" selection-start-line="119" selection-start-column="40" selection-end-line="119" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="404" column="20" lean-forward="false" selection-start-line="404" selection-start-column="20" selection-end-line="404" selection-end-column="20" />
+          <folding>
+            <element signature="e#5660#5661#0" expanded="true" />
+            <element signature="e#5682#5683#0" expanded="true" />
+            <element signature="e#6826#7267#0" expanded="true" />
+            <element signature="e#7266#7267#0" expanded="true" />
+            <element signature="e#8879#8880#0" expanded="true" />
+            <element signature="e#8949#8950#0" expanded="true" />
+            <element signature="e#13033#13041#0" expanded="true" />
+            <element signature="method#adjustWindowPositionBySavedState#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setHideFindBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setShowFindAllBoxOnMainWindowFocus#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setQuitOnWindowClosing#0;class#MainWindow#0" expanded="false" />
+            <element signature="method#setExitOnEscWhenEnabled#0;class#MainWindow#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1254">
+          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#522#579#0" expanded="false" />
           </folding>
         </state>
       </provider>

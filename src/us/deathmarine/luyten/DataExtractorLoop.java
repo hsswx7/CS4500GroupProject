@@ -4,87 +4,12 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
-import java.util.BitSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DataExtractorLoop {
 
-
-    private boolean checkYears(UploadedFilesContainer filesContainer) {
-    	ArrayList<String> yearCheck = new ArrayList<String>();
-    	for(File file : filesContainer.getAllFiles()){
-    		try{
-    			BufferedReader buf = new BufferedReader(new FileReader(file.getAbsolutePath()));
-    			String patternString = "^\\d{1,2}\\/\\d{1,2}\\/\\d{4}.*";//look for the first data in data
-    			Pattern pattern = Pattern.compile(patternString);
-    			String lineFetched = null;
-    			boolean foundYear = false;//look for the first year
-    			
-    			while(!foundYear){
-    				 lineFetched = buf.readLine();
-                     if (lineFetched == null) {
-                         break;
-                     } else {
-                    	 Matcher matcher = pattern.matcher(lineFetched);
-                    	 boolean matches = matcher.matches();
-                    	 if (matches){
-                    		 Pattern getYear = Pattern.compile(".*\\/(.?\\d{4})");
-                    		 Matcher findYear = getYear.matcher(lineFetched);
-                    		 if (findYear.find()){//when the year is found stop and add to list
-                    			 yearCheck.add(findYear.group(1));
-                    			 foundYear = true;
-                    		 } 
-                    	 }
-                       }
-    			}
-    			
-    		} catch (Exception e){
-    			Luyten.showExceptionDialog("checkYears", e);
-    		}
-    	}//end of file loop
-    	int index = yearCheck.size();
-    	for (int i = 0; i < index; i++){
-    		if (!yearCheck.get(0).equals(yearCheck.get(i))){
-    			return false;
-    		}
-			
-    	}
-        return true;
-    }
-
-    private boolean checkStationName(UploadedFilesContainer filesContainer) {
-//        byte[] b = new byte[]{3};
-        int bitSize = filesContainer.getMaxFilesAllowed();
-        BitSet bitSet = new BitSet(bitSize);
-
-        bitSet.set(0, bitSize);
-
-        for (File file : filesContainer.getAllFiles()){
-            try {
-                BufferedReader buf = new BufferedReader(new FileReader(file.getAbsolutePath()));
-                String lineFetched = null;
-                lineFetched = buf.readLine();//make sure a valid file is uploaded.
-
-                if (lineFetched.contains("Peoria")) {
-                    bitSet.set(0,false);
-                } else if (lineFetched.contains("Havana")) {
-                    bitSet.set(1,false);
-                } else if (lineFetched.contains("Beardstown")) {
-                    bitSet.set(2,false);
-                }
-
-            }catch (Exception e){
-                Luyten.showExceptionDialog("checkStationName", e);
-            }
-        }
-
-        
-        if(bitSet.length() == 0){
-        	return true;
-        }
-        return false;
-    }
+    private MainWindow mainWindow; //Gives access to function of the MainWindow
 
 
     public float[][] getData(UploadedFilesContainer filesUploaded) {
@@ -125,75 +50,58 @@ public class DataExtractorLoop {
                             throw new Exception("No known Station Name");
                         }
                     }
-                    //System.out.println(stationName);
+                }
+                //System.out.println(stationName);
 
 
-                    while (true) {
-                        lineFetched = buf.readLine();
-                        if (lineFetched == null) {
-                            break;
-                        } else {
+                while (true) {
+                    lineFetched = buf.readLine();
+                    if (lineFetched == null) {
+                        break;
+                    } else {
 
 
-                            stringArray = lineFetched.split("\t");
+                        stringArray = lineFetched.split("\t");
 
 
-                            for (String each : stringArray) {
-                                //int counter = 0;
-                                if (each.contentEquals("M")) {
-                                    each = "00.00";//get missing number
-                                }
-                                Matcher matcher = pattern.matcher(each);//compare the WHOLE line with regular expression
-                                boolean matches = matcher.matches();//T/F if line matches
-                                if (!"".equals(each) && matches) {
-                                    float riverheight = Float.parseFloat(each);
-                                    if (stationName.equals("Peoria")) {
-                                        riverData[counter][0] = riverheight;
-                                        counter++;
+                        for (String each : stringArray) {
+                            //int counter = 0;
+                            if (each.contentEquals("M")) {
+                                each = "00.00";//get missing number
+                            }
+                            Matcher matcher = pattern.matcher(each);//compare the WHOLE line with regular expression
+                            boolean matches = matcher.matches();//T/F if line matches
+                            if (!"".equals(each) && matches) {
+                                float riverheight = Float.parseFloat(each);
+                                if (stationName.equals("Peoria")) {
+                                    riverData[counter][0] = riverheight;
+                                    counter++;
 
 
-                                    } else if (stationName.equals("Havana")) {
-                                        riverData[counter][1] = riverheight;
-                                        counter++;
+                                } else if (stationName.equals("Havana")) {
+                                    riverData[counter][1] = riverheight;
+                                    counter++;
 
-                                    } else if (stationName.equals("Beardstown")) {
-                                        riverData[counter][2] = riverheight;
-                                        counter++;
-                                    }
+                                } else if (stationName.equals("Beardstown")) {
+                                    riverData[counter][2] = riverheight;
+                                    counter++;
                                 }
                             }
-
                         }
-                    }
+
 
    
 
-
-                    buf.close();
-
+                for (int i = 0; i < 3; i++) {
+                    Float x = riverData[i][2];
+                    System.out.println(x);
+                }
                     //TODO Send 2D array to Paul's Function hopefully he has a function
                     
                 }
-                
+                buf.close();
                 return riverData;
-            } catch (Exception e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-                System.out.println("File not Found");
-            }
-        }
-        else{
-            StringBuilder errorString = new StringBuilder();
 
-            if(!yearsValid){
-                errorString.append("Location Years not Consistent.\n");
-            }
-            if(!stationValid){
-                errorString.append("Your Bases are belong to us.");
-            }
-            Luyten.showErrorDialog(errorString.toString());
-        }
-		return null;
-    }
+
 
 }
