@@ -80,8 +80,8 @@ public class Model extends JSplitPane {
 		tree.setModel(new DefaultTreeModel(null));
 		tree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
 		tree.setCellRenderer(new CellRenderer());
-		TreeListener tl = new TreeListener();
-		tree.addMouseListener(tl);
+//		TreeListener tl = new TreeListener();
+//		tree.addMouseListener(tl);
 		tree.addKeyListener(new KeyAdapter() {
 
 			@Override
@@ -164,7 +164,7 @@ public class Model extends JSplitPane {
 		// TODO REMOVE ALL TAB STUFF
 		house = new JTabbedPane();
 		house.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
-		house.addChangeListener(new TabChangeListener());
+//		house.addChangeListener(new TabChangeListener());
 		house.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -221,56 +221,6 @@ public class Model extends JSplitPane {
 		decompilationOptions = new DecompilationOptions();
 		decompilationOptions.setSettings(settings);
 		decompilationOptions.setFullDecompilation(true);
-	}
-
-	// BackSpace and Delete Listener for List that holds Uploaded Files
-	private void addUploadedFilesListKeyListener(final JList<String> list, final DefaultListModel<String> listModel) {
-		list.addKeyListener(new KeyListener() {
-
-			@Override
-			public void keyPressed(KeyEvent e) {
-				if (e.getKeyCode() == KeyEvent.VK_DELETE || e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
-					deleteUploadedFiles();
-				}
-			}
-
-			@Override
-			public void keyReleased(KeyEvent e) {
-			}
-
-			@Override
-			public void keyTyped(KeyEvent e) {
-			}
-		});
-	}
-
-	// Deleting uploaded Files if the user has not submitted
-	private void deleteUploadedFiles() {
-		// If user has submitted then files will not be uploaded
-		if (filesSubmitted) {
-			return;
-		}
-		// If there's nothing in the JList or the User didn't Select
-		// a file to delete nothing happens
-		if (list.getSelectedIndices().length > 0) {
-			// Getting the Items you selected and want to delete
-			int[] selectedIndices = list.getSelectedIndices();
-			for (int i = selectedIndices.length - 1; i >= 0; i--) {
-				mainWindow.removeFile(listModel.getElementAt(i));
-				listModel.removeElementAt(i);// Deleting Selected Items
-				submitButtonAccess(false);
-			}
-		}
-	}
-
-	/*
-	 * Asks the MainWindows to Check if files are ready to be Submits The files
-	 */
-	public void onSubmitButtonClicked() {
-		filesSubmitted = mainWindow.onSubmitFilesButtonClicked();
-		if (filesSubmitted) {
-			submitButtonAccess(false);
-		}
 	}
 
 	public void onFileParsingError(){
