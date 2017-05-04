@@ -603,6 +603,4 @@ public class Model extends JSplitPane {
 		dm.setDataPoints(data2);
 		dm.play();
 	}
-
-
 }

@@ -328,6 +328,7 @@ public class MainWindow extends JFrame {
             DataExtractorLoop uploadeFiles = new DataExtractorLoop();
             float[][] data = uploadeFiles.getData(uploadedFilesContainer);
             model.submitButtonAccess(false);
+            model.submitData(data);
             return true;
         }
         return false;

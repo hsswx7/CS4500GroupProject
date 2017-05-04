@@ -14,8 +14,8 @@ public class DataExtractorLoop {
     public float[][] getData(UploadedFilesContainer filesUploaded){
         //location of files
         ArrayList<File> Files = filesUploaded.getAllFiles();
+        float riverData[][] = new float[365][3];//store riverHeight values for each substation.
         try {
-            float riverData[][] = new float[365][3];//store riverHeight values for each substation.
             for (File file : Files) {
 
                 BufferedReader buf = new BufferedReader(new FileReader(file));
@@ -83,17 +83,18 @@ public class DataExtractorLoop {
                         }
 
 
-                        for (int i = 0; i < 3; i++) {
-                            Float x = riverData[i][2];
-                            System.out.println(x);
-                        }
+//                        for (int i = 0; i < 3; i++) {
+//                            Float x = riverData[i][2];
+//                            System.out.println(x);
+//                        }
                     }
-                    buf.close();
-                    return riverData;
-
-
                 }
+                buf.close();
             }
+        }catch (Exception e){
+        	e.printStackTrace();
+        	System.out.println("Fatel Data Extraction Crash");
         }
+        return riverData;
     }
 }
