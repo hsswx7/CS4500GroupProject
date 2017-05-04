@@ -17,7 +17,9 @@ import com.strobel.decompiler.PlainTextOutput;
 import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
 import org.fife.ui.rsyntaxtextarea.Theme;
 import org.fife.ui.rtextarea.RTextScrollPane;
+import sun.swing.ImageIconUIResource;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
@@ -25,11 +27,13 @@ import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringWriter;
 import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.jar.JarFile;
+import javax.swing.UIManager;
 
 
 /**
@@ -48,6 +52,7 @@ public class Model extends JSplitPane {
     private DefaultListModel<String> listModel;
     private JButton submitFileButton;
     private JButton uploadFileButton;
+    private JButton playSimulationBtn;
     private File file;
     private DecompilerSettings settings;
     private DecompilationOptions decompilationOptions;
@@ -97,8 +102,9 @@ public class Model extends JSplitPane {
         list = new JList<String>(listModel);
         list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         list.setLayoutOrientation(JList.VERTICAL);
-        list.setVisibleRowCount(-1);
-        list.setFont(new Font("Times New Roman",Font.BOLD,22));
+        list.setVisibleRowCount(-1); //lets list know it can create a scroll of the list items anytime the view is not
+        // big enough
+        list.setFont(new Font("Times New Roman",Font.BOLD,22)); //Adding font to the files uploaded
 
         // renderer allows JList to center String Names Added
         DefaultListCellRenderer renderer = (DefaultListCellRenderer) list.getCellRenderer();
@@ -114,8 +120,21 @@ public class Model extends JSplitPane {
         leftMainPanel.setLayout(new BoxLayout(leftMainPanel, BoxLayout.Y_AXIS));
 
 
+        /*********************** Upload Panel for Files Names ****************/
+        JPanel uploadFileLeftPanel = new JPanel();
+        uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel, 1));
+        uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
+        uploadFileLeftPanel.setToolTipText("Use Delete or BackSpace to Remove Uploaded File");
+        uploadFileLeftPanel.add(listScrollPane);
+
+
         /**********************Upload File Button**************/
-        uploadFileButton = new JButton("Upload File..");
+
+        uploadFileButton = new JButton("Upload Files..");
+        uploadFileButton.setIcon(new ImageIcon(getClass().getResource("/resources/file.png")));
+        uploadFileButton.setHorizontalAlignment(SwingConstants.LEFT);
+        uploadFileButton.setToolTipText("Maximum of 3 Files Allowed");
+
         uploadFileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
@@ -123,25 +142,9 @@ public class Model extends JSplitPane {
             }
         });
 
-        //leftMainPanel.add(uploadFileButton);
-
-        /*********************** Upload Panel for Files Names ****************/
-        JPanel uploadFileLeftPanel = new JPanel();
-        uploadFileLeftPanel.setLayout(new BoxLayout(uploadFileLeftPanel, 1));
-        uploadFileLeftPanel.setBorder(BorderFactory.createTitledBorder("Files Uploaded"));
-        uploadFileLeftPanel.add(listScrollPane);
-
-
         /******************* Submit File Button ******************************/
         submitFileButton = new JButton("Submit Uploaded Files");
-        submitFileButton.setEnabled(false);
-        JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new BoxLayout(buttonPanel, 0));
-        buttonPanel.add(submitFileButton);
-        buttonPanel.add(uploadFileButton, 0);
-
-        leftMainPanel.add(uploadFileLeftPanel);
-        leftMainPanel.add(buttonPanel);
+//        submitFileButton.setEnabled(false);
 
         // This Listener Detects Submit Button Click
         submitFileButton.addActionListener(new ActionListener() {
@@ -150,6 +153,27 @@ public class Model extends JSplitPane {
                 onSubmitButtonClicked();
             }
         });
+
+        /********************Button Panel For the Buttons ****************/
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, 0));
+        buttonPanel.add(submitFileButton);
+        buttonPanel.add(uploadFileButton, 0);
+
+        /**********************Play Simulation Button *********************/
+        playSimulationBtn = new JButton("Start Simulation");
+        playSimulationBtn.setEnabled(false);
+
+        /********************Second Simulation Button Panel ************************/
+        JPanel simulationButtonPanel = new JPanel();
+        simulationButtonPanel.setLayout(new BoxLayout(simulationButtonPanel,0));
+        simulationButtonPanel.add(playSimulationBtn,0);
+
+
+        /*********************Adding items to Left Main Panel *************/
+        leftMainPanel.add(uploadFileLeftPanel);
+        leftMainPanel.add(buttonPanel);
+        leftMainPanel.add(simulationButtonPanel);
 
         /******************** Panel 3 For Test ************************/
 
@@ -212,7 +236,7 @@ public class Model extends JSplitPane {
 
         /***************** Setting The Panels ***************************/
         this.setOrientation(JSplitPane.HORIZONTAL_SPLIT);
-        this.setDividerLocation(250 % mainWindow.getWidth());
+        this.setDividerLocation(270 % mainWindow.getWidth());
         this.setLeftComponent(leftMainPanel);
         this.setRightComponent(panel);
 
@@ -220,6 +244,8 @@ public class Model extends JSplitPane {
         decompilationOptions.setSettings(settings);
         decompilationOptions.setFullDecompilation(true);
     }
+    
+    //--------------- Model Methods -------------------------
 
     // BackSpace and Delete Listener for List that holds Uploaded Files
     private void addUploadedFilesListKeyListener(final JList<String> list, final DefaultListModel<String> listModel) {
