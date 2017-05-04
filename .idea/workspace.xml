@@ -3,37 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="252a06cc-d3e8-4576-a746-c2abce4bddd5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/CellRenderer.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/CellRenderer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/Closer.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/Closer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/ConfigSaver.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/ConfigSaver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/DecompilerLinkProvider.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/DecompilerLinkProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/DrawMap.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/DrawMap.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/DropListener.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/DropListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/FileDialog.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/FileDialog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/FileEntryNotFoundException.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/FileEntryNotFoundException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/FileIsBinaryException.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/FileIsBinaryException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/FileSaver.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/FileSaver.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/FindAllBox.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/FindAllBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/FindBox.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/FindBox.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/JFontChooser.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/JFontChooser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/JarEntryFilter.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/JarEntryFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/LinkProvider.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/LinkProvider.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/LuytenOsx.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/LuytenOsx.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/LuytenPreferences.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/LuytenPreferences.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/LuytenTypeLoader.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/LuytenTypeLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/MainMenuBar.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/MainMenuBar.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/OpenFile.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/OpenFile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/Selection.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/Selection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/TooLargeFileException.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/TooLargeFileException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/TreeNodeUserObject.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/TreeNodeUserObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/TreeUtil.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/TreeUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/UploadedFilesContainer.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/UploadedFilesContainer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/WindowPosition.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/WindowPosition.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,42 +30,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Model.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="51" column="40" lean-forward="false" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+            <state relative-caret-position="386">
+              <caret line="100" column="71" lean-forward="false" selection-start-line="100" selection-start-column="71" selection-end-line="100" selection-end-column="71" />
               <folding>
                 <element signature="docComment;class#Model#0" expanded="false" />
                 <element signature="e#3044#3085#0" expanded="false" />
-                <element signature="class#7333:8006" expanded="false" />
-                <element signature="method#reshape#0;class#7333:8006" expanded="false" />
-                <element signature="method#init#0;class#7333:8006" expanded="false" />
-                <element signature="method#dispose#0;class#7333:8006" expanded="false" />
-                <element signature="method#display#0;class#7333:8006" expanded="false" />
+                <element signature="class#7412:8085" expanded="false" />
+                <element signature="method#reshape#0;class#7412:8085" expanded="false" />
+                <element signature="method#init#0;class#7412:8085" expanded="false" />
+                <element signature="method#dispose#0;class#7412:8085" expanded="false" />
+                <element signature="method#display#0;class#7412:8085" expanded="false" />
                 <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-                <element signature="class#8719:9504" expanded="false" />
-                <element signature="method#keyPressed#0;class#8719:9504" expanded="false" />
-                <element signature="method#keyReleased#0;class#8719:9504" expanded="false" />
-                <element signature="method#keyTyped#0;class#8719:9504" expanded="false" />
+                <element signature="class#8798:9583" expanded="false" />
+                <element signature="method#keyPressed#0;class#8798:9583" expanded="false" />
+                <element signature="method#keyReleased#0;class#8798:9583" expanded="false" />
+                <element signature="method#keyTyped#0;class#8798:9583" expanded="false" />
                 <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
-                <element signature="e#9749#9809#0" expanded="false" />
+                <element signature="e#9828#9888#0" expanded="false" />
                 <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
-                <element signature="e#10855#10856#0" expanded="true" />
-                <element signature="e#10894#10895#0" expanded="true" />
+                <element signature="method#show#0;class#Model#0" expanded="false" />
                 <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
                 <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
                 <element signature="method#getChild#0;class#Model#0" expanded="false" />
                 <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
                 <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-                <element signature="e#13278#13332#0" expanded="false" />
+                <element signature="e#13357#13411#0" expanded="false" />
                 <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
                 <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
                 <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
                 <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
                 <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
                 <element signature="method#submitData#0;class#Model#0" expanded="false" />
-                <element signature="e#18938#18973#0" expanded="false" />
+                <element signature="e#19017#19052#0" expanded="false" />
                 <element signature="class#State#0;class#Model#0" expanded="false" />
                 <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
                 <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -144,7 +113,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Luyten.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Luyten.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="286">
@@ -274,6 +243,7 @@
       <find>Clear Recent</find>
       <find>RecentFiles</find>
       <find>Recent</find>
+      <find>listModel</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -298,8 +268,8 @@
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/MainMenuBar.java" />
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java" />
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java" />
-        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java" />
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java" />
+        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java" />
       </list>
     </option>
   </component>
@@ -889,7 +859,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36970000" />
+    <option name="totallyTimeSpent" value="37735000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1065,34 +1035,33 @@
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
             <element signature="e#3044#3085#0" expanded="false" />
-            <element signature="class#7333:8006" expanded="false" />
-            <element signature="method#reshape#0;class#7333:8006" expanded="false" />
-            <element signature="method#init#0;class#7333:8006" expanded="false" />
-            <element signature="method#dispose#0;class#7333:8006" expanded="false" />
-            <element signature="method#display#0;class#7333:8006" expanded="false" />
+            <element signature="class#7412:8085" expanded="false" />
+            <element signature="method#reshape#0;class#7412:8085" expanded="false" />
+            <element signature="method#init#0;class#7412:8085" expanded="false" />
+            <element signature="method#dispose#0;class#7412:8085" expanded="false" />
+            <element signature="method#display#0;class#7412:8085" expanded="false" />
             <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-            <element signature="class#8719:9504" expanded="false" />
-            <element signature="method#keyPressed#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyReleased#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyTyped#0;class#8719:9504" expanded="false" />
+            <element signature="class#8798:9583" expanded="false" />
+            <element signature="method#keyPressed#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyReleased#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyTyped#0;class#8798:9583" expanded="false" />
             <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
-            <element signature="e#9749#9809#0" expanded="false" />
+            <element signature="e#9828#9888#0" expanded="false" />
             <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
-            <element signature="e#10855#10856#0" expanded="true" />
-            <element signature="e#10894#10895#0" expanded="true" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
             <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
             <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
             <element signature="method#getChild#0;class#Model#0" expanded="false" />
             <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
             <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-            <element signature="e#13278#13332#0" expanded="false" />
+            <element signature="e#13357#13411#0" expanded="false" />
             <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
             <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
             <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
             <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
             <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
             <element signature="method#submitData#0;class#Model#0" expanded="false" />
-            <element signature="e#18938#18973#0" expanded="false" />
+            <element signature="e#19017#19052#0" expanded="false" />
             <element signature="class#State#0;class#Model#0" expanded="false" />
             <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
             <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -1208,34 +1177,33 @@
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
             <element signature="e#3044#3085#0" expanded="false" />
-            <element signature="class#7333:8006" expanded="false" />
-            <element signature="method#reshape#0;class#7333:8006" expanded="false" />
-            <element signature="method#init#0;class#7333:8006" expanded="false" />
-            <element signature="method#dispose#0;class#7333:8006" expanded="false" />
-            <element signature="method#display#0;class#7333:8006" expanded="false" />
+            <element signature="class#7412:8085" expanded="false" />
+            <element signature="method#reshape#0;class#7412:8085" expanded="false" />
+            <element signature="method#init#0;class#7412:8085" expanded="false" />
+            <element signature="method#dispose#0;class#7412:8085" expanded="false" />
+            <element signature="method#display#0;class#7412:8085" expanded="false" />
             <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-            <element signature="class#8719:9504" expanded="false" />
-            <element signature="method#keyPressed#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyReleased#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyTyped#0;class#8719:9504" expanded="false" />
+            <element signature="class#8798:9583" expanded="false" />
+            <element signature="method#keyPressed#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyReleased#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyTyped#0;class#8798:9583" expanded="false" />
             <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
-            <element signature="e#9749#9809#0" expanded="false" />
+            <element signature="e#9828#9888#0" expanded="false" />
             <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
-            <element signature="e#10855#10856#0" expanded="true" />
-            <element signature="e#10894#10895#0" expanded="true" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
             <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
             <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
             <element signature="method#getChild#0;class#Model#0" expanded="false" />
             <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
             <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-            <element signature="e#13278#13332#0" expanded="false" />
+            <element signature="e#13357#13411#0" expanded="false" />
             <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
             <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
             <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
             <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
             <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
             <element signature="method#submitData#0;class#Model#0" expanded="false" />
-            <element signature="e#18938#18973#0" expanded="false" />
+            <element signature="e#19017#19052#0" expanded="false" />
             <element signature="class#State#0;class#Model#0" expanded="false" />
             <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
             <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -1351,34 +1319,33 @@
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
             <element signature="e#3044#3085#0" expanded="false" />
-            <element signature="class#7333:8006" expanded="false" />
-            <element signature="method#reshape#0;class#7333:8006" expanded="false" />
-            <element signature="method#init#0;class#7333:8006" expanded="false" />
-            <element signature="method#dispose#0;class#7333:8006" expanded="false" />
-            <element signature="method#display#0;class#7333:8006" expanded="false" />
+            <element signature="class#7412:8085" expanded="false" />
+            <element signature="method#reshape#0;class#7412:8085" expanded="false" />
+            <element signature="method#init#0;class#7412:8085" expanded="false" />
+            <element signature="method#dispose#0;class#7412:8085" expanded="false" />
+            <element signature="method#display#0;class#7412:8085" expanded="false" />
             <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-            <element signature="class#8719:9504" expanded="false" />
-            <element signature="method#keyPressed#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyReleased#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyTyped#0;class#8719:9504" expanded="false" />
+            <element signature="class#8798:9583" expanded="false" />
+            <element signature="method#keyPressed#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyReleased#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyTyped#0;class#8798:9583" expanded="false" />
             <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
-            <element signature="e#9749#9809#0" expanded="false" />
+            <element signature="e#9828#9888#0" expanded="false" />
             <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
-            <element signature="e#10855#10856#0" expanded="true" />
-            <element signature="e#10894#10895#0" expanded="true" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
             <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
             <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
             <element signature="method#getChild#0;class#Model#0" expanded="false" />
             <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
             <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-            <element signature="e#13278#13332#0" expanded="false" />
+            <element signature="e#13357#13411#0" expanded="false" />
             <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
             <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
             <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
             <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
             <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
             <element signature="method#submitData#0;class#Model#0" expanded="false" />
-            <element signature="e#18938#18973#0" expanded="false" />
+            <element signature="e#19017#19052#0" expanded="false" />
             <element signature="class#State#0;class#Model#0" expanded="false" />
             <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
             <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -1494,34 +1461,33 @@
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
             <element signature="e#3044#3085#0" expanded="false" />
-            <element signature="class#7333:8006" expanded="false" />
-            <element signature="method#reshape#0;class#7333:8006" expanded="false" />
-            <element signature="method#init#0;class#7333:8006" expanded="false" />
-            <element signature="method#dispose#0;class#7333:8006" expanded="false" />
-            <element signature="method#display#0;class#7333:8006" expanded="false" />
+            <element signature="class#7412:8085" expanded="false" />
+            <element signature="method#reshape#0;class#7412:8085" expanded="false" />
+            <element signature="method#init#0;class#7412:8085" expanded="false" />
+            <element signature="method#dispose#0;class#7412:8085" expanded="false" />
+            <element signature="method#display#0;class#7412:8085" expanded="false" />
             <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-            <element signature="class#8719:9504" expanded="false" />
-            <element signature="method#keyPressed#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyReleased#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyTyped#0;class#8719:9504" expanded="false" />
+            <element signature="class#8798:9583" expanded="false" />
+            <element signature="method#keyPressed#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyReleased#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyTyped#0;class#8798:9583" expanded="false" />
             <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
-            <element signature="e#9749#9809#0" expanded="false" />
+            <element signature="e#9828#9888#0" expanded="false" />
             <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
-            <element signature="e#10855#10856#0" expanded="true" />
-            <element signature="e#10894#10895#0" expanded="true" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
             <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
             <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
             <element signature="method#getChild#0;class#Model#0" expanded="false" />
             <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
             <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-            <element signature="e#13278#13332#0" expanded="false" />
+            <element signature="e#13357#13411#0" expanded="false" />
             <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
             <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
             <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
             <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
             <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
             <element signature="method#submitData#0;class#Model#0" expanded="false" />
-            <element signature="e#18938#18973#0" expanded="false" />
+            <element signature="e#19017#19052#0" expanded="false" />
             <element signature="class#State#0;class#Model#0" expanded="false" />
             <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
             <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -1605,34 +1571,33 @@
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
             <element signature="e#3044#3085#0" expanded="false" />
-            <element signature="class#7333:8006" expanded="false" />
-            <element signature="method#reshape#0;class#7333:8006" expanded="false" />
-            <element signature="method#init#0;class#7333:8006" expanded="false" />
-            <element signature="method#dispose#0;class#7333:8006" expanded="false" />
-            <element signature="method#display#0;class#7333:8006" expanded="false" />
+            <element signature="class#7412:8085" expanded="false" />
+            <element signature="method#reshape#0;class#7412:8085" expanded="false" />
+            <element signature="method#init#0;class#7412:8085" expanded="false" />
+            <element signature="method#dispose#0;class#7412:8085" expanded="false" />
+            <element signature="method#display#0;class#7412:8085" expanded="false" />
             <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-            <element signature="class#8719:9504" expanded="false" />
-            <element signature="method#keyPressed#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyReleased#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyTyped#0;class#8719:9504" expanded="false" />
+            <element signature="class#8798:9583" expanded="false" />
+            <element signature="method#keyPressed#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyReleased#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyTyped#0;class#8798:9583" expanded="false" />
             <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
-            <element signature="e#9749#9809#0" expanded="false" />
+            <element signature="e#9828#9888#0" expanded="false" />
             <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
-            <element signature="e#10855#10856#0" expanded="true" />
-            <element signature="e#10894#10895#0" expanded="true" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
             <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
             <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
             <element signature="method#getChild#0;class#Model#0" expanded="false" />
             <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
             <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-            <element signature="e#13278#13332#0" expanded="false" />
+            <element signature="e#13357#13411#0" expanded="false" />
             <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
             <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
             <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
             <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
             <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
             <element signature="method#submitData#0;class#Model#0" expanded="false" />
-            <element signature="e#18938#18973#0" expanded="false" />
+            <element signature="e#19017#19052#0" expanded="false" />
             <element signature="class#State#0;class#Model#0" expanded="false" />
             <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
             <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -1700,34 +1665,33 @@
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
             <element signature="e#3044#3085#0" expanded="false" />
-            <element signature="class#7333:8006" expanded="false" />
-            <element signature="method#reshape#0;class#7333:8006" expanded="false" />
-            <element signature="method#init#0;class#7333:8006" expanded="false" />
-            <element signature="method#dispose#0;class#7333:8006" expanded="false" />
-            <element signature="method#display#0;class#7333:8006" expanded="false" />
+            <element signature="class#7412:8085" expanded="false" />
+            <element signature="method#reshape#0;class#7412:8085" expanded="false" />
+            <element signature="method#init#0;class#7412:8085" expanded="false" />
+            <element signature="method#dispose#0;class#7412:8085" expanded="false" />
+            <element signature="method#display#0;class#7412:8085" expanded="false" />
             <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-            <element signature="class#8719:9504" expanded="false" />
-            <element signature="method#keyPressed#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyReleased#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyTyped#0;class#8719:9504" expanded="false" />
+            <element signature="class#8798:9583" expanded="false" />
+            <element signature="method#keyPressed#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyReleased#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyTyped#0;class#8798:9583" expanded="false" />
             <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
-            <element signature="e#9749#9809#0" expanded="false" />
+            <element signature="e#9828#9888#0" expanded="false" />
             <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
-            <element signature="e#10855#10856#0" expanded="true" />
-            <element signature="e#10894#10895#0" expanded="true" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
             <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
             <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
             <element signature="method#getChild#0;class#Model#0" expanded="false" />
             <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
             <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-            <element signature="e#13278#13332#0" expanded="false" />
+            <element signature="e#13357#13411#0" expanded="false" />
             <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
             <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
             <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
             <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
             <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
             <element signature="method#submitData#0;class#Model#0" expanded="false" />
-            <element signature="e#18938#18973#0" expanded="false" />
+            <element signature="e#19017#19052#0" expanded="false" />
             <element signature="class#State#0;class#Model#0" expanded="false" />
             <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
             <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -1795,34 +1759,33 @@
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
             <element signature="e#3044#3085#0" expanded="false" />
-            <element signature="class#7333:8006" expanded="false" />
-            <element signature="method#reshape#0;class#7333:8006" expanded="false" />
-            <element signature="method#init#0;class#7333:8006" expanded="false" />
-            <element signature="method#dispose#0;class#7333:8006" expanded="false" />
-            <element signature="method#display#0;class#7333:8006" expanded="false" />
+            <element signature="class#7412:8085" expanded="false" />
+            <element signature="method#reshape#0;class#7412:8085" expanded="false" />
+            <element signature="method#init#0;class#7412:8085" expanded="false" />
+            <element signature="method#dispose#0;class#7412:8085" expanded="false" />
+            <element signature="method#display#0;class#7412:8085" expanded="false" />
             <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-            <element signature="class#8719:9504" expanded="false" />
-            <element signature="method#keyPressed#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyReleased#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyTyped#0;class#8719:9504" expanded="false" />
+            <element signature="class#8798:9583" expanded="false" />
+            <element signature="method#keyPressed#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyReleased#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyTyped#0;class#8798:9583" expanded="false" />
             <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
-            <element signature="e#9749#9809#0" expanded="false" />
+            <element signature="e#9828#9888#0" expanded="false" />
             <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
-            <element signature="e#10855#10856#0" expanded="true" />
-            <element signature="e#10894#10895#0" expanded="true" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
             <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
             <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
             <element signature="method#getChild#0;class#Model#0" expanded="false" />
             <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
             <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-            <element signature="e#13278#13332#0" expanded="false" />
+            <element signature="e#13357#13411#0" expanded="false" />
             <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
             <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
             <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
             <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
             <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
             <element signature="method#submitData#0;class#Model#0" expanded="false" />
-            <element signature="e#18938#18973#0" expanded="false" />
+            <element signature="e#19017#19052#0" expanded="false" />
             <element signature="class#State#0;class#Model#0" expanded="false" />
             <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
             <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
@@ -2010,50 +1973,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="51" column="40" lean-forward="false" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
-          <folding>
-            <element signature="docComment;class#Model#0" expanded="false" />
-            <element signature="e#3044#3085#0" expanded="false" />
-            <element signature="class#7333:8006" expanded="false" />
-            <element signature="method#reshape#0;class#7333:8006" expanded="false" />
-            <element signature="method#init#0;class#7333:8006" expanded="false" />
-            <element signature="method#dispose#0;class#7333:8006" expanded="false" />
-            <element signature="method#display#0;class#7333:8006" expanded="false" />
-            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
-            <element signature="class#8719:9504" expanded="false" />
-            <element signature="method#keyPressed#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyReleased#0;class#8719:9504" expanded="false" />
-            <element signature="method#keyTyped#0;class#8719:9504" expanded="false" />
-            <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
-            <element signature="e#9749#9809#0" expanded="false" />
-            <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
-            <element signature="e#10855#10856#0" expanded="true" />
-            <element signature="e#10894#10895#0" expanded="true" />
-            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
-            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
-            <element signature="method#getChild#0;class#Model#0" expanded="false" />
-            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
-            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
-            <element signature="e#13278#13332#0" expanded="false" />
-            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
-            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
-            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
-            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
-            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
-            <element signature="method#submitData#0;class#Model#0" expanded="false" />
-            <element signature="e#18938#18973#0" expanded="false" />
-            <element signature="class#State#0;class#Model#0" expanded="false" />
-            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
-            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
-            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
-            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1232">
@@ -2107,6 +2026,49 @@
         <state relative-caret-position="286">
           <caret line="37" column="70" lean-forward="false" selection-start-line="37" selection-start-column="70" selection-end-line="37" selection-end-column="70" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="100" column="71" lean-forward="false" selection-start-line="100" selection-start-column="71" selection-end-line="100" selection-end-column="71" />
+          <folding>
+            <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="e#3044#3085#0" expanded="false" />
+            <element signature="class#7412:8085" expanded="false" />
+            <element signature="method#reshape#0;class#7412:8085" expanded="false" />
+            <element signature="method#init#0;class#7412:8085" expanded="false" />
+            <element signature="method#dispose#0;class#7412:8085" expanded="false" />
+            <element signature="method#display#0;class#7412:8085" expanded="false" />
+            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
+            <element signature="class#8798:9583" expanded="false" />
+            <element signature="method#keyPressed#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyReleased#0;class#8798:9583" expanded="false" />
+            <element signature="method#keyTyped#0;class#8798:9583" expanded="false" />
+            <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
+            <element signature="e#9828#9888#0" expanded="false" />
+            <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
+            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
+            <element signature="e#13357#13411#0" expanded="false" />
+            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
+            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
+            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
+            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
+            <element signature="method#submitData#0;class#Model#0" expanded="false" />
+            <element signature="e#19017#19052#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

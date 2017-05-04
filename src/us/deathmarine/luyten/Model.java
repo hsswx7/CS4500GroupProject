@@ -98,6 +98,7 @@ public class Model extends JSplitPane {
         list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
         list.setLayoutOrientation(JList.VERTICAL);
         list.setVisibleRowCount(-1);
+        list.setFont(new Font("Times New Roman",Font.BOLD,22));
 
         // renderer allows JList to center String Names Added
         DefaultListCellRenderer renderer = (DefaultListCellRenderer) list.getCellRenderer();
