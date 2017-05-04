@@ -97,7 +97,7 @@ public class Model extends JSplitPane {
 		listModel = new DefaultListModel<String>();
 
 		list = new JList<String>(listModel);
-		list.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+		list.setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 		list.setLayoutOrientation(JList.VERTICAL);
 		list.setVisibleRowCount(-1);
 
@@ -223,11 +223,6 @@ public class Model extends JSplitPane {
 		decompilationOptions.setFullDecompilation(true);
 	}
 
-	public void onFileParsingError(){
-	    filesSubmitted = false;
-	    submitButtonAccess(true);
-    }
-
     // BackSpace and Delete Listener for List that holds Uploaded Files
     private void addUploadedFilesListKeyListener(final JList<String> list, final DefaultListModel<String> listModel) {
         list.addKeyListener(new KeyListener() {
@@ -235,6 +230,7 @@ public class Model extends JSplitPane {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_DELETE || e.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
+
                     deleteUploadedFiles();
                 }
             }
@@ -260,9 +256,13 @@ public class Model extends JSplitPane {
         if (list.getSelectedIndices().length > 0) {
             // Getting the Items you selected and want to delete
             int[] selectedIndices = list.getSelectedIndices();
-            for (int i = selectedIndices.length - 1; i >= 0; i--) {
-                mainWindow.removeFile(listModel.getElementAt(i));
-                listModel.removeElementAt(i);// Deleting Selected Items
+            System.out.println("SelectedIndices length " + selectedIndices.length);
+            System.out.println("SelectedIndex " + this.list.getSelectedIndex());
+
+            for (int i = 0; i <= selectedIndices.length - 1; i++) {
+//                System.out.println("SelectedIndices " + selectedIndices.`)
+                mainWindow.removeFile(listModel.getElementAt(list.getSelectedIndex()));
+                listModel.removeElementAt(list.getSelectedIndex());// Deleting Selected Items
                 submitButtonAccess(false);
             }
         }

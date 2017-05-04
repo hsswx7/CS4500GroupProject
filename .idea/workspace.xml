@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="252a06cc-d3e8-4576-a746-c2abce4bddd5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java" afterPath="$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,13 +30,50 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Model.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Model.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3036">
-              <caret line="335" column="47" lean-forward="false" selection-start-line="335" selection-start-column="47" selection-end-line="335" selection-end-column="47" />
+            <state relative-caret-position="465">
+              <caret line="99" column="76" lean-forward="false" selection-start-line="99" selection-start-column="76" selection-end-line="99" selection-end-column="76" />
               <folding>
                 <element signature="docComment;class#Model#0" expanded="false" />
+                <element signature="e#2809#2850#0" expanded="false" />
+                <element signature="class#6628:7565" expanded="false" />
+                <element signature="method#reshape#0;class#6628:7565" expanded="false" />
+                <element signature="method#init#0;class#6628:7565" expanded="false" />
+                <element signature="method#dispose#0;class#6628:7565" expanded="false" />
+                <element signature="method#display#0;class#6628:7565" expanded="false" />
+                <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
+                <element signature="class#8252:8700" expanded="false" />
+                <element signature="method#keyPressed#0;class#8252:8700" expanded="false" />
+                <element signature="method#keyReleased#0;class#8252:8700" expanded="false" />
+                <element signature="method#keyTyped#0;class#8252:8700" expanded="false" />
+                <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
+                <element signature="e#8945#9005#0" expanded="false" />
+                <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
+                <element signature="method#show#0;class#Model#0" expanded="false" />
+                <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
+                <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
+                <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+                <element signature="class#State#0;class#Model#0" expanded="false" />
+                <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+                <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+                <element signature="class#Tab#0;class#Model#0" expanded="false" />
+                <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+                <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+                <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+                <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+                <element signature="method#getChild#0;class#Model#0" expanded="false" />
+                <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+                <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
+                <element signature="e#15887#15941#0" expanded="false" />
+                <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
+                <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
+                <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
+                <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
+                <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
+                <element signature="method#submitData#0;class#Model#0" expanded="false" />
+                <element signature="e#21462#21497#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -46,20 +82,18 @@
       <file leaf-file-name="RecentFiles.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1232">
+            <state relative-caret-position="506">
               <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DataExtractorLoop.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DataExtractorLoop.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="642">
-              <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+            <state relative-caret-position="1584">
+              <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -124,7 +158,7 @@
         <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="731">
-              <caret line="405" column="5" lean-forward="false" selection-start-line="405" selection-start-column="5" selection-end-line="405" selection-end-column="5" />
+              <caret line="407" column="0" lean-forward="false" selection-start-line="407" selection-start-column="0" selection-end-line="407" selection-end-column="0" />
               <folding>
                 <element signature="e#5660#5661#0" expanded="true" />
                 <element signature="e#5682#5683#0" expanded="true" />
@@ -132,30 +166,30 @@
                 <element signature="e#7266#7267#0" expanded="true" />
                 <element signature="e#8879#8880#0" expanded="true" />
                 <element signature="e#8949#8950#0" expanded="true" />
-                <marker date="1493862834297" expanded="true" signature="11636:12816" ph="{...}" />
-                <marker date="1493862834297" expanded="true" signature="12997:14715" ph="{...}" />
-                <marker date="1493862834297" expanded="true" signature="13050:13058" ph="&lt;~&gt;" />
-                <marker date="1493862834297" expanded="false" signature="14860:16554" ph="{...}" />
-                <marker date="1493862834297" expanded="false" signature="15640:15755" ph="(ComponentAdapter) componentResized(e) → {" />
-                <marker date="1493862834297" expanded="false" signature="16326:16345" ph="}" />
-                <marker date="1493862834297" expanded="false" signature="16607:16906" ph="{...}" />
-                <marker date="1493862834297" expanded="false" signature="16645:16747" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-                <marker date="1493862834297" expanded="false" signature="16883:16898" ph="}" />
-                <marker date="1493862834297" expanded="false" signature="16962:17270" ph="{...}" />
-                <marker date="1493862834297" expanded="false" signature="17000:17102" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-                <marker date="1493862834297" expanded="false" signature="17247:17262" ph="}" />
-                <marker date="1493862834297" expanded="false" signature="17314:17501" ph="{...}" />
-                <marker date="1493862834297" expanded="false" signature="17347:17462" ph="(WindowAdapter) windowClosing(e) → { " />
-                <marker date="1493862834297" expanded="false" signature="17469:17493" ph=" }" />
-                <marker date="1493862834297" expanded="true" signature="17527:17882" ph="{...}" />
-                <marker date="1493862834297" expanded="false" signature="17951:18567" ph="{...}" />
-                <marker date="1493862834297" expanded="false" signature="17983:18165" ph="(AbstractAction) (e) → {" />
-                <marker date="1493862834297" expanded="false" signature="18276:18291" ph="}" />
-                <marker date="1493862834297" expanded="false" signature="18596:18607" ph=" { " />
-                <marker date="1493862834297" expanded="false" signature="18620:18626" ph=" }" />
-                <marker date="1493862834297" expanded="false" signature="18660:18671" ph=" { " />
-                <marker date="1493862834297" expanded="false" signature="18682:18688" ph=" }" />
-                <marker date="1493862834297" expanded="false" signature="18718:18729" ph=" { " />
+                <marker date="1493868703070" expanded="true" signature="11672:12852" ph="{...}" />
+                <marker date="1493868703070" expanded="true" signature="13033:14751" ph="{...}" />
+                <marker date="1493868703070" expanded="true" signature="13086:13094" ph="&lt;~&gt;" />
+                <marker date="1493868703070" expanded="false" signature="14896:16590" ph="{...}" />
+                <marker date="1493868703070" expanded="false" signature="15676:15791" ph="(ComponentAdapter) componentResized(e) → {" />
+                <marker date="1493868703070" expanded="false" signature="16362:16381" ph="}" />
+                <marker date="1493868703070" expanded="false" signature="16643:16942" ph="{...}" />
+                <marker date="1493868703070" expanded="false" signature="16681:16783" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+                <marker date="1493868703070" expanded="false" signature="16919:16934" ph="}" />
+                <marker date="1493868703070" expanded="false" signature="16998:17306" ph="{...}" />
+                <marker date="1493868703070" expanded="false" signature="17036:17138" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+                <marker date="1493868703070" expanded="false" signature="17283:17298" ph="}" />
+                <marker date="1493868703070" expanded="false" signature="17350:17537" ph="{...}" />
+                <marker date="1493868703070" expanded="false" signature="17383:17498" ph="(WindowAdapter) windowClosing(e) → { " />
+                <marker date="1493868703070" expanded="false" signature="17505:17529" ph=" }" />
+                <marker date="1493868703070" expanded="true" signature="17563:17918" ph="{...}" />
+                <marker date="1493868703070" expanded="false" signature="17987:18603" ph="{...}" />
+                <marker date="1493868703070" expanded="false" signature="18019:18201" ph="(AbstractAction) (e) → {" />
+                <marker date="1493868703070" expanded="false" signature="18312:18327" ph="}" />
+                <marker date="1493868703070" expanded="false" signature="18632:18643" ph=" { " />
+                <marker date="1493868703070" expanded="false" signature="18656:18662" ph=" }" />
+                <marker date="1493868703070" expanded="false" signature="18696:18707" ph=" { " />
+                <marker date="1493868703070" expanded="false" signature="18718:18724" ph=" }" />
+                <marker date="1493868703070" expanded="false" signature="18754:18765" ph=" { " />
               </folding>
             </state>
           </provider>
@@ -221,11 +255,11 @@
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/CellRenderer.java" />
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/UploadeFiles.java" />
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/Luyten.java" />
-        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java" />
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java" />
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/MainMenuBar.java" />
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java" />
+        <option value="$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java" />
       </list>
     </option>
   </component>
@@ -815,7 +849,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33643000" />
+    <option name="totallyTimeSpent" value="35827000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -827,7 +861,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -881,9 +915,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1232">
           <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -955,30 +987,30 @@
             <element signature="e#7266#7267#0" expanded="true" />
             <element signature="e#8879#8880#0" expanded="true" />
             <element signature="e#8949#8950#0" expanded="true" />
-            <marker date="1493862834297" expanded="true" signature="11636:12816" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="12997:14715" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="13050:13058" ph="&lt;~&gt;" />
-            <marker date="1493862834297" expanded="false" signature="14860:16554" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="15640:15755" ph="(ComponentAdapter) componentResized(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16326:16345" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16607:16906" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="16645:16747" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16883:16898" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16962:17270" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17000:17102" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="17247:17262" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="17314:17501" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17347:17462" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1493862834297" expanded="false" signature="17469:17493" ph=" }" />
-            <marker date="1493862834297" expanded="true" signature="17527:17882" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17951:18567" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17983:18165" ph="(AbstractAction) (e) → {" />
-            <marker date="1493862834297" expanded="false" signature="18276:18291" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="18596:18607" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18620:18626" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18660:18671" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18682:18688" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18718:18729" ph=" { " />
+            <marker date="1493868703070" expanded="true" signature="11672:12852" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13033:14751" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13086:13094" ph="&lt;~&gt;" />
+            <marker date="1493868703070" expanded="false" signature="14896:16590" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="15676:15791" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16362:16381" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16643:16942" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="16681:16783" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16919:16934" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16998:17306" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17036:17138" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="17283:17298" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="17350:17537" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17383:17498" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493868703070" expanded="false" signature="17505:17529" ph=" }" />
+            <marker date="1493868703070" expanded="true" signature="17563:17918" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17987:18603" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="18019:18201" ph="(AbstractAction) (e) → {" />
+            <marker date="1493868703070" expanded="false" signature="18312:18327" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="18632:18643" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18656:18662" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18696:18707" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18718:18724" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18754:18765" ph=" { " />
           </folding>
         </state>
       </provider>
@@ -997,6 +1029,43 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="e#2809#2850#0" expanded="false" />
+            <element signature="class#6628:7565" expanded="false" />
+            <element signature="method#reshape#0;class#6628:7565" expanded="false" />
+            <element signature="method#init#0;class#6628:7565" expanded="false" />
+            <element signature="method#dispose#0;class#6628:7565" expanded="false" />
+            <element signature="method#display#0;class#6628:7565" expanded="false" />
+            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
+            <element signature="class#8252:8700" expanded="false" />
+            <element signature="method#keyPressed#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyReleased#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyTyped#0;class#8252:8700" expanded="false" />
+            <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
+            <element signature="e#8945#9005#0" expanded="false" />
+            <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
+            <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
+            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
+            <element signature="e#15887#15941#0" expanded="false" />
+            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
+            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
+            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
+            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
+            <element signature="method#submitData#0;class#Model#0" expanded="false" />
+            <element signature="e#21462#21497#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1069,30 +1138,30 @@
             <element signature="e#7266#7267#0" expanded="true" />
             <element signature="e#8879#8880#0" expanded="true" />
             <element signature="e#8949#8950#0" expanded="true" />
-            <marker date="1493862834297" expanded="true" signature="11636:12816" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="12997:14715" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="13050:13058" ph="&lt;~&gt;" />
-            <marker date="1493862834297" expanded="false" signature="14860:16554" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="15640:15755" ph="(ComponentAdapter) componentResized(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16326:16345" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16607:16906" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="16645:16747" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16883:16898" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16962:17270" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17000:17102" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="17247:17262" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="17314:17501" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17347:17462" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1493862834297" expanded="false" signature="17469:17493" ph=" }" />
-            <marker date="1493862834297" expanded="true" signature="17527:17882" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17951:18567" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17983:18165" ph="(AbstractAction) (e) → {" />
-            <marker date="1493862834297" expanded="false" signature="18276:18291" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="18596:18607" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18620:18626" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18660:18671" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18682:18688" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18718:18729" ph=" { " />
+            <marker date="1493868703070" expanded="true" signature="11672:12852" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13033:14751" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13086:13094" ph="&lt;~&gt;" />
+            <marker date="1493868703070" expanded="false" signature="14896:16590" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="15676:15791" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16362:16381" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16643:16942" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="16681:16783" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16919:16934" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16998:17306" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17036:17138" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="17283:17298" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="17350:17537" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17383:17498" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493868703070" expanded="false" signature="17505:17529" ph=" }" />
+            <marker date="1493868703070" expanded="true" signature="17563:17918" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17987:18603" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="18019:18201" ph="(AbstractAction) (e) → {" />
+            <marker date="1493868703070" expanded="false" signature="18312:18327" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="18632:18643" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18656:18662" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18696:18707" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18718:18724" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18754:18765" ph=" { " />
           </folding>
         </state>
       </provider>
@@ -1103,6 +1172,43 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="e#2809#2850#0" expanded="false" />
+            <element signature="class#6628:7565" expanded="false" />
+            <element signature="method#reshape#0;class#6628:7565" expanded="false" />
+            <element signature="method#init#0;class#6628:7565" expanded="false" />
+            <element signature="method#dispose#0;class#6628:7565" expanded="false" />
+            <element signature="method#display#0;class#6628:7565" expanded="false" />
+            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
+            <element signature="class#8252:8700" expanded="false" />
+            <element signature="method#keyPressed#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyReleased#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyTyped#0;class#8252:8700" expanded="false" />
+            <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
+            <element signature="e#8945#9005#0" expanded="false" />
+            <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
+            <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
+            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
+            <element signature="e#15887#15941#0" expanded="false" />
+            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
+            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
+            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
+            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
+            <element signature="method#submitData#0;class#Model#0" expanded="false" />
+            <element signature="e#21462#21497#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1175,30 +1281,30 @@
             <element signature="e#7266#7267#0" expanded="true" />
             <element signature="e#8879#8880#0" expanded="true" />
             <element signature="e#8949#8950#0" expanded="true" />
-            <marker date="1493862834297" expanded="true" signature="11636:12816" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="12997:14715" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="13050:13058" ph="&lt;~&gt;" />
-            <marker date="1493862834297" expanded="false" signature="14860:16554" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="15640:15755" ph="(ComponentAdapter) componentResized(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16326:16345" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16607:16906" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="16645:16747" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16883:16898" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16962:17270" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17000:17102" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="17247:17262" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="17314:17501" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17347:17462" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1493862834297" expanded="false" signature="17469:17493" ph=" }" />
-            <marker date="1493862834297" expanded="true" signature="17527:17882" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17951:18567" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17983:18165" ph="(AbstractAction) (e) → {" />
-            <marker date="1493862834297" expanded="false" signature="18276:18291" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="18596:18607" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18620:18626" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18660:18671" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18682:18688" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18718:18729" ph=" { " />
+            <marker date="1493868703070" expanded="true" signature="11672:12852" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13033:14751" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13086:13094" ph="&lt;~&gt;" />
+            <marker date="1493868703070" expanded="false" signature="14896:16590" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="15676:15791" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16362:16381" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16643:16942" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="16681:16783" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16919:16934" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16998:17306" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17036:17138" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="17283:17298" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="17350:17537" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17383:17498" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493868703070" expanded="false" signature="17505:17529" ph=" }" />
+            <marker date="1493868703070" expanded="true" signature="17563:17918" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17987:18603" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="18019:18201" ph="(AbstractAction) (e) → {" />
+            <marker date="1493868703070" expanded="false" signature="18312:18327" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="18632:18643" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18656:18662" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18696:18707" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18718:18724" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18754:18765" ph=" { " />
           </folding>
         </state>
       </provider>
@@ -1209,6 +1315,43 @@
           <caret line="290" column="52" lean-forward="true" selection-start-line="290" selection-start-column="52" selection-end-line="290" selection-end-column="52" />
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="e#2809#2850#0" expanded="false" />
+            <element signature="class#6628:7565" expanded="false" />
+            <element signature="method#reshape#0;class#6628:7565" expanded="false" />
+            <element signature="method#init#0;class#6628:7565" expanded="false" />
+            <element signature="method#dispose#0;class#6628:7565" expanded="false" />
+            <element signature="method#display#0;class#6628:7565" expanded="false" />
+            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
+            <element signature="class#8252:8700" expanded="false" />
+            <element signature="method#keyPressed#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyReleased#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyTyped#0;class#8252:8700" expanded="false" />
+            <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
+            <element signature="e#8945#9005#0" expanded="false" />
+            <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
+            <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
+            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
+            <element signature="e#15887#15941#0" expanded="false" />
+            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
+            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
+            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
+            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
+            <element signature="method#submitData#0;class#Model#0" expanded="false" />
+            <element signature="e#21462#21497#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1281,30 +1424,30 @@
             <element signature="e#7266#7267#0" expanded="true" />
             <element signature="e#8879#8880#0" expanded="true" />
             <element signature="e#8949#8950#0" expanded="true" />
-            <marker date="1493862834297" expanded="true" signature="11636:12816" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="12997:14715" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="13050:13058" ph="&lt;~&gt;" />
-            <marker date="1493862834297" expanded="false" signature="14860:16554" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="15640:15755" ph="(ComponentAdapter) componentResized(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16326:16345" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16607:16906" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="16645:16747" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16883:16898" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16962:17270" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17000:17102" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="17247:17262" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="17314:17501" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17347:17462" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1493862834297" expanded="false" signature="17469:17493" ph=" }" />
-            <marker date="1493862834297" expanded="true" signature="17527:17882" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17951:18567" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17983:18165" ph="(AbstractAction) (e) → {" />
-            <marker date="1493862834297" expanded="false" signature="18276:18291" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="18596:18607" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18620:18626" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18660:18671" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18682:18688" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18718:18729" ph=" { " />
+            <marker date="1493868703070" expanded="true" signature="11672:12852" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13033:14751" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13086:13094" ph="&lt;~&gt;" />
+            <marker date="1493868703070" expanded="false" signature="14896:16590" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="15676:15791" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16362:16381" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16643:16942" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="16681:16783" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16919:16934" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16998:17306" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17036:17138" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="17283:17298" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="17350:17537" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17383:17498" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493868703070" expanded="false" signature="17505:17529" ph=" }" />
+            <marker date="1493868703070" expanded="true" signature="17563:17918" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17987:18603" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="18019:18201" ph="(AbstractAction) (e) → {" />
+            <marker date="1493868703070" expanded="false" signature="18312:18327" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="18632:18643" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18656:18662" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18696:18707" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18718:18724" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18754:18765" ph=" { " />
           </folding>
         </state>
       </provider>
@@ -1315,6 +1458,43 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="e#2809#2850#0" expanded="false" />
+            <element signature="class#6628:7565" expanded="false" />
+            <element signature="method#reshape#0;class#6628:7565" expanded="false" />
+            <element signature="method#init#0;class#6628:7565" expanded="false" />
+            <element signature="method#dispose#0;class#6628:7565" expanded="false" />
+            <element signature="method#display#0;class#6628:7565" expanded="false" />
+            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
+            <element signature="class#8252:8700" expanded="false" />
+            <element signature="method#keyPressed#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyReleased#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyTyped#0;class#8252:8700" expanded="false" />
+            <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
+            <element signature="e#8945#9005#0" expanded="false" />
+            <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
+            <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
+            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
+            <element signature="e#15887#15941#0" expanded="false" />
+            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
+            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
+            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
+            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
+            <element signature="method#submitData#0;class#Model#0" expanded="false" />
+            <element signature="e#21462#21497#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1346,30 +1526,30 @@
             <element signature="e#7266#7267#0" expanded="true" />
             <element signature="e#8879#8880#0" expanded="true" />
             <element signature="e#8949#8950#0" expanded="true" />
-            <marker date="1493862834297" expanded="true" signature="11636:12816" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="12997:14715" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="13050:13058" ph="&lt;~&gt;" />
-            <marker date="1493862834297" expanded="false" signature="14860:16554" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="15640:15755" ph="(ComponentAdapter) componentResized(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16326:16345" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16607:16906" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="16645:16747" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16883:16898" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16962:17270" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17000:17102" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="17247:17262" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="17314:17501" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17347:17462" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1493862834297" expanded="false" signature="17469:17493" ph=" }" />
-            <marker date="1493862834297" expanded="true" signature="17527:17882" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17951:18567" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17983:18165" ph="(AbstractAction) (e) → {" />
-            <marker date="1493862834297" expanded="false" signature="18276:18291" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="18596:18607" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18620:18626" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18660:18671" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18682:18688" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18718:18729" ph=" { " />
+            <marker date="1493868703070" expanded="true" signature="11672:12852" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13033:14751" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13086:13094" ph="&lt;~&gt;" />
+            <marker date="1493868703070" expanded="false" signature="14896:16590" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="15676:15791" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16362:16381" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16643:16942" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="16681:16783" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16919:16934" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16998:17306" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17036:17138" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="17283:17298" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="17350:17537" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17383:17498" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493868703070" expanded="false" signature="17505:17529" ph=" }" />
+            <marker date="1493868703070" expanded="true" signature="17563:17918" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17987:18603" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="18019:18201" ph="(AbstractAction) (e) → {" />
+            <marker date="1493868703070" expanded="false" signature="18312:18327" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="18632:18643" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18656:18662" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18696:18707" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18718:18724" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18754:18765" ph=" { " />
           </folding>
         </state>
       </provider>
@@ -1380,6 +1560,43 @@
           <caret line="58" column="37" lean-forward="true" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="e#2809#2850#0" expanded="false" />
+            <element signature="class#6628:7565" expanded="false" />
+            <element signature="method#reshape#0;class#6628:7565" expanded="false" />
+            <element signature="method#init#0;class#6628:7565" expanded="false" />
+            <element signature="method#dispose#0;class#6628:7565" expanded="false" />
+            <element signature="method#display#0;class#6628:7565" expanded="false" />
+            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
+            <element signature="class#8252:8700" expanded="false" />
+            <element signature="method#keyPressed#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyReleased#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyTyped#0;class#8252:8700" expanded="false" />
+            <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
+            <element signature="e#8945#9005#0" expanded="false" />
+            <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
+            <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
+            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
+            <element signature="e#15887#15941#0" expanded="false" />
+            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
+            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
+            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
+            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
+            <element signature="method#submitData#0;class#Model#0" expanded="false" />
+            <element signature="e#21462#21497#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1395,30 +1612,30 @@
             <element signature="e#7266#7267#0" expanded="true" />
             <element signature="e#8879#8880#0" expanded="true" />
             <element signature="e#8949#8950#0" expanded="true" />
-            <marker date="1493862834297" expanded="true" signature="11636:12816" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="12997:14715" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="13050:13058" ph="&lt;~&gt;" />
-            <marker date="1493862834297" expanded="false" signature="14860:16554" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="15640:15755" ph="(ComponentAdapter) componentResized(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16326:16345" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16607:16906" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="16645:16747" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16883:16898" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16962:17270" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17000:17102" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="17247:17262" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="17314:17501" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17347:17462" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1493862834297" expanded="false" signature="17469:17493" ph=" }" />
-            <marker date="1493862834297" expanded="true" signature="17527:17882" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17951:18567" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17983:18165" ph="(AbstractAction) (e) → {" />
-            <marker date="1493862834297" expanded="false" signature="18276:18291" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="18596:18607" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18620:18626" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18660:18671" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18682:18688" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18718:18729" ph=" { " />
+            <marker date="1493868703070" expanded="true" signature="11672:12852" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13033:14751" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13086:13094" ph="&lt;~&gt;" />
+            <marker date="1493868703070" expanded="false" signature="14896:16590" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="15676:15791" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16362:16381" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16643:16942" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="16681:16783" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16919:16934" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16998:17306" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17036:17138" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="17283:17298" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="17350:17537" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17383:17498" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493868703070" expanded="false" signature="17505:17529" ph=" }" />
+            <marker date="1493868703070" expanded="true" signature="17563:17918" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17987:18603" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="18019:18201" ph="(AbstractAction) (e) → {" />
+            <marker date="1493868703070" expanded="false" signature="18312:18327" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="18632:18643" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18656:18662" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18696:18707" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18718:18724" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18754:18765" ph=" { " />
           </folding>
         </state>
       </provider>
@@ -1429,6 +1646,43 @@
           <caret line="72" column="42" lean-forward="true" selection-start-line="72" selection-start-column="42" selection-end-line="72" selection-end-column="42" />
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="e#2809#2850#0" expanded="false" />
+            <element signature="class#6628:7565" expanded="false" />
+            <element signature="method#reshape#0;class#6628:7565" expanded="false" />
+            <element signature="method#init#0;class#6628:7565" expanded="false" />
+            <element signature="method#dispose#0;class#6628:7565" expanded="false" />
+            <element signature="method#display#0;class#6628:7565" expanded="false" />
+            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
+            <element signature="class#8252:8700" expanded="false" />
+            <element signature="method#keyPressed#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyReleased#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyTyped#0;class#8252:8700" expanded="false" />
+            <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
+            <element signature="e#8945#9005#0" expanded="false" />
+            <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
+            <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
+            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
+            <element signature="e#15887#15941#0" expanded="false" />
+            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
+            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
+            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
+            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
+            <element signature="method#submitData#0;class#Model#0" expanded="false" />
+            <element signature="e#21462#21497#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1444,30 +1698,30 @@
             <element signature="e#7266#7267#0" expanded="true" />
             <element signature="e#8879#8880#0" expanded="true" />
             <element signature="e#8949#8950#0" expanded="true" />
-            <marker date="1493862834297" expanded="true" signature="11636:12816" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="12997:14715" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="13050:13058" ph="&lt;~&gt;" />
-            <marker date="1493862834297" expanded="false" signature="14860:16554" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="15640:15755" ph="(ComponentAdapter) componentResized(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16326:16345" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16607:16906" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="16645:16747" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16883:16898" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16962:17270" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17000:17102" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="17247:17262" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="17314:17501" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17347:17462" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1493862834297" expanded="false" signature="17469:17493" ph=" }" />
-            <marker date="1493862834297" expanded="true" signature="17527:17882" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17951:18567" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17983:18165" ph="(AbstractAction) (e) → {" />
-            <marker date="1493862834297" expanded="false" signature="18276:18291" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="18596:18607" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18620:18626" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18660:18671" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18682:18688" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18718:18729" ph=" { " />
+            <marker date="1493868703070" expanded="true" signature="11672:12852" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13033:14751" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13086:13094" ph="&lt;~&gt;" />
+            <marker date="1493868703070" expanded="false" signature="14896:16590" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="15676:15791" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16362:16381" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16643:16942" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="16681:16783" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16919:16934" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16998:17306" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17036:17138" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="17283:17298" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="17350:17537" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17383:17498" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493868703070" expanded="false" signature="17505:17529" ph=" }" />
+            <marker date="1493868703070" expanded="true" signature="17563:17918" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17987:18603" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="18019:18201" ph="(AbstractAction) (e) → {" />
+            <marker date="1493868703070" expanded="false" signature="18312:18327" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="18632:18643" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18656:18662" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18696:18707" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18718:18724" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18754:18765" ph=" { " />
           </folding>
         </state>
       </provider>
@@ -1478,6 +1732,43 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="e#2809#2850#0" expanded="false" />
+            <element signature="class#6628:7565" expanded="false" />
+            <element signature="method#reshape#0;class#6628:7565" expanded="false" />
+            <element signature="method#init#0;class#6628:7565" expanded="false" />
+            <element signature="method#dispose#0;class#6628:7565" expanded="false" />
+            <element signature="method#display#0;class#6628:7565" expanded="false" />
+            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
+            <element signature="class#8252:8700" expanded="false" />
+            <element signature="method#keyPressed#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyReleased#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyTyped#0;class#8252:8700" expanded="false" />
+            <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
+            <element signature="e#8945#9005#0" expanded="false" />
+            <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
+            <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
+            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
+            <element signature="e#15887#15941#0" expanded="false" />
+            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
+            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
+            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
+            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
+            <element signature="method#submitData#0;class#Model#0" expanded="false" />
+            <element signature="e#21462#21497#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1493,30 +1784,30 @@
             <element signature="e#7266#7267#0" expanded="true" />
             <element signature="e#8879#8880#0" expanded="true" />
             <element signature="e#8949#8950#0" expanded="true" />
-            <marker date="1493862834297" expanded="true" signature="11636:12816" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="12997:14715" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="13050:13058" ph="&lt;~&gt;" />
-            <marker date="1493862834297" expanded="false" signature="14860:16554" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="15640:15755" ph="(ComponentAdapter) componentResized(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16326:16345" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16607:16906" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="16645:16747" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16883:16898" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16962:17270" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17000:17102" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="17247:17262" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="17314:17501" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17347:17462" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1493862834297" expanded="false" signature="17469:17493" ph=" }" />
-            <marker date="1493862834297" expanded="true" signature="17527:17882" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17951:18567" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17983:18165" ph="(AbstractAction) (e) → {" />
-            <marker date="1493862834297" expanded="false" signature="18276:18291" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="18596:18607" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18620:18626" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18660:18671" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18682:18688" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18718:18729" ph=" { " />
+            <marker date="1493868703070" expanded="true" signature="11672:12852" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13033:14751" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13086:13094" ph="&lt;~&gt;" />
+            <marker date="1493868703070" expanded="false" signature="14896:16590" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="15676:15791" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16362:16381" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16643:16942" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="16681:16783" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16919:16934" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16998:17306" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17036:17138" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="17283:17298" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="17350:17537" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17383:17498" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493868703070" expanded="false" signature="17505:17529" ph=" }" />
+            <marker date="1493868703070" expanded="true" signature="17563:17918" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17987:18603" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="18019:18201" ph="(AbstractAction) (e) → {" />
+            <marker date="1493868703070" expanded="false" signature="18312:18327" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="18632:18643" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18656:18662" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18696:18707" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18718:18724" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18754:18765" ph=" { " />
           </folding>
         </state>
       </provider>
@@ -1628,26 +1919,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3036">
-          <caret line="335" column="47" lean-forward="false" selection-start-line="335" selection-start-column="47" selection-end-line="335" selection-end-column="47" />
-          <folding>
-            <element signature="docComment;class#Model#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1232">
-          <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainMenuBar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-10500">
@@ -1659,7 +1930,7 @@
     <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
-          <caret line="405" column="5" lean-forward="false" selection-start-line="405" selection-start-column="5" selection-end-line="405" selection-end-column="5" />
+          <caret line="407" column="0" lean-forward="false" selection-start-line="407" selection-start-column="0" selection-end-line="407" selection-end-column="0" />
           <folding>
             <element signature="e#5660#5661#0" expanded="true" />
             <element signature="e#5682#5683#0" expanded="true" />
@@ -1667,40 +1938,95 @@
             <element signature="e#7266#7267#0" expanded="true" />
             <element signature="e#8879#8880#0" expanded="true" />
             <element signature="e#8949#8950#0" expanded="true" />
-            <marker date="1493862834297" expanded="true" signature="11636:12816" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="12997:14715" ph="{...}" />
-            <marker date="1493862834297" expanded="true" signature="13050:13058" ph="&lt;~&gt;" />
-            <marker date="1493862834297" expanded="false" signature="14860:16554" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="15640:15755" ph="(ComponentAdapter) componentResized(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16326:16345" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16607:16906" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="16645:16747" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="16883:16898" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="16962:17270" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17000:17102" ph="(WindowAdapter) windowGainedFocus(e) → {" />
-            <marker date="1493862834297" expanded="false" signature="17247:17262" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="17314:17501" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17347:17462" ph="(WindowAdapter) windowClosing(e) → { " />
-            <marker date="1493862834297" expanded="false" signature="17469:17493" ph=" }" />
-            <marker date="1493862834297" expanded="true" signature="17527:17882" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17951:18567" ph="{...}" />
-            <marker date="1493862834297" expanded="false" signature="17983:18165" ph="(AbstractAction) (e) → {" />
-            <marker date="1493862834297" expanded="false" signature="18276:18291" ph="}" />
-            <marker date="1493862834297" expanded="false" signature="18596:18607" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18620:18626" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18660:18671" ph=" { " />
-            <marker date="1493862834297" expanded="false" signature="18682:18688" ph=" }" />
-            <marker date="1493862834297" expanded="false" signature="18718:18729" ph=" { " />
+            <marker date="1493868703070" expanded="true" signature="11672:12852" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13033:14751" ph="{...}" />
+            <marker date="1493868703070" expanded="true" signature="13086:13094" ph="&lt;~&gt;" />
+            <marker date="1493868703070" expanded="false" signature="14896:16590" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="15676:15791" ph="(ComponentAdapter) componentResized(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16362:16381" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16643:16942" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="16681:16783" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="16919:16934" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="16998:17306" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17036:17138" ph="(WindowAdapter) windowGainedFocus(e) → {" />
+            <marker date="1493868703070" expanded="false" signature="17283:17298" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="17350:17537" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17383:17498" ph="(WindowAdapter) windowClosing(e) → { " />
+            <marker date="1493868703070" expanded="false" signature="17505:17529" ph=" }" />
+            <marker date="1493868703070" expanded="true" signature="17563:17918" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="17987:18603" ph="{...}" />
+            <marker date="1493868703070" expanded="false" signature="18019:18201" ph="(AbstractAction) (e) → {" />
+            <marker date="1493868703070" expanded="false" signature="18312:18327" ph="}" />
+            <marker date="1493868703070" expanded="false" signature="18632:18643" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18656:18662" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18696:18707" ph=" { " />
+            <marker date="1493868703070" expanded="false" signature="18718:18724" ph=" }" />
+            <marker date="1493868703070" expanded="false" signature="18754:18765" ph=" { " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/DataExtractorLoop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="642">
-          <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+        <state relative-caret-position="1584">
+          <caret line="72" column="0" lean-forward="true" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/RecentFiles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="58" column="12" lean-forward="false" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/us/deathmarine/luyten/Model.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="99" column="76" lean-forward="false" selection-start-line="99" selection-start-column="76" selection-end-line="99" selection-end-column="76" />
+          <folding>
+            <element signature="docComment;class#Model#0" expanded="false" />
+            <element signature="e#2809#2850#0" expanded="false" />
+            <element signature="class#6628:7565" expanded="false" />
+            <element signature="method#reshape#0;class#6628:7565" expanded="false" />
+            <element signature="method#init#0;class#6628:7565" expanded="false" />
+            <element signature="method#dispose#0;class#6628:7565" expanded="false" />
+            <element signature="method#display#0;class#6628:7565" expanded="false" />
+            <element signature="method#addUploadedFilesListKeyListener#0;class#Model#0" expanded="false" />
+            <element signature="class#8252:8700" expanded="false" />
+            <element signature="method#keyPressed#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyReleased#0;class#8252:8700" expanded="false" />
+            <element signature="method#keyTyped#0;class#8252:8700" expanded="false" />
+            <element signature="method#deleteUploadedFiles#0;class#Model#0" expanded="false" />
+            <element signature="e#8945#9005#0" expanded="false" />
+            <element signature="method#onSubmitButtonClicked#0;class#Model#0" expanded="false" />
+            <element signature="method#show#0;class#Model#0" expanded="false" />
+            <element signature="method#addOrSwitchToTab#0;class#Model#0" expanded="false" />
+            <element signature="method#closeOpenTab#0;class#Model#0" expanded="false" />
+            <element signature="method#isTabInForeground#0;class#Model#0" expanded="false" />
+            <element signature="class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#State#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="method#close#0;class#State#0;class#Model#0" expanded="false" />
+            <element signature="class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#Tab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="method#createTab#0;class#Tab#0;class#Model#0" expanded="false" />
+            <element signature="class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#mouseClicked#0;class#CloseTab#0;class#Model#0" expanded="false" />
+            <element signature="method#getChild#0;class#Model#0" expanded="false" />
+            <element signature="method#checkFileSelected#0;class#Model#0" expanded="false" />
+            <element signature="method#verifyFile#0;class#Model#0" expanded="false" />
+            <element signature="e#15887#15941#0" expanded="false" />
+            <element signature="method#addFileUploadedToPane#0;class#Model#0" expanded="false" />
+            <element signature="method#changeTheme#0;class#Model#0" expanded="false" />
+            <element signature="method#getOpenedFile#0;class#Model#0" expanded="false" />
+            <element signature="method#getCurrentTextArea#0;class#Model#0" expanded="false" />
+            <element signature="method#startWarmUpThread#0;class#Model#0" expanded="false" />
+            <element signature="method#submitData#0;class#Model#0" expanded="false" />
+            <element signature="e#21462#21497#0" expanded="false" />
           </folding>
         </state>
       </provider>
