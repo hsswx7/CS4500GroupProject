@@ -11,7 +11,7 @@ import java.util.regex.Pattern;
 public class DataExtractorLoop {
 
 
-    public float[][] getData(UploadedFilesContainer filesUploaded){
+    public float[][] getData(UploadedFilesContainer filesUploaded) {
         //location of files
         ArrayList<File> Files = filesUploaded.getAllFiles();
         float riverData[][] = new float[365][3];//store riverHeight values for each substation.
@@ -91,9 +91,9 @@ public class DataExtractorLoop {
                 }
                 buf.close();
             }
-        }catch (Exception e){
-        	e.printStackTrace();
-        	System.out.println("Fatel Data Extraction Crash");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Fatel Data Extraction Crash");
         }
         return riverData;
     }

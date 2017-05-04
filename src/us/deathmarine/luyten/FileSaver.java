@@ -41,12 +41,12 @@ import com.strobel.decompiler.languages.java.JavaFormattingOptions; */
 
 /**
  * Performs Save and Save All
- * This Can be Removed 
+ * This Can be Removed
  */
 public class FileSaver {
 
 	/*private JProgressBar bar;
-	private JLabel label;
+    private JLabel label;
 	private boolean cancel;
 	private boolean extracting;
 

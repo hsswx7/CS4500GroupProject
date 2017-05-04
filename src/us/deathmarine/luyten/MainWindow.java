@@ -1,36 +1,16 @@
 package us.deathmarine.luyten;
 
-import java.awt.Dimension;
-import java.awt.Toolkit;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.dnd.DropTarget;
-import java.awt.event.ActionEvent;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.awt.event.*;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.BitSet;
 import java.util.Iterator;
 import java.util.Vector;
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-
-import javax.swing.AbstractAction;
-import javax.swing.Action;
-import javax.swing.ImageIcon;
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JProgressBar;
-import javax.swing.KeyStroke;
-
-import org.fife.ui.rsyntaxtextarea.RSyntaxTextArea;
+import java.util.regex.Pattern;
 
 //TODO In-Progress
 
@@ -171,77 +151,21 @@ public class MainWindow extends JFrame {
         quit();
     }
 
-    public void onSelectAllMenu() {
-        try {
-            RSyntaxTextArea pane = this.getModel().getCurrentTextArea();
-            if (pane != null) {
-                pane.requestFocusInWindow();
-                pane.setSelectionStart(0);
-                pane.setSelectionEnd(pane.getText().length());
-            }
-        } catch (Exception e) {
-            Luyten.showExceptionDialog("Exception!", e);
-        }
-    }
-
-    public void onFindMenu() {
-        try {
-            RSyntaxTextArea pane = this.getModel().getCurrentTextArea();
-            if (pane != null) {
-                if (findBox == null)
-                    findBox = new FindBox(this);
-                findBox.showFindBox();
-            }
-        } catch (Exception e) {
-            Luyten.showExceptionDialog("Exception!", e);
-        }
-    }
-
-    public void onFindAllMenu() {
-        try {
-            if (findAllBox == null)
-                findAllBox = new FindAllBox(this);
-            findAllBox.showFindBox();
-
-        } catch (Exception e) {
-            Luyten.showExceptionDialog("Exception!", e);
-        }
-    }
 
     public void onLegalMenu() {
         new Thread() {
             public void run() {
                 try {
-                    bar.setVisible(true);
-                    bar.setIndeterminate(true);
-                    String legalStr = getLegalStr();
-                    MainWindow.this.getModel().showLegal(legalStr);
+//                    bar.setVisible(true);
+//                    bar.setIndeterminate(true);
+//                    String legalStr = getLegalStr();
+//                    MainWindow.this.getModel().showLegal(legalStr);
                 } finally {
-                    bar.setIndeterminate(false);
-                    bar.setVisible(false);
+//                    bar.setIndeterminate(false);
+//                    bar.setVisible(false);
                 }
             }
         }.start();
-    }
-
-    public void onListLoadedClasses() {
-        try {
-            StringBuilder sb = new StringBuilder();
-            ClassLoader myCL = Thread.currentThread().getContextClassLoader();
-            bar.setVisible(true);
-            bar.setIndeterminate(true);
-            while (myCL != null) {
-                sb.append("ClassLoader: " + myCL + "\n");
-                for (Iterator<?> iter = list(myCL); iter.hasNext(); ) {
-                    sb.append("\t" + iter.next() + "\n");
-                }
-                myCL = myCL.getParent();
-            }
-            MainWindow.this.getModel().show("Debug", sb.toString());
-        } finally {
-            bar.setIndeterminate(false);
-            bar.setVisible(false);
-        }
     }
 
     private String getLegalStr() {
