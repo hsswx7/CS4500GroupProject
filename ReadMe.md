@@ -17,7 +17,8 @@ Go to: https://www.eclipse.org and download the latest version of eclipse.
 
 Follow through both installers normally.
 
-Go to Github and pull the latest trunk code for the project. 
+Go to Github and pull the latest trunk code for the project.
+https://github.com/hsswx7/CS4500GroupProject
 This will contain the native java application and it's dependencies.
 
 Add this project to the eclipse workspace by clicking on file->open projects from file system/Browse/To/Root/Folder.
