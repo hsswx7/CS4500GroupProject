@@ -1,12 +1,16 @@
 RiverTracer
--Created by Rebecca Dolph-
 
-Used to trace an image and store coordinates of the line in a file for use.
-Detailed instructions provided on execution.
+To access files, extract contents of the .rar file to a folder.
 
-To invoke in Java Program, include code:
+This program was created in Visual Studio. 
+If you have VS, you can simply go into the FreeHand folder, and open the project
+within VS by opening the freehand.sln solution.
 
-Runtime runTime = Runtime.getRuntime();
-Process process = runTime.exec(".\\RiverTracer\\RiverTracer.exe"); // or whatever the path ends up as
+Source code are provided in the JustFiles folder.
 
-FILE "river.bmp" MUST be in the root directory (ie CS4500GroupProject, whenever I tried otherwise the image would NOT show up).
+The image file must be named be named river.bmp, and must be in proper bitmap format.
+
+To set the Tracer canvas size to fit a different image, change IMAGE_X and IMAGE_Y to match
+the new file's pixel size accordingly.
+
+Further instructions on how to use the program are provided upon running.
