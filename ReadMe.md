@@ -1,8 +1,7 @@
-**************************************
-*  README for River Data Visualizer  *
-*      A River's Kidney project      *
-*      UMSL SP17-CMPSCI4500-001      *
-**************************************
+README for River Data Visualizer  
+   A River's Kidney project      
+   UMSL SP17-CMPSCI4500-001      
+
 
 SETUP
 =========================================
